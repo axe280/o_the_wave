@@ -1,0 +1,32 @@
+// &::-webkit-scrollbar-button
+// &::-webkit-scrollbar-track
+// &::-webkit-scrollbar-track-piece
+// &::-webkit-scrollbar-thumb
+// &::-webkit-scrollbar-corner
+// &::-webkit-resizer
+
+/* Max width $lg */
+@media only screen and (max-width: $lg)
+  .mobile-scroll-wrapper
+    margin-left: $sides-negative-spacing-md
+    margin-right: $sides-negative-spacing-md
+    padding-left: $sides-spacing-md
+/* end media max width $lg */
+
+
+/* Max width $md */
+@media only screen and (max-width: $md)
+  .mobile-scroll-wrapper
+    margin-left: $sides-negative-spacing-xs
+    margin-right: $sides-negative-spacing-xs
+    padding-left: $sides-spacing-xs
+    overflow-x: auto
+    -webkit-overflow-scrolling: touch
+    -ms-overflow-style: none
+    overflow: -moz-scrollbars-none
+
+    &::-webkit-scrollbar
+      display: none
+      height: 0
+      width: 0
+/* end media max width $md */

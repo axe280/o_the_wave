@@ -1,0 +1,194 @@
+/* ----- Navigation -------------------- */
+/* -- Bread crumbs ------------------ */
+.bread-crumbs
+  padding: 0
+  list-style-type: none
+
+  li
+    display: inline-block
+    vertical-align: middle
+    margin: 0
+
+    &:before
+      content: '/ '
+
+    &:first-child
+      &:before
+        display: none
+
+
+/* -- Pagination -------------------- */
+.active
+  .pagination
+    background-color: red
+
+.pagination
+  list-style-type: none
+
+  li
+    display: inline-block
+    vertical-align: middle
+    margin: 10px 5px
+
+  a
+    display: block
+    width: 30px
+    height: 30px
+    border-radius: 2px
+    background-color: #f3f3f3
+    line-height: 30px
+    text-align: center
+    text-decoration: none
+
+    &:hover
+      background-color: $base-color
+      color: #fff
+
+  &__prev,
+  &__next
+    a
+      width: auto
+      height: auto
+      border-radius: 0
+      background: none
+
+      &:hover
+        background: none
+        color: #000
+
+  &__active
+    a
+      background-color: $base-color
+      color: #fff
+
+
+/* -- Main menu --------------------- */
+.menu
+  margin: 0
+  padding: 0
+  list-style: none
+
+.menu-item
+  position: relative
+  margin-bottom: 15px
+  padding: 0
+  list-style-type: none
+  font-size: 16px
+  line-height: 20px
+  color: #fff
+
+  &__link
+    color: #fff
+    text-decoration: none
+
+    &:hover
+      color: #fff
+
+
+/* - Drop down main menu -------- */
+.menu-item__link_dd
+  cursor: pointer
+  user-select: none
+
+  &:after
+    content: ' '
+    border-top-color: #fff
+    margin: 0 0 0 10px
+
+.menu-dd
+  display: none
+  margin: 0
+  padding: 5px 0
+  list-style: none
+
+.menu-dd-item
+  line-height: 20px
+  margin: 10px 0
+  padding-left: 20px
+  position: relative
+
+  &__link
+    color: #fff
+    text-decoration: none
+    font-size: 14px
+
+    &:hover
+      color: #fff
+
+.menu-item.open
+  .menu-dd
+    display: block
+
+  .menu-item__link_dd
+    &:after
+      transform: rotate(180deg)
+
+.menu-item.active
+  .menu-item__link
+    color: $second-color
+
+
+/* Min width $lg pixels */
+@media only screen and (min-width: $lg)
+  .menu
+    background-color: $base-color
+    border-radius: 3px
+
+  .menu-item
+    display: inline-block
+    vertical-align: top
+    margin: 0
+
+    &.active
+      .menu-item__link
+        color: #fff
+        background-color: $second-color
+
+        &:hover
+          background-color: $second-color
+
+    &__link
+      display: block
+      padding: 15px 20px
+      transition: background-color 0.2s ease
+
+      &:hover
+        background-color: darken($base-color, 5%)
+
+  /* - Drop down main menu -------- */
+  .menu-item.open
+    .menu-dd
+      display: none
+
+    .menu-item__link_dd
+      &:after
+        transform: rotate(0)
+
+  .menu-dd
+    position: absolute
+    display: none
+    top: 100%
+    width: 270px
+    text-align: left
+    background-color: darken($base-color, 5%)
+    padding: 10px 20px
+    border-radius: 0 0 5px 5px
+
+  .menu-dd-item
+    margin: 10px 0
+    padding-left: 0
+
+    &__link
+      &:hover
+        text-decoration: underline
+
+  .menu-item
+    &:hover
+      .menu-item__link_dd
+        background-color: darken($base-color, 5%)
+
+      .menu-dd
+        display: block
+  /* end media min width $lg pixels */
+
+/* ----- END Navigation ---------------- */

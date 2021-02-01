@@ -1,0 +1,36 @@
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes myBounceY {
+  20% {
+    transform: translate(-15px, 5px) rotate(-10deg);
+    animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+  }
+
+  60%, 80%, to {
+    transform: translate(-50px, 350px) rotate(-90deg);
+    animation-timing-function: cubic-bezier(.215, .61,.355,1);
+  }
+  
+  70% {
+    transform: translate(-50px, 300px) rotate(-135deg);
+    animation-timing-function: ease-in;
+  }
+
+  90% {
+    transform: translate(-50px, 345px) rotate(-95deg);
+    animation-timing-function: ease-in;
+  }
+}
+
+.bart-head {
+  animation: myBounceY 2s ease-in forwards 3s;
+}

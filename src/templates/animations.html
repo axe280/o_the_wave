@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <style>
+      .section-st {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      .bart-component {
+        width: 200px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .bart-head {
+        position: absolute;
+        width: 100%;
+        left: -14px;
+        top: 1px;
+        z-index: 10;
+      }
+
+      .bart-body {
+        position: relative;
+      }
+
+      .bart-body::before {
+        content: '';
+        position: absolute;
+        left: 83px;
+        z-index: 2;
+        top: 134px;
+        height: 2px;
+        width: 29px;
+        background-color: #fc0000;
+        border-radius: 1px;
+      }
+
+      .surikane-scene {
+        position: absolute;
+        left: -50px;
+        right: -50px;
+        top: 174px;
+        z-index: 5;
+        animation: surikaneMove 2s linear forwards 2s;
+      }
+
+      .surikane {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        background-image: url('assets/img/surikane.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        animation: surikaneRotate 1s linear infinite;
+      }
+
+      .ninja {
+        position: absolute;
+        bottom: 0;
+        transform: translateY(100%);
+        right: 0;
+        width: 200px;
+        height: 200px;
+        background-image: url('assets/img/ninja.png');
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: 50% 0;
+        animation: ninjaShow 4s ease-in-out 4.5s;
+      }
+
+      @keyframes surikaneRotate {
+        to {
+          transform: rotate(720deg)
+        }
+      }
+
+      @keyframes surikaneMove {
+        to {
+          transform: translate(100%);
+        }
+      }
+
+      @keyframes ninjaShow {
+        30%, 70% {
+          transform: translateY(50%);
+        }
+
+        to {
+          transform: translateY(100%);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="site-wrapper">
+      <section class="section-st">
+        <div class="container">
+          <div class="ninja"></div>
+          <div class="surikane-scene">
+            <div class="surikane"></div>
+          </div>
+          <div class="bart-component">
+            <div class="bart-head">
+              <img src="assets/img/bart-head.png" alt="">
+            </div>
+            <div class="bart-body">
+              <img src="assets/img/bart-body.png" alt="">
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

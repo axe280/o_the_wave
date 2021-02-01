@@ -1,0 +1,20 @@
+.header_sticky
+  .header-inner
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    z-index: 200
+    box-shadow: 0 0 10px rgba(#000, 0.7)
+    animation: .25s slideInDown ease
+
+
+/* Min width $lg pixels */
+@media only screen and (min-width: $lg)
+  .header_sticky
+    .header-top-panel
+      display: none
+
+    .header-inner
+      padding: 10px 0
+/* end media min width $lg pixels */

@@ -1,0 +1,17 @@
+@import const
+
+// placeholder
+=placeholder-color($color-pl)
+  &:-moz-placeholder,
+  &::-moz-placeholder
+    color: $color-pl
+    opacity: 1
+  &::-webkit-input-placeholder
+    color: $color-pl
+    opacity: 1
+  &:focus
+    &:-moz-placeholder,
+    &::-moz-placeholder
+      opacity: 0
+    &::-webkit-input-placeholder
+      opacity: 0

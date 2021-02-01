@@ -1,0 +1,101 @@
+/* ----- Page structure ---------------- */
+html
+  height: 100%
+
+body
+  display: flex
+  flex-direction: column
+  min-width: 375px
+  min-height: 100%
+  width: 100%
+  margin: 0
+  padding: 0
+  background-color: #f3f3f3
+
+.site-wrapper
+  overflow: hidden
+  flex: 1 0 auto
+
+.footer
+  flex-shrink: 0
+
+.section-st
+  padding-top: 40px
+  padding-bottom: 40px
+
+.container
+  padding: 0 $sides-spacing-xs
+
+.hidden-mobile,
+.hidden-devices
+  display: none
+
+.main
+  padding: 50px 0
+
+
+/* Min width $md*/
+@media only screen and (min-width: $md)
+  .hidden-tablet
+    display: none
+
+  .hidden-mobile
+    display: block
+
+  .container
+    padding: 0 $sides-spacing-md
+/* end media min width $md*/
+
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .section-st
+    padding-top: 60px
+    padding-bottom: 60px
+
+  .container
+    max-width: $max-width-layout
+    margin-left: auto
+    margin-right: auto
+
+  .hidden-devices,
+  .hidden-tablet
+    display: block
+
+  .hidden-desktop
+    display: none
+
+  .site-columns
+    display: flex
+
+    &__main
+      flex: 1
+
+    &__aside
+      flex: 0 0 270px
+      margin-left: 50px
+/* end media min width $lg */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

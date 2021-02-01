@@ -1,0 +1,81 @@
+/* ----- Forms ------------------------- */
+.form-group
+  margin-bottom: 30px
+
+.field-item
+  &_animation-label
+    position: relative
+    margin-top: 40px
+    display: block
+
+    .field-item__label
+      position: absolute
+      z-index: 3
+      left: 0
+      top: 0
+      transform: translateY(0)
+      width: 100%
+      padding: 0 15px
+      font-size: 16px
+      line-height: 50px
+      cursor: text
+      transition: transform $transDefault, padding $transDefault
+      margin: 0
+      color: #ccc
+
+  &._focused
+    .field-item__label
+      transform: translateY(-85%)
+      padding: 0
+      color: #444
+
+  &__label
+    margin-bottom: 10px
+    font-size: 16px
+    line-height: 20px
+    color: #0B3954
+
+
+/* Min width $md pixels */
+@media only screen and (min-width: $md)
+  .form-group-grid
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+  .form-group
+    &_half-col,
+    &_four-col
+      width: 48.5%
+
+    &_three-col
+      width: 31.3%
+
+  .field-item
+    &_inline
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      .field-item__label
+        min-width: 140px
+        flex-basis: 140px
+        margin-bottom: 0
+        margin-right: 10px
+
+      .field-item__field
+        flex-grow: 1
+/* end media min width $md pixels */
+
+
+/* Min width $lg pixels */
+@media only screen and (min-width: $lg)
+  .form-group
+    &_four-col
+      width: 22.8%
+/* end media min width $lg pixels */
+
+
+/* ----- END Forms --------------------- */
+
+

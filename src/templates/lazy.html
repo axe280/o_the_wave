@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+  </head>
+
+  <body>
+    <div class="site-wrapper">
+      <section class="section-st">
+        <div class="container">
+          <h3>Lazy load scroll images</h3>
+          <p><img src="assets/img/img1.png" alt=""></p>
+          <p><img src="assets/img/img2.jpg" alt=""></p>
+          <p><img src="assets/img/img3.jpg" alt=""></p>
+          <p>
+            <img class="lazy" data-src="assets/img/img1.png" alt="">
+          </p>
+          <p>
+            <img class="lazy" data-src="assets/img/img2.jpg" alt="">
+          </p>
+          <p>
+            <img class="lazy" data-src="assets/img/img3.jpg" alt="">
+          </p>
+
+          <br><br>
+          <h3>Picture tag</h3>
+          <!-- <picture>
+            <source srcset="assets/img/img3.jpg, img3@2x.jpg 2x" media="(min-width: 980px)">
+            <source srcset="assets/img/img3-tablet.jpg, assets/img/img3-tablet@2x.jpg 2x" media="(min-width: 400px)">
+            <source srcset="assets/img/img3-mob.jpg, assets/img/img3-mob@2x.jpg 2x">
+            <img srcset="assets/img/img3.jpg, img3@2x.jpg 2x" alt="">
+          </picture> -->
+          <picture>
+            <source srcset="assets/img/img3.jpg, assets/img/img3@2x.jpg 2x" media="(min-width: 980px)">
+            <source srcset="assets/img/img3-tablet.jpg, assets/img/img3-tablet@2x.jpg 2x" media="(min-width: 400px)">
+            <source srcset="assets/img/img3-mob.jpg, assets/img/img3-mob@2x.jpg 2x">
+            <img srcset="assets/img/img3.jpg, assets/img/img3@2x.jpg 2x" alt="">
+          </picture>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

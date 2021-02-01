@@ -1,0 +1,46 @@
+// menu st
+.menu-st
+  position: relative
+  margin-bottom: 30px
+
+  li
+    display: inline-block
+    vertical-align: top
+    margin: 0 10px
+
+    a
+      display: block
+      padding: 10px 15px
+
+
+// magic line
+.magic-line
+  position: absolute
+  left: 0
+  bottom: 0
+  height: 3px
+  width: 0
+  background-color: #bb0ebb
+
+// inline social
+.social-inline
+  display: flex
+  align-items: center
+
+  a
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 34px
+    height: 34px
+    border: 1px solid #000
+
+    &:hover
+      .icon
+        fill: blue
+
+  .icon
+    width: 20px
+    height: 20px
+    fill: green
+    transition: fill $transDefault

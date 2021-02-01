@@ -1,0 +1,162 @@
+/* ----- Typography -------------------- */
+*
+  box-sizing: border-box
+
+body
+  font-family: $site-font-family, $systemFont
+  font-weight: 300
+  font-size: $site-text-size
+  line-height: 18px
+  color: $site-text-color
+
+.title-site, h1, h2, h3, h4, h5, h6
+  display: block
+  margin: 0 0 16px
+  padding: 0
+  font-family: $site-font-family, $systemFont
+  font-weight: 700
+  line-height: 15px
+  color: $site-title-color
+
+h1, .title-site_h1
+  font-size: $site-h1-size-mobile
+  line-height: 22px
+
+h2, .title-site_h2
+  font-size: $site-h2-size-mobile
+  line-height: 22px
+
+h3, .title-site_h3
+  font-size: $site-h3-size-mobile
+  line-height: 17px
+
+h4, .title-site_h4
+  font-size: $site-h4-size-mobile
+
+h5, .title-site_h5
+  font-size: $site-h5-size-mobile
+
+h6, .title-site_h6
+  font-size: $site-h6-size-mobile
+
+.title-thin
+  font-weight: 300
+  font-size: $title-light-tt-mobile
+  line-height: 22px
+  text-transform: uppercase
+
+ul, ol
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+li
+  margin: 0
+  padding: 0
+
+p
+  margin: 0 0 20px
+
+.text-bl
+  ul
+    margin-bottom: 20px
+    list-style-type: disc
+    padding-left: 15px
+
+  ol
+    margin-bottom: 20px
+    list-style-type: decimal
+    padding-left: 15px
+
+  li
+    margin-bottom: 10px
+
+.text_center
+  text-align: center
+
+.text_left
+  text-align: left
+
+.text_right
+  text-align: right
+
+.text_uppercase
+  text-transform: uppercase
+
+.text_primary
+  color: $colorPrimary
+
+.text_bold
+  font-weight: 700
+
+.text_danger
+  color: $colorDanger
+
+img
+  vertical-align: middle
+  max-width: 100%
+
+a
+  color: $color-link
+  text-decoration: underline
+  transition: color $transDefault
+
+  &:hover
+    text-decoration: none
+    color: $color-h-link
+
+.icon
+  display: inline-block
+  vertical-align: middle
+  width: 24px
+  height: 24px
+  transition: fill $transDefault, stroke $transDefault
+
+
+/* Min width $md pixels */
+@media only screen and (min-width: $md)
+  body
+    line-height: 26px
+
+  .title-site, h1, h2, h3, h4, h5, h6
+    line-height: 17px
+
+  h1, .title-site_h1
+    font-size: $site-h1-size
+
+  h2, .title-site_h2
+    font-size: $site-h2-size
+
+  h3, .title-site_h3
+    font-size: $site-h3-size
+    line-height: 20px
+
+  h4, .title-site_h4
+    font-size: $site-h4-size
+    line-height: 17px
+
+  h5, .title-site_h5
+    font-size: $site-h5-size
+
+  h6, .title-site_h6
+    font-size: $site-h6-size
+
+  .text-bl-grid
+    display: flex
+    justify-content: space-between
+
+    &__half-col
+      width: 48%
+
+  .title-thin
+    font-size: $title-light-tt
+    line-height: 27px
+/* end media min width $md pixels */
+
+/* ----- END Typography ---------------- */
+
+
+
+
+
+

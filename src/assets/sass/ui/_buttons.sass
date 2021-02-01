@@ -1,0 +1,188 @@
+// all page buttons
+button
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  margin: 0
+  padding: 0
+  background: none
+  border: none
+  outline: none
+  box-shadow: none
+  transition: background-color $transDefault, color $transDefault, border-color $transDefault
+
+  .icon
+    transition: fill $transDefault, stroke $transDefault
+
+
+// page buttons default with class
+.btn
+  position: relative
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  vertical-align: middle
+  margin: 0
+  padding: 9px 28px
+  border: none
+  text-align: center
+  font: normal 300 18px/22px $site-font-family, Arial, sans-serif
+  text-decoration: none
+  color: $colorLight
+  background-color: $colorPrimary
+  border-radius: 2px
+  outline: none
+  cursor: pointer
+  transition: background-color $transDefault, color $transDefault, border-color $transDefault
+
+  &:hover
+    text-decoration: none
+    color: $colorLight
+    background-color: $colorPrimary
+
+  &:active
+    color: $colorDark
+    background-color: $colorGrayLight
+
+  // disabled
+  &[disabled],
+  &.disabled,
+  &_border[disabled],
+  &_border.btn_second-st[disabled]
+    cursor: default
+    color: $colorDark
+    background-color: $colorUiDisabled
+    border-color: transparent
+
+    &:hover
+      color: $colorDark
+      background-color: $colorUiDisabled
+      border-color: transparent
+
+  // icon
+  &.btn_icon
+    padding: 12px
+
+    .icon
+      width: 16px
+      height: 16px
+      fill: #fff
+
+  // icon and text
+  &__icon
+    width: 20px
+    height: 20px
+    margin-left: 10px
+
+    &:first-child
+      margin-right: 10px
+      margin-left: 0
+
+    .icon
+      vertical-align: top
+      height: 100%
+      width: 100%
+      fill: #fff
+
+
+  // border, border-second-st
+  &.btn_border
+    border: 1px solid $colorPrimary
+    background: transparent
+    color: $colorDark
+    line-height: 20px
+
+    &:hover
+      color: $colorDark
+      background: transparent
+
+    &:active
+      background-color: $colorPrimary
+      color: $colorLight
+
+
+  // link
+  &.btn_link
+    background: none
+    color: $color-link
+
+    &:hover
+      background: none
+      color: $color-h-link
+
+      .icon
+        color: $color-h-link
+
+    .icon
+      fill: $color-link
+
+
+  // width
+  &.btn_min-width
+    min-width: 200px
+
+  &.btn_max
+    width: 100%
+
+
+  // sm
+  &.btn_sm
+    padding: 5px 12px
+    font-size: 16px
+
+    &.btn_min-width
+      min-width: 150px
+
+    &.btn_icon
+      padding: 10px
+
+
+  // md
+  &.btn_md
+    padding: 16px 26px
+
+    &.btn_icon
+      padding: 18px
+      
+      .icon
+        width: 20px
+        height: 20px
+
+
+  // lg
+  &.btn_lg
+    padding: 22px 30px
+    font-size: 24px
+
+    &.btn_icon
+      padding: 22px
+
+      .icon
+        width: 24px
+        height: 24px
+
+
+/* Max width $md */
+@media only screen and (max-width: $md)
+  .btn
+    &_max-mobile
+      width: 100%
+/* end media max width $md */
+
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .btn
+    padding: 11px 32px
+    font-size: 22px
+    line-height: 26px
+
+    &.btn_sm
+      font-size: 18px
+      padding: 3px 20px
+
+    &.btn_border
+      line-height: 24px
+
+    &.btn_min-width
+      min-width: 256px
+/* end media min width $md */

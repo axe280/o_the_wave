@@ -1,0 +1,94 @@
+.header
+  height: $header-height-xs
+
+.header-inner
+  background-color: $header-bg-color
+
+.header-mob-layer-wrapp
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.logo
+  display: flex
+  align-items: center
+  outline: none
+  text-decoration: none
+  transition: opacity .2s
+
+  &:hover
+    opacity: .95
+
+  img
+    width: 100px
+
+.header-min-nav
+  display: flex
+
+  li
+    margin-left: 33px
+
+    &:first-child
+      margin-left: 0
+
+.h-nav-icon
+  display: flex
+  align-items: center
+  color: $colorLight
+  text-decoration: none
+  cursor: pointer
+
+  &:hover
+    color: $colorGold
+
+    .icon
+      stroke: $colorGold
+
+  .icon
+    width: 16px
+    height: 16px
+    fill: none
+    stroke: $colorLight
+
+  span
+    display: none
+
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .h-nav-icon
+    .icon
+      margin-right: 5px
+
+    span
+      display: block
+      font-size: 14px
+      line-height: 17px
+/* end media min width $md */
+
+
+/* Max width $m-lg */
+@media only screen and (max-width: $m-lg)
+  .header-mob-layer-wrapp
+    position: relative
+    z-index: 40
+    padding: 10px 0
+/* end media max width $m-lg */
+
+
+/* Min width $lg pixels */
+@media only screen and (min-width: $lg)
+  .header
+    height: $header-height-lg
+
+  .header-panel
+    display: flex
+    align-items: center
+    justify-content: space-between
+/* end media min width $lg pixels */
+
+/* Min width $hd */
+@media only screen and (min-width: $hd)
+  .header-min-nav
+    li
+      margin-left: 50px
+/* end media min width $hd */

@@ -1,0 +1,31 @@
+.mfp-zoom {
+  cursor: default;
+}
+
+.mfp-bg,
+.mfp-content,
+button.mfp-arrow {
+  opacity: 0;
+  transition: .3s ease;
+}
+
+.mfp-ready.mfp-bg,
+.mfp-ready .mfp-content,
+.mfp-ready button.mfp-arrow {
+  opacity: 1;
+}
+
+.mfp-removing.mfp-bg,
+.mfp-removing .mfp-content,
+.mfp-removing button.mfp-arrow {
+  opacity: 0;
+}
+
+.mfp-zoom.mfp-ready .mfp-content {
+  transform: scale(1);
+}
+
+.mfp-zoom .mfp-content,
+.mfp-zoom.mfp-removing .mfp-content {
+  transform: scale(.5);
+}

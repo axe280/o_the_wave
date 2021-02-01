@@ -1,0 +1,81 @@
+.owl-carousel
+  margin-bottom: 50px
+
+.owl-item
+  height: 100px
+  line-height: 100px
+  text-align: center
+  background-color: #d9d9d9
+
+.owl-nav
+  position: absolute
+  left: 0
+  top: 50%
+  width: 100%
+  height: 1px
+  
+.owl-prev,
+.owl-next
+  position: absolute
+  top: 50%
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-top: -40px
+  height: 80px
+  width: 30px
+  color: #fff
+  background-color: red
+  transition: background-color $transDefault
+  cursor: pointer
+
+  &.disabled
+    opacity: 0.35
+    cursor: default
+
+    &:hover
+      background-color: red
+
+  .icon
+    width: 30px
+    height: 30px
+    fill: white
+
+.owl-prev
+  left: 10px
+
+.owl-next
+  right: 10px
+
+.owl-dots
+  position: absolute
+  line-height: 20px
+  top: 100%
+  left: 0
+  margin-top: 20px
+  width: 100%
+  text-align: center
+
+.owl-dot
+  display: inline-block
+  vertical-align: top
+  margin: 0 4px
+  width: 10px
+  height: 10px
+  border-radius: 50%
+  background-color: #444
+  cursor: pointer
+
+  &.active
+    background-color: red
+
+/* Min width $lg pixels */
+@media only screen and (min-width: $lg)
+  .owl-prev,
+  .owl-next
+    &:hover
+      background-color: #333
+
+      .icon
+        fill: white
+/* end media min width $lg pixels */

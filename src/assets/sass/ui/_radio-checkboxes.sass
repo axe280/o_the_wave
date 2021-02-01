@@ -1,0 +1,67 @@
+/* checkbox and radio */
+.ui-st-radio,
+.ui-st-checkbox
+  position: relative
+  padding-left: 25px
+  font-size: 14px
+  line-height: 24px
+  margin-bottom: 10px
+
+  input
+    width: 0
+    height: 0
+    visibility: hidden
+    position: absolute
+    left: 0
+    top: 0
+
+.fake-control
+  position: absolute
+  left: 0
+  top: 5px
+  width: 14px
+  height: 14px
+  background-color: #fff
+  box-shadow: 0 1px 3px rgba(#000, 0.3)
+  transition: background-color $transDefault, border-color $transDefault
+
+.ui-st-radio
+  .fake-control
+    border-radius: 50%
+
+    &::before
+      content: ''
+      position: absolute
+      left: 3px
+      top: 3px
+      width: 8px
+      height: 8px
+      background-color: $second-color
+      border-radius: 50%
+      background-color: inherit
+      transform: scale(0)
+      transition: transform $transDefault, background-color $transDefault
+
+  input:checked ~ .fake-control
+    &::before
+      background-color: $second-color
+      transform: scale(1)
+
+.ui-st-checkbox
+  input:checked ~ .fake-control
+    background-color: $second-color
+    // background-image: url('../img/check.svg')
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: 75% 75%
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+.mobile-scroll-wrapper
+  [data-simple-tabs]
+    display: flex
+    white-space: nowrap
+
+.tabs-wrapper
+  margin-bottom: 20px
+
+[data-simple-tabs]
+  position: relative
+  margin-bottom: 20px
+
+  li
+    display: inline-block 
+    vertical-align: top
+    padding: 10px
+    cursor: pointer
+
+    &.current
+      cursor: default
+
+    &.magic-line
+      display: block
+      padding: 0
+      cursor: default
+
+.simple-tabs-box
+  display: none
+
+  &.visible
+    display: block

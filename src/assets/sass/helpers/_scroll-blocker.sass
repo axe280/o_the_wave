@@ -1,0 +1,14 @@
+body.scroll-page-locked
+  touch-action: none
+  overscroll-behavior: none
+  -webkit-overflow-scrolling: auto
+  overflow: hidden
+
+/* Min width $lg pixels */
+@media only screen and (min-width: $lg)
+  body.scroll-page-locked
+    &.menu_opened
+      touch-action: auto
+      overscroll-behavior: auto
+      overflow: visible
+/* end media min width $lg pixels */

@@ -1,0 +1,191 @@
+.burger-menu,
+.burger-menu-box
+  &::before,
+  &::after
+    content: ''
+    position: absolute
+    width: 100%
+    height: 3px
+    border-radius: 3px
+    background-color: #fff
+    transition-property: width, transform
+    transition-duration: .35s
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1)
+
+.burger-menu
+  display: flex
+  align-items: center
+  position: relative
+  z-index: 40
+  width: 32px
+  height: 25px
+  user-select: none
+  cursor: pointer
+
+  &::before
+    top: 0
+    right: 0
+
+  &::after
+    bottom: 0
+    left: 0
+
+.burger-menu-box
+  width: 100%
+  height: 3px
+  position: relative
+
+
+// opened menu
+.menu_opened
+  .burger-menu
+    &::before,
+    &::after
+      width: 0
+
+  .header-mob-layer-wrapp
+    // background-color: #911212
+
+  .burger-menu-box
+    &:before
+      transform: rotate(135deg)
+
+    &:after
+      transform: rotate(45deg)
+
+
+/* Max width $m-lg */
+@media only screen and (max-width: $m-lg)
+  // left
+  ._mobile-menu-left
+    .menu-wrapper-fixed
+      right: 50%
+      transform: translate(-100%)
+
+    .menu-close-overlay
+      left: 100%
+
+  // right
+  ._mobile-menu-right
+    .menu-wrapper-fixed
+      left: 50%
+      right: 0
+      transform: translate(100%)
+
+    .menu-close-overlay
+      right: 100%
+  
+  // top
+  ._mobile-menu-top
+    .header-mob-layer-wrapp
+      background-color: $header-bg-color
+      padding-left: $sides-spacing-md
+      padding-right: $sides-spacing-md
+      margin: 0 $sides-negative-spacing-md
+
+    // .menu-wrapper-fixed
+    //   left: 0
+    //   right: 0
+    //   transform: translateY(-100%)
+    //   background-color: $header-bg-color
+
+    // .menu-close-overlay
+    //   top: 100%
+    //   left: 0
+
+
+    // menu top one more version
+    .menu-wrapper-fixed
+      left: 0
+      right: 0
+      transform: translateY(-100%)
+      background: none
+
+    .menu-close-overlay
+      top: 0
+      left: 0
+
+    .menu-open-wrapper
+      height: auto
+      max-height: 100%
+      background-color: $header-bg-color
+
+
+  .menu-wrapper-fixed
+    position: fixed
+    left: 0
+    top: 0
+    bottom: 0
+    z-index: 30
+    padding-top: $header-height-xs
+    background-color: $header-bg-color
+    transition: transform .35s cubic-bezier(0.25, 1, 0.5, 1)
+
+  .menu-open-wrapper
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 30px $sides-spacing-md
+    height: 100%
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+
+  .menu-close-overlay
+    position: absolute
+    cursor: pointer
+    top: 0
+    height: 100%
+    z-index: -1
+
+
+  // opened menu
+  .menu_opened
+    overflow: hidden
+
+    .menu-wrapper-fixed
+      transform: translate(0)
+
+    .menu-close-overlay
+      width: 2000px
+      background-color: rgba(#000000, .15)
+      transition: background-color .2s ease-in .35s
+/* end media max width $m-lg */
+
+
+/* Max width $m-md */
+@media only screen and (max-width: $m-md)
+  .menu-open-wrapper
+    padding-left: $sides-spacing-xs
+    padding-right: $sides-spacing-xs
+
+  // left
+  ._mobile-menu-left
+    .menu-wrapper-fixed
+      right: 25%
+
+  // right
+  ._mobile-menu-right
+    .menu-wrapper-fixed
+      left: 25%
+/* end media max width $m-md */
+
+
+/* Max width $m-mobile-s */
+@media only screen and (max-width: $m-mobile-s)
+  // left
+  ._mobile-menu-left
+    .menu-wrapper-fixed
+      right: 62px
+
+  // right
+  ._mobile-menu-right
+    .menu-wrapper-fixed
+      left: 62px
+/* end media max width $m-mobile-s */
+
+
+/* Min width $lg pixels */
+@media only screen and (min-width: $lg)
+  .burger-menu
+    display: none
+/* end media min width $lg pixels */

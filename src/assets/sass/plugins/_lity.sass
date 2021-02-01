@@ -1,0 +1,79 @@
+.lity-active
+  overflow: hidden
+
+.lity
+  background-color: rgba(#000, .7)
+
+.lity-wrap
+  overflow: auto
+  padding: 0 15px
+
+  &::before
+    margin-right: 0
+
+.lity-container
+  width: 100%
+  margin: 40px 0
+  max-height: none
+
+.lity-content
+  box-shadow: none
+
+  &::after
+    display: none
+
+  .st-modal
+    max-height: none !important
+
+.lity-inline
+  .lity-close
+    display: none
+
+.st-modal
+  .lity-close
+    display: flex
+
+.lity-close
+  position: absolute
+  width: 35px
+  height: 35px
+  top: -35px
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: #fff
+  overflow: hidden
+  transition: background-color $transDefault, color $transDefault
+
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: 3
+
+  .icon
+    width: 20px
+    height: 20px
+    fill: #000
+
+  &:hover
+    background-color: #000
+
+    .icon
+      fill: #fff
+
+  &:active
+    top: -35px
+
+/* Min width $mobile-s pixels */
+@media only screen and (min-width: $mobile-s)
+  .lity-container
+    width: auto
+
+    .st-modal
+      max-width: 100%
+      width: 340px
+/* end media min width $mobile-s pixels */
