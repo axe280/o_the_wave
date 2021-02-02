@@ -1,4 +1,9 @@
 .header
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  z-index: 200
   height: $header-height-xs
 
 .header-inner
@@ -7,13 +12,14 @@
 .header-mob-layer-wrapp
   display: flex
   align-items: center
-  justify-content: space-between
+  height: $header-height-xs
 
 .logo
   display: flex
   align-items: center
   outline: none
   text-decoration: none
+  margin-top: 3px
   transition: opacity .2s
 
   &:hover
@@ -21,6 +27,7 @@
 
   img
     width: 100px
+    vertical-align: top
 
 .header-min-nav
   display: flex
@@ -71,7 +78,15 @@
   .header-mob-layer-wrapp
     position: relative
     z-index: 40
-    padding: 10px 0
+    padding: 5px 0
+
+  .header-min-nav
+    position: absolute
+    align-items: center
+    height: $header-height-xs
+    right: $sides-spacing-xs
+    top: 0
+    z-index: 40
 /* end media max width $m-lg */
 
 
@@ -80,15 +95,48 @@
   .header
     height: $header-height-lg
 
+  .header-mob-layer-wrapp
+    height: $header-height-lg
+
   .header-panel
     display: flex
     align-items: center
-    justify-content: space-between
+
+  .header-menu
+    order: 1
+
+  .header-min-nav
+    order: 2
+    margin-left: auto
+
+  .h-nav-icon
+    span
+      display: none
+
+  .logo
+    margin-right: 50px
+
+    img
+      width: 120px
 /* end media min width $lg pixels */
+
+/* Min width $xl */
+@media only screen and (min-width: $xl)
+  .h-nav-icon
+    span
+      display: block
+
+  .logo
+    img
+      width: 150px
+/* end media min width $xl */
 
 /* Min width $hd */
 @media only screen and (min-width: $hd)
   .header-min-nav
     li
       margin-left: 50px
+
+  .logo
+    margin-right: 70px
 /* end media min width $hd */

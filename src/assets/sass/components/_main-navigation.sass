@@ -1,21 +1,34 @@
 /* ----- Navigation -------------------- */
 /* -- Bread crumbs ------------------ */
 .bread-crumbs
-  padding: 0
-  list-style-type: none
+  display: flex
+  align-items: center
+  justify-content: center
 
   li
-    display: inline-block
-    vertical-align: middle
-    margin: 0
-
-    &:before
-      content: '/ '
+    position: relative
+    padding: 0 20px
+    font-weight: 400
+    font-size: 10px
+    line-height: 14px
 
     &:first-child
-      &:before
+      &::before
         display: none
 
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      top: 50%
+      width: 1px
+      height: 10px
+      z-index: 2
+      margin-top: -5px
+      background-color: $colorGold
+
+  a
+    text-decoration: none
 
 /* -- Pagination -------------------- */
 .active
@@ -70,125 +83,157 @@
 
 .menu-item
   position: relative
-  margin-bottom: 15px
-  padding: 0
   list-style-type: none
   font-size: 16px
-  line-height: 20px
-  color: #fff
+  line-height: 21px
+  border-bottom: 1px solid $colorGold
+
+  &:last-child
+    margin-bottom: 0
+    padding-bottom: 0
+    border: none
 
   &__link
-    color: #fff
+    display: block
+    padding: 16px 30px 16px 0
+    font-weight: 700
+    text-transform: uppercase
     text-decoration: none
 
-    &:hover
-      color: #fff
+    &_dd
+      position: relative
+
+      &::before,
+      &::after
+        content: ''
+        position: absolute
+        right: 0
+        top: 26px
+        width: 13px
+        height: 1px
+        z-index: 2
+        background-color: #000
+
+      &::after
+        width: 1px
+        height: 13px
+        top: 20px
+        right: 6px
+        transition: transform .2s
 
 
 /* - Drop down main menu -------- */
 .menu-item__link_dd
-  cursor: pointer
   user-select: none
-
-  &:after
-    content: ' '
-    border-top-color: #fff
-    margin: 0 0 0 10px
 
 .menu-dd
   display: none
   margin: 0
-  padding: 5px 0
+  padding: 0
   list-style: none
 
-.menu-dd-item
-  line-height: 20px
-  margin: 10px 0
-  padding-left: 20px
-  position: relative
+  ul
+    margin-bottom: 16px
 
-  &__link
-    color: #fff
+  li
+    margin-bottom: 8px
+    font-weight: 400
+    font-size: 16px
+    line-height: 19px
+
+    &:first-child
+      font-weight: 700
+
+  a
     text-decoration: none
-    font-size: 14px
 
     &:hover
-      color: #fff
+      text-decoration: underline
 
-.menu-item.open
-  .menu-dd
-    display: block
-
+.menu-item._opened
   .menu-item__link_dd
     &:after
-      transform: rotate(180deg)
-
-.menu-item.active
-  .menu-item__link
-    color: $second-color
-
+      transform: rotate(90deg)
 
 /* Min width $lg pixels */
 @media only screen and (min-width: $lg)
-  .menu
-    background-color: $base-color
-    border-radius: 3px
-
-  .menu-item
-    display: inline-block
-    vertical-align: top
-    margin: 0
-
-    &.active
-      .menu-item__link
-        color: #fff
-        background-color: $second-color
-
-        &:hover
-          background-color: $second-color
-
-    &__link
-      display: block
-      padding: 15px 20px
-      transition: background-color 0.2s ease
-
-      &:hover
-        background-color: darken($base-color, 5%)
-
   /* - Drop down main menu -------- */
-  .menu-item.open
-    .menu-dd
-      display: none
-
-    .menu-item__link_dd
-      &:after
-        transform: rotate(0)
-
-  .menu-dd
-    position: absolute
-    display: none
-    top: 100%
-    width: 270px
-    text-align: left
-    background-color: darken($base-color, 5%)
-    padding: 10px 20px
-    border-radius: 0 0 5px 5px
-
-  .menu-dd-item
-    margin: 10px 0
-    padding-left: 0
-
-    &__link
-      &:hover
-        text-decoration: underline
+  .menu
+    display: flex
 
   .menu-item
+    position: relative
+    font-size: 14px
+    line-height: 17px
+    padding-right: 36px
+    border: none
+
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      bottom: 0
+      width: 0
+      height: 2px
+      z-index: 2
+      background-color: $colorGold
+      transition: width .2s
+
     &:hover
-      .menu-item__link_dd
-        background-color: darken($base-color, 5%)
+      &::before
+        width: 100%
 
       .menu-dd
-        display: block
+        z-index: 100
+        transform: translateY(0)
+
+    &__link
+      padding: 0
+      line-height: 50px
+      font-weight: 400
+      color: #fff
+
+      &:hover
+        color: #fff
+
+      &_dd
+        &::before,
+        &::after
+          display: none
+
+  /* - Drop down main menu -------- */
+  .menu-dd
+    display: flex
+    justify-content: flex-end
+    position: fixed
+    z-index: -1
+    transform: translateX(-100%)
+    left: 0
+    top: 50px
+    padding: 72px 16px 42px 100px
+    max-width: 100%
+    min-width: 62%
+    height: calc(100% - 50px)
+    background-color: rgba(#333333, .95)
+    transition: transform .5s ease-in-out
+
+    &__inner
+      max-height: 470px
+      display: flex
+      overflow: auto
+
+    ul
+      width: 224px
+      padding: 0 16px
+      border-left: 1px solid #828282
+
+    li
+      margin-bottom: 32px
+      font-size: 18px
+      line-height: 22px
+
+    a
+      color: #fff
   /* end media min width $lg pixels */
 
 /* ----- END Navigation ---------------- */

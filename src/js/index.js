@@ -14,8 +14,7 @@ $(function () {
     document.body.classList.remove('scroll-page-locked')
   }
 
-  // open mobile menu
-  $('.burger-menu').on('click', function () {
+  var toggleMobileNavi = function () {
     $('body').toggleClass('menu_opened')
 
     if ($('body').hasClass('menu_opened')) {
@@ -23,11 +22,17 @@ $(function () {
     } else {
       removeDocumentScrollBlocker()
     }
-  })
+  }
 
-  $('.menu-close-overlay').on('click', function () {
-    $('body').removeClass('menu_opened')
-    removeDocumentScrollBlocker()
+  // open mobile menu
+  $('.burger-menu').on('click', toggleMobileNavi)
+  $('.menu-close-overlay').on('click', toggleMobileNavi)
+
+  $('.menu-item__link_dd').on('click', function () {
+    if ($(window).width() < 980) {
+      $(this).siblings('.menu-dd').slideToggle()
+      $(this).parent().toggleClass('_opened')
+    }
   })
 
   // animation inputs
