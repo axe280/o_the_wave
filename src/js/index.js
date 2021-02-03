@@ -19,6 +19,18 @@ $(function () {
 
     if ($('body').hasClass('menu_opened')) {
       addDocumentScrollBlocker()
+      $searchEL.removeClass('_opened')
+    } else {
+      removeDocumentScrollBlocker()
+    }
+  }
+
+  var toggleSearch = function () {
+    $searchEL.toggleClass('_opened')
+
+    if ($searchEL.hasClass('_opened')) {
+      $('body').removeClass('menu_opened')
+      addDocumentScrollBlocker()
     } else {
       removeDocumentScrollBlocker()
     }
@@ -35,20 +47,10 @@ $(function () {
     }
   })
 
-  // animation inputs
-  $(document).on(
-    {
-      focus: function () {
-        $(this).parents('.field-item').addClass('_focused')
-      },
-      blur: function () {
-        if ($(this).val() === '') {
-          $(this).parents('.field-item').removeClass('_focused')
-        }
-      },
-    },
-    '.field-item_animation-label input, .field-item_animation-label textarea'
-  )
+  // open search panel
+  var $searchEL = $('.main-search-wrapper')
+  $('.main-search-btn').on('click', toggleSearch)
+  $('.main-search-overlay').on('click', toggleSearch)
 
   // sticky header
   function stickyHeader() {
@@ -81,6 +83,20 @@ $(function () {
   }
 
   stickyHeader()
+
+  // simple tabs
+  $('[data-simple-tabs]').on('click', 'li:not(.current)', function () {
+    $(this)
+      .addClass('current')
+      .siblings()
+      .removeClass('current')
+      .parents('.simple-tabs-wrapp')
+      .find('.simple-tabs-box')
+      .eq($(this).index())
+      .fadeIn()
+      .siblings('.simple-tabs-box')
+      .hide()
+  })
 
   // // data-lity
   // $(document).on('lity:ready', function (e, instance) {

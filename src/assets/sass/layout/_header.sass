@@ -32,7 +32,7 @@
 .header-min-nav
   display: flex
 
-  li
+  > li
     margin-left: 33px
 
     &:first-child
@@ -72,6 +72,12 @@
       line-height: 17px
 /* end media min width $md */
 
+/* Max width $m-md */
+@media only screen and (max-width: $m-md)
+  .header-min-nav
+    right: $sides-spacing-xs
+/* end media max width $m-md */
+
 
 /* Max width $m-lg */
 @media only screen and (max-width: $m-lg)
@@ -84,7 +90,7 @@
     position: absolute
     align-items: center
     height: $header-height-xs
-    right: $sides-spacing-xs
+    right: $sides-spacing-md
     top: 0
     z-index: 40
 /* end media max width $m-lg */

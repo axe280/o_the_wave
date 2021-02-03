@@ -8,16 +8,38 @@
 
 [data-simple-tabs]
   position: relative
-  margin-bottom: 20px
+  margin-bottom: 16px
 
   li
+    position: relative
     display: inline-block 
     vertical-align: top
-    padding: 10px
+    margin-right: 14px
+    font-weight: 700
+    font-size: 16px
+    line-height: 20px
+    text-transform: uppercase
     cursor: pointer
+
+    &:last-child
+      margin-right: 0
+
+    &::before
+      content: ""
+      position: absolute
+      left: 0
+      bottom: -2px
+      width: 0
+      height: 1px
+      z-index: 2
+      background-color: #d0a452
+      transition: width .2s
 
     &.current
       cursor: default
+
+      &::before
+        width: 100%
 
     &.magic-line
       display: block

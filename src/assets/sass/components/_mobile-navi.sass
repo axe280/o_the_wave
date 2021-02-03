@@ -117,9 +117,10 @@
     top: 0
     bottom: 0
     z-index: 30
+    opacity: 0
     padding-top: $header-height-xs
     background-color: $header-bg-color
-    transition: transform .5s cubic-bezier(0.25, 1, 0.5, 1)
+    transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1), opacity .5s
 
   .menu-open-wrapper
     display: flex
@@ -143,6 +144,8 @@
 
     .menu-wrapper-fixed
       transform: translate(0)
+      opacity: 1
+      transition: transform .5s cubic-bezier(0.25, 1, 0.5, 1), opacity .5s
 
     .menu-close-overlay
       width: 2000px

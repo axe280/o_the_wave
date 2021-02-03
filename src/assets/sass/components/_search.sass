@@ -1,0 +1,98 @@
+/* Max width $lg */
+@media only screen and (max-width: $lg)
+  .main-search-wrapper
+    position: fixed
+    z-index: 35
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    width: 100%
+    height: 100%
+    padding-top: $header-height-xs
+    overflow: auto
+    transform: translateY(-100%)
+    transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1), opacity .5s, background-color .2s .5s
+    opacity: 0
+
+    &._opened
+      transform: translateY(0)
+      opacity: 1
+      background-color: rgba(#000, .3)
+      transition: transform .5s cubic-bezier(0.25, 1, 0.5, 1), opacity .5s, background-color 1s .5s
+
+  .main-search-overlay
+    position: absolute
+    z-index: 2
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+
+  .main-search
+    position: relative
+    z-index: 3
+    padding: $sides-spacing-xs
+    background-color: #fff
+
+  .main-search-field
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 16px
+
+    div
+      flex-grow: 1
+
+      input
+        position: relative
+        padding: 0 40px
+        height: 40px
+        border-right: none
+        border-radius: 2px 0 0 2px
+
+      input::-webkit-search-cancel-button
+        -webkit-appearance: none
+        position: absolute
+        right: 10px
+        top: 50%
+        transform: translateY(-50%)
+        width: 13px
+        height: 13px
+        background-image: url('../img/close.svg')
+        background-repeat: no-repeat
+        background-position: 50% 50%
+        background-size: 100% 100%
+        cursor: pointer
+
+    .btn
+      flex-shrink: 0
+      border-radius: 0 2px 2px 0
+
+  .search-category-list
+    li
+      display: inline-block
+      vertical-align: top
+      margin-right: 20px
+      margin-bottom: 8px
+      font-size: 12px
+      line-height: 15px
+
+    a
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+/* end media max width $lg */
+
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .main-search
+    padding: 16px $sides-spacing-md 8px
+/* end media min width $md */
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .main-search-wrapper
+    display: none
+/* end media min width $lg */
