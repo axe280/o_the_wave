@@ -47,10 +47,29 @@ $(function () {
     }
   })
 
+  // footer nav open
+  $('.footer-col-head').on('click', function () {
+    if ($(window).width() < 980) {
+      $(this).siblings('.footer-col-body').slideToggle()
+      $(this).parent().toggleClass('_opened')
+    }
+  })
+
   // open search panel
   var $searchEL = $('.main-search-wrapper')
   $('.main-search-btn').on('click', toggleSearch)
   $('.main-search-overlay').on('click', toggleSearch)
+
+  $(document).bind('click touchstart', function (e) {
+    var $clicked = $(e.target)
+    if (
+      !$clicked.parents().hasClass('main-search') &&
+      !$clicked.parents().hasClass('main-search-btn')
+    ) {
+      $('.main-search-wrapper').removeClass('_opened')
+      removeDocumentScrollBlocker()
+    }
+  })
 
   // sticky header
   function stickyHeader() {
@@ -159,9 +178,47 @@ $(function () {
   // })
 
   // owl carousel
-  $('.owl-carousel').owlCarousel({
-    margin: 10,
+  // $('.owl-carousel').owlCarousel({
+  //   margin: 10,
+  //   nav: true,
+  //   navText: [
+  //     '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
+  //     '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
+  //   ],
+  //   responsive: {
+  //     0: {
+  //       items: 1,
+  //     },
+  //     640: {
+  //       items: 2,
+  //     },
+  //     740: {
+  //       items: 3,
+  //     },
+  //     1000: {
+  //       items: 5,
+  //     },
+  //   },
+  // })
+
+  $('.main-carousel').owlCarousel({
+    items: 1,
+    autoplay: true,
+    loop: true,
+    dots: true,
     nav: true,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    navText: [
+      '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
+      '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
+    ],
+  })
+
+  $('.brands-carousel').owlCarousel({
+    nav: true,
+    loop: true,
+    dots: false,
     navText: [
       '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
       '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
@@ -170,14 +227,74 @@ $(function () {
       0: {
         items: 1,
       },
-      640: {
-        items: 2,
-      },
       740: {
         items: 3,
+        margin: 12,
       },
-      1000: {
+      980: {
+        items: 4,
+        margin: 20,
+      },
+      1200: {
         items: 5,
+        margin: 35,
+      },
+    },
+  })
+
+  $('.insta-carousel').owlCarousel({
+    loop: true,
+    dots: false,
+    navText: [
+      '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
+      '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
+    ],
+    responsive: {
+      0: {
+        margin: 8,
+        center: true,
+        autoWidth: true,
+        nav: false,
+      },
+      980: {
+        nav: true,
+        center: true,
+        autoWidth: true,
+        margin: 16,
+      },
+      1400: {
+        items: 3,
+        margin: 16,
+        center: false,
+        autoWidth: false,
+        nav: true,
+      },
+    },
+  })
+
+  $('.st-prod-carousel').owlCarousel({
+    nav: true,
+    loop: true,
+    dots: false,
+    navText: [
+      '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
+      '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
+    ],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      740: {
+        items: 2,
+        margin: 16,
+      },
+      980: {
+        items: 3,
+        margin: 16,
+      },
+      1200: {
+        items: 4,
+        margin: 16,
       },
     },
   })

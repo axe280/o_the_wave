@@ -1,0 +1,112 @@
+.st-label
+  display: inline-block
+  vertical-align: top
+  font-weight: 400
+  font-size: 10px
+  line-height: 14px
+  padding: 0 8px
+  text-transform: uppercase
+  color: #fff
+  background-color: #000
+
+  &._danger
+    background-color: $colorDanger
+
+.st-prod-card
+  position: relative
+
+  &__like
+    position: absolute
+    right: 0
+    top: 0
+    z-index: 3
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 40px
+    height: 36px
+
+    .icon
+      width: 15px
+      height: 13px
+      stroke: #000
+      fill: #fff
+
+    &:hover
+      .icon
+        fill: #000
+
+  &__link
+    display: block
+    text-decoration: none
+
+    &:hover
+      img
+        opacity: .95
+
+  &__img
+    position: relative
+    width: 100%
+    margin-bottom: 20px
+    overflow: hidden
+    height: 465px
+    text-align: center
+
+    img
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: 50% 0
+      transition: opacity .2s
+
+  &__labels
+    position: absolute
+    bottom: 0
+    left: 0
+    display: flex
+    align-items: center
+    width: 100%
+    z-index: 3
+
+  &__name
+    text-align: center
+    margin-bottom: 10px
+    font-weight: 700
+    font-size: 24px
+    line-height: 29px
+
+  &__price
+    font-weight: 700
+    font-size: 22px
+    line-height: 27px
+    text-align: center
+    
+    del
+      margin-right: 18px
+      font-weight: 400
+      font-size: 18px
+      color: #c4c4c4
+
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .st-prod-card
+    &__like
+      width: 64px
+      height: 60px
+
+      .icon
+        width: 30px
+        height: 26px
+/* end media min width $md */
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .st-prod-card
+    margin-bottom: 48px
+
+    &__img
+      height: 736px
+/* end media min width $lg */

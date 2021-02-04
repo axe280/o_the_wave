@@ -1,3 +1,269 @@
 .footer
-  background-color: rgba(#ccc, 0.4)
-  padding: 20px 0
+  background-color: $colorDark
+  color: #fff
+  padding: 16px 0 18px
+  font-weight: 400
+
+  .social-inline
+    justify-content: flex-end
+
+    li
+      margin: 0 0 0 10px
+
+    a
+      .icon
+        fill: #fff
+
+.copy
+  font-size: 10px
+  line-height: 12px
+
+.footer-col
+  margin-bottom: 8px
+
+.footer-col-head
+  position: relative
+  font-weight: 700
+  font-size: 16px
+  line-height: 19px
+  margin-bottom: 8px
+
+  &::before,
+  &::after
+    content: ''
+    position: absolute
+    right: 0
+    top: 50%
+    width: 13px
+    height: 1px
+    margin-top: -1px
+    z-index: 2
+    background-color: #fff
+
+  &::after
+    width: 1px
+    height: 13px
+    right: 6px
+    margin-top: -7px
+    transition: transform .2s
+
+.footer-col._opened
+  .footer-col-head
+    &:after
+      transform: rotate(90deg)
+
+.footer-col-body
+  display: none
+
+.footer-nav
+  li
+    margin-bottom: 8px
+    font-size: 12px
+    line-height: 15px
+
+    &:last-child
+      margin-bottom: 0
+
+    a
+      color: #fff
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+
+.footer-subs
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 4px
+
+  .btn
+    width: 48.5%
+
+.footer-subs-field
+  width: 48.5%
+
+  input
+    font-size: 16px
+    height: 32px
+
+.form-subs-mob-info
+  font-size: 12px
+  line-height: 15px
+
+.footer-main-wrapp
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+.footer-nav-wrapp
+  width: 100%
+  margin-bottom: 8px
+
+.footer-follow-bl
+  order: 2
+  margin-bottom: 16px
+
+.footer-bottom-row
+  order: 1
+  margin-bottom: 16px
+
+.footer-phone
+  margin-bottom: 4px
+  font-weight: 700
+  color: #fff
+  text-decoration: none
+
+  &:hover
+    color: #fff
+
+.footer-contacts
+  font-size: 16px
+  line-height: 20px
+
+  span
+    display: block
+
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .footer-subs
+    max-width: 320px
+/* end media min width $md */
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .footer
+    padding: 40px 0 24px
+
+    .social-inline
+      margin-top: 14px
+
+  .footer-nav-wrapp
+    width: auto
+    display: flex
+    margin-bottom: 20px
+
+  .footer-col
+    margin-right: 25px
+
+    &:last-child
+      margin-right: 0
+
+  .footer-col-head
+    &::before,
+    &::after
+      display: none
+
+  .footer-col-body
+    display: block !important
+
+  .footer-nav
+    li
+      font-size: 14px
+      line-height: 18px
+
+  .footer-subs
+    margin-top: 28px
+
+  .copy
+    text-align: center
+    font-size: 12px
+    line-height: 15px
+
+    .hidden-devices
+      display: inline
+
+  .footer-follow-bl
+    order: 1
+    margin-bottom: 16px
+    width: 200px
+    text-align: right
+
+  .footer-follow-tt
+    font-size: 14px
+    line-height: 17px
+
+    span
+      display: block
+
+    a
+      color: #fff
+      text-decoration: none
+      font-weight: 700
+
+  .footer-bottom-row
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    order: 2
+    margin-bottom: 26px
+
+  .footer-line-icons
+    display: flex
+    align-items: center
+
+    .icon
+      vertical-align: top
+      width: 40px
+      height: 16px
+      margin: 0 8px
+
+      &:first-child
+        margin-left: 0
+
+      &:last-child
+        margin-right: 0
+
+    div.icon
+      display: flex
+      align-items: center
+
+      img
+        max-height: 100%
+        vertical-align: top
+
+  .footer-contacts
+    display: flex
+    align-items: center
+    font-size: 18px
+    line-height: 22px
+
+    a
+      margin: 0
+
+    span
+      position: relative
+      margin: 0 0 0 14px
+      padding-left: 14px
+      
+      &::before
+        content: ''
+        position: absolute
+        left: 0
+        top: 50%
+        width: 1px
+        height: 12px
+        margin-top: -6px
+        z-index: 2
+        background-color: $colorGold
+/* end media min width $lg */
+
+/* Min width 1100px */
+@media only screen and (min-width: 1100px)
+  .footer-col
+    margin-right: 45px
+/* end media min width 1100px */
+
+/* Min width $xl */
+@media only screen and (min-width: $xl)
+  .footer-col
+    margin-right: 75px
+
+  .footer-line-icons
+    .icon
+      margin: 0 16px
+
+  .footer-subs
+    width: 320px
+/* end media min width $xl */

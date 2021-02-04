@@ -1,14 +1,221 @@
-/* ----- Index page -------------------- */
+.subs-main
+  max-width: 440px
+  margin: 0 auto
 
-/* ----- END index page /--------------- */
+  p
+    font-size: 16px
+    line-height: 20px
+
+  form
+    margin-top: 20px
+
+  input
+    height: 32px
+    font-size: 16px
+    border: none
+    border-radius: 0
+    border-bottom: 1px solid $colorGray
+
+  .btn
+    margin-top: 32px
+
+.main-product-g-sm-col,
+.main-product-g-lg-col
+  margin-bottom: 32px
+
+.main-product-g-about
+  text-align: center
+
+  .title-thin
+    max-width: 260px
+    margin: 0 auto 32px
+    text-transform: uppercase
+
+.main-product-g
+  position: relative
+
+  &:hover
+    &::before
+      background-color: rgba(#000, .3)
+
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: 2
+    transition: background-color 1s
+
+  img
+    vertical-align: top
+
+  &__info
+    z-index: 3
+    position: absolute
+    bottom: 16px
+    left: 0
+    width: 100%
+    text-align: center
+    color: #fff
+
+.main-product-g-tt
+  margin-bottom: 4px
+  font-weight: 700
+  font-size: 23px
+  line-height: 29px
+
+.main-product-g-link
+  font-size: 10px
+  line-height: 12px
+
+  a
+    color: #fff
+
+.main-object-wrapp-bl
+  position: relative
+  overflow: hidden
+  height: 384px
+
+  img, video
+    position: absolute
+    height: 100%
+    width: 100%
+    object-fit: cover
+    object-position: 50% 50%
+
+.video-wrap
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: 2
+    background-color: rgba(#000, .55)
 
 
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .subs-main
+    form
+      max-width: 300px
+      margin: 0 auto
 
+  .main-products-g-row
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
 
+    > div
+      width: 49%
+      margin-bottom: 0
 
+      &:first-child
+        width: 100%
+        margin-bottom: 32px
 
+  .main-product-g
+    overflow: hidden
+    height: 384px
 
+    img
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: 50% 0
+/* end media min width $md */
 
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .subs-main
+    max-width: 520px
 
+    p
+      font-size: 18px
+      line-height: 22px
 
+    form
+      max-width: 430px
+      margin-top: 30px
 
+    input
+      height: 40px
+
+    .btn
+      margin-top: 44px
+
+  .main-products-g-row
+    overflow: hidden
+    display: block
+
+    > div,
+    > div:first-child
+      margin: 0
+      width: calc(50% - 8px)
+
+  .main-product-g-lg-col
+    float: left
+    height: 752px
+
+  .main-product-g-sm-col
+    float: right
+    height: 376px
+
+  .main-product-g
+    height: 100%
+
+    &:hover
+      img
+        transform: scale(1.2)
+        transition: transform 3s linear
+
+    &__info
+      bottom: 26px
+
+    img
+      transition-duration: 1s
+
+  .main-product-g-about
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    height: 100%
+
+    .title-thin
+      max-width: 420px
+
+  .main-product-g-tt
+    margin-bottom: 8px
+    font-size: 44px
+    line-height: 54px
+
+  .main-product-g-link
+    font-size: 18px
+    line-height: 22px
+
+  .main-object-wrapp-bl
+    height: 480px
+
+    img
+      object-position: 50% 0
+/* end media min width $lg */
+
+/* Min width $hd */
+@media only screen and (min-width: $hd)
+  .main-object-wrapp-bl
+    height: 640px
+/* end media min width $hd */
+
+/* Min width $full-hd */
+@media only screen and (min-width: $full-hd)
+  .main-object-wrapp-bl
+    height: 740px
+/* end media min width $full-hd */

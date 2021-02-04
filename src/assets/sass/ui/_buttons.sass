@@ -44,6 +44,20 @@ button
     color: $colorDark
     background-color: $colorGrayLight
 
+  &.btn_light,
+  &.btn_border.btn_light
+    color: #fff
+    border-color: #fff
+    background-color: transparent
+
+    &:hover
+      color: #fff
+
+    &:active
+      color: $colorDark
+      border-color: $colorDark
+      background-color: $colorGrayLight
+
   // disabled
   &[disabled],
   &.disabled,
@@ -170,8 +184,8 @@ button
       width: 100%
 /* end media max width $md */
 
-/* Min width $md */
-@media only screen and (min-width: $md)
+/* Min width $lg */
+@media only screen and (min-width: $lg)
   .btn
     padding: 11px 32px
     font-size: 22px
@@ -186,4 +200,4 @@ button
 
     &.btn_min-width
       min-width: 256px
-/* end media min width $md */
+/* end media min width $lg */

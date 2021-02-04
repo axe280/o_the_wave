@@ -27,22 +27,24 @@
   display: flex
   align-items: center
 
+  li
+    margin-right: 10px
+
   a
     display: flex
     align-items: center
     justify-content: center
-    width: 34px
-    height: 34px
-    border: 1px solid #000
+    width: 16px
+    height: 16px
 
     &:hover
       .icon
-        fill: blue
+        fill: $colorDark
 
   .icon
     width: 20px
     height: 20px
-    fill: green
+    fill: $colorDark
     transition: fill $transDefault
 
 
@@ -57,3 +59,11 @@
 //   background-repeat: no-repeat
 //   background-position: 50% 50%
 //   background-size: 100% 100%
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .social-inline
+    a
+      width: 22px
+      height: 22px
+/* end media min width $lg */
