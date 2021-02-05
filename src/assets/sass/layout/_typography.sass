@@ -4,7 +4,6 @@
 
 body
   font-family: $site-font-family, $systemFont
-  font-weight: 300
   font-size: $site-text-size
   line-height: 18px
   color: $site-text-color
@@ -17,6 +16,7 @@ body
   font-weight: 700
   line-height: 15px
   color: $site-title-color
+  text-transform: uppercase
 
 h1, .title-site_h1
   font-size: $site-h1-size-mobile
@@ -41,7 +41,6 @@ h6, .title-site_h6
 
 .title-thin
   margin-bottom: 32px
-  font-weight: 300
   font-size: $title-light-tt-mobile
   line-height: 22px
   text-transform: uppercase
@@ -56,21 +55,10 @@ li
   padding: 0
 
 p
-  margin: 0 0 20px
+  margin: 0
 
-.text-bl
-  ul
-    margin-bottom: 20px
-    list-style-type: disc
-    padding-left: 15px
-
-  ol
-    margin-bottom: 20px
-    list-style-type: decimal
-    padding-left: 15px
-
-  li
-    margin-bottom: 10px
+p + p
+  margin-top: 20px
 
 .text_center
   text-align: center
@@ -113,6 +101,78 @@ a
   height: 24px
   transition: fill $transDefault, stroke $transDefault
 
+.st-text-bl
+  font-size: 14px
+  line-height: 22px
+
+  .st-spacing-block
+    &:first-child
+      margin-top: 0
+
+  ul
+    margin-top: 16px
+
+    li
+      &::before
+        content: '•'
+        font-weight: 700
+
+  ol
+    margin-top: 16px
+    counter-reset: nubmList
+
+    li
+      &::before
+        counter-increment: nubmList
+        content: counter(nubmList) ". "
+        font-weight: 700
+
+  li
+    margin-bottom: 0
+    font-size: 14px
+    line-height: 26px
+
+  .title-site, h1, h2, h3, h4, h5, h6
+    text-align: center
+
+  .st-spacing-block
+    margin: 32px 0
+
+    &:last-child
+      margin-bottom: 0
+
+blockquote
+  position: relative
+  display: block
+  position: relative
+  padding: 0
+  margin: 8px auto 0
+  max-width: 1100px
+  border: 2px solid $colorUiDisabled
+  padding: 22px 35px 30px
+  text-align: center
+  font-size: 18px
+  line-height: 22px
+
+  &::before
+    content: ''
+    position: absolute
+    left: 6px
+    top: -11px
+    width: 36px
+    height: 24px
+    z-index: 2
+    background-color: #fff
+    background-image: url('../img/qw.svg')
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: 24px 24px
+
+  b
+    display: block
+    margin-top: 16px
+    font-size: 16px
+    line-height: 16px
 
 /* Min width $lg pixels */
 @media only screen and (min-width: $lg)
@@ -121,12 +181,15 @@ a
 
   .title-site, h1, h2, h3, h4, h5, h6
     line-height: 17px
+    text-transform: none
 
   h1, .title-site_h1
     font-size: $site-h1-size
+    text-transform: uppercase
 
   h2, .title-site_h2
     font-size: $site-h2-size
+    text-transform: uppercase
 
   h3, .title-site_h3
     font-size: $site-h3-size
@@ -153,7 +216,39 @@ a
     margin-bottom: 44px
     font-size: $title-light-tt
     line-height: 27px
+
+  .st-text-bl
+    .title-site, h1, h2, h3, h4, h5, h6
+      text-align: left
 /* end media min width $lg pixels */
+
+/* Min width $xl */
+@media only screen and (min-width: $xl)
+  blockquote
+    margin-top: 25px
+    margin-bottom: 48px
+    padding: 37px 113px 32px
+    font-size: 36px
+    line-height: 46px
+
+    &::before
+      content: ''
+      position: absolute
+      left: 20px
+      top: -28px
+      width: 100px
+      height: 62px
+      z-index: 2
+      background-color: #fff
+      background-image: url('../img/qw.svg')
+      background-repeat: no-repeat
+      background-position: 50% 50%
+      background-size: 80px 62px
+
+    b
+      font-size: 18px
+      line-height: 18px
+/* end media min width $xl */
 
 /* ----- END Typography ---------------- */
 

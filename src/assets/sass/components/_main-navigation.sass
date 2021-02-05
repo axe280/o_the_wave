@@ -4,11 +4,11 @@
   display: flex
   align-items: center
   justify-content: center
+  margin-bottom: 30px
 
   li
     position: relative
     padding: 0 20px
-    font-weight: 400
     font-size: 10px
     line-height: 14px
 
@@ -29,6 +29,24 @@
 
   a
     text-decoration: none
+
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .bread-crumbs
+    justify-content: flex-start
+
+    li
+      padding: 0 25px
+      font-size: 12px
+      line-height: 15px
+      
+      &:first-child
+        padding-left: 0
+
+    a
+      &:hover
+        text-decoration: underline
+/* end media min width $md */
 
 /* -- Pagination -------------------- */
 .active
@@ -137,7 +155,6 @@
 
   li
     margin-bottom: 8px
-    font-weight: 400
     font-size: 16px
     line-height: 19px
 
@@ -153,7 +170,8 @@
 .menu-item._opened
   .menu-item__link_dd
     &:after
-      transform: rotate(90deg)
+      transform: rotate(90deg)      
+
 
 /* Min width $lg pixels */
 @media only screen and (min-width: $lg)
@@ -190,7 +208,6 @@
     &__link
       padding: 0
       line-height: 50px
-      font-weight: 400
       color: #fff
 
       &:hover

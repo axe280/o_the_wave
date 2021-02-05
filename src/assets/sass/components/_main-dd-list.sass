@@ -1,0 +1,141 @@
+.dd-list-head
+  position: relative
+  padding-right: 30px
+  font-weight: 700
+  cursor: pointer
+  user-select: none
+
+  &::before,
+  &::after
+    content: ''
+    position: absolute
+    right: 0
+    top: 50%
+    width: 17px
+    height: 1px
+    margin-top: -1px
+    z-index: 2
+    background-color: #000
+
+  &::after
+    width: 1px
+    height: 17px
+    right: 8px
+    margin-top: -9px
+    transition: transform .2s
+
+
+.dd-list-item._opened
+  .dd-list-head
+    &:after
+      transform: rotate(90deg)
+
+.dd-list-body
+  display: none
+
+.faq-dd-list
+  .dd-list-item
+    margin-bottom: 32px
+
+    &:last-child
+      margin-bottom: 0
+
+  .dd-list-head
+    font-size: 14px
+    line-height: 17px
+
+    &::before,
+    &::after
+      top: 9px
+
+  .dd-list-body
+    margin-top: 8px
+    padding-right: 30px
+    font-size: 14px
+    line-height: 18px
+
+.aside-dd-nav-list
+  .dd-list-item
+    padding-bottom: 18px
+    margin-bottom: 18px
+    border-bottom: 1px solid $colorGold
+
+    &:last-child
+      margin-bottom: 0
+      border: none
+
+  .dd-list-head
+    font-size: 14px
+    line-height: 22px
+    text-transform: uppercase
+
+.dd-nav-list
+  li
+    margin-top: 8px
+    font-size: 14px
+    line-height: 18px
+
+    &.active
+      font-weight: 700
+      
+      a
+        cursor: default
+        text-decoration: none
+
+  a
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .dd-list-head
+    &::before,
+    &::after
+      width: 16px
+      height: 2px
+      margin-top: -2px
+
+    &::after
+      width: 2px
+      height: 16px
+      right: 7px
+      margin-top: -9px
+  
+  .aside-dd-nav-list
+    .dd-list-item
+      padding-bottom: 32px
+      margin-bottom: 32px
+
+    .dd-list-head
+      font-size: 18px
+      line-height: 26px
+
+  .dd-nav-list
+    li
+      font-size: 18px
+      line-height: 26px
+
+  .faq-dd-list
+    max-width: 800px
+    margin: 0 auto
+
+    .dd-list-item
+      margin-bottom: 16px
+
+    .dd-list-head
+      margin-top: -5px
+      padding: 5px 60px 5px 0
+      font-size: 18px
+      line-height: 22px
+
+      &::before,
+      &::after
+        top: 16px
+
+    .dd-list-body
+      font-size: 14px
+      line-height: 26px
+/* end media min width $lg */

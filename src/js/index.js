@@ -55,6 +55,11 @@ $(function () {
     }
   })
 
+  $('.dd-list-head').on('click', function () {
+    $(this).siblings('.dd-list-body').slideToggle()
+    $(this).parent().toggleClass('_opened')
+  })
+
   // open search panel
   var $searchEL = $('.main-search-wrapper')
   $('.main-search-btn').on('click', toggleSearch)
