@@ -76,6 +76,13 @@ $(function () {
     }
   })
 
+  // open order item
+  $('.order-item').on('click', '.btn', function () {
+    var $item = $(this).parents('.order-item')
+    $item.find('.order-item__details').slideToggle()
+    $item.toggleClass('_opened')
+  })
+
   // sticky header
   function stickyHeader() {
     var $header = $('#header')

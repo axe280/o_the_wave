@@ -1,0 +1,267 @@
+.order-item
+  padding-bottom: 32px
+  margin-bottom: 32px
+  border-bottom: 1px solid $colorGold
+
+  &:last-child
+    padding-bottom: 0
+    margin-bottom: 0
+    border: none
+
+  &__details
+    margin-top: 16px
+    display: none
+
+  &__main
+    position: relative
+    display: flex
+    flex-direction: column
+    padding-bottom: 48px
+    font-size: 14px
+    line-height: 18px
+
+.order-item-photos
+  display: flex
+  flex-wrap: wrap
+  order: 2
+  margin-left: -2%
+
+  &__item
+    position: relative
+    overflow: hidden
+    width: 48%
+    margin-left: 2%
+    height: 230px
+    margin-bottom: 8px
+
+    img
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: 50% 0
+
+.order-item-m-row
+  order: 1
+  margin-bottom: 8px
+
+  .btn
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+
+.oimt-no
+  margin-bottom: 8px
+  font-weight: 700
+  font-size: 18px
+  line-height: 22px
+  text-transform: uppercase
+
+.oimt-price
+  margin-bottom: 8px
+  font-weight: 700
+  font-size: 18px
+  line-height: 22px
+
+.oimt-date
+  margin-bottom: 8px
+  font-size: 14px
+  line-height: 18px
+
+.oimt-status
+  color: #C4C1C2
+
+  li
+    margin-bottom: 8px
+    display: none
+
+    &.active
+      display: block
+
+  .oimt-status-complete
+    color: $colorDark
+
+.order-item-d-tt
+  margin-bottom: 16px
+  text-transform: uppercase
+  font-weight: 700
+
+.order-item-d-date-del
+  margin-bottom: 16px
+
+.order-item-m-info
+  margin-bottom: 34px
+  
+  li
+    margin-bottom: 16px
+
+  b, span
+    display: block
+    margin-bottom: 8px
+
+.order-item-m-total
+  display: flex
+  align-items: center
+  font-size: 18px
+  line-height: 26px
+
+  b
+    margin-left: 5px
+
+  .h-comp
+    margin-left: 16px
+
+.order-item
+  &._opened
+    .oimt-status
+      li
+        display: block
+
+      .active
+        font-weight: 700
+
+    .btn
+      background-color: #000
+      color: #fff
+
+/* Min width $sm */
+@media only screen and (min-width: $sm)
+  .order-item-photos
+    &__item
+      width: 31.33% 
+/* end media min width $sm */
+
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .order-item-photos
+    margin-left: -1.33%
+
+    &__item
+      height: 320px
+      width: 32%
+      margin-left: 1.33%
+
+  .order-item-m-info
+    li
+      display: flex
+
+    b
+      flex-shrink: 0
+      width: 230px
+/* end media min width $md */
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .order-item
+    &__main
+      padding-bottom: 0
+
+  .order-item-m-row
+    display: flex
+    align-items: flex-end
+    justify-content: space-between
+
+    .btn
+      position: relative
+      margin-bottom: 8px
+
+  .order-item
+    &__main
+      flex-direction: row
+      line-height: 22px
+
+    &__details
+      font-size: 18px
+      line-height: 18px
+
+  .order-item-photos
+    order: 1
+    flex-shrink: 0
+    margin-left: 0
+    margin-top: -8px
+    margin-right: 24px
+    width: 304px
+
+    &__item
+      width: 144px
+      height: 196px
+      margin: 8px 8px 0 0
+
+  .order-item-m-row
+    flex-grow: 1
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-end
+    margin-bottom: 0
+
+    .btn
+      width: auto
+      margin-bottom: 0
+
+  .order-item-m-titles
+    display: flex
+    justify-content: space-between
+    width: 100%
+
+  .oimt-status
+    text-align: right
+
+  .oimt-date
+    line-height: 22px
+
+  .oimt-no
+    width: 34%
+
+  .oimt-price,
+  .oimt-date,
+  .oimt-status
+    width: 22%
+
+  .order-item__details
+    margin-top: 32px
+
+  .order-item-d-date-del,
+  .order-item-d-tt
+    margin-bottom: 32px
+
+  .order-item-m-info
+    li
+      margin-bottom: 32px
+
+      b
+        width: 344px
+
+  .order-item-m-total
+    font-size: 22px
+    line-height: 32px
+/* end media min width $lg */
+
+/* Min width $xl */
+@media only screen and (min-width: $xl)
+  .order-item__main,
+  .oimt-date
+    font-size: 18px
+
+  .oimt-no,
+  .oimt-price
+    font-size: 20px
+/* end media min width $xl */
+
+/* Min width $hd */
+@media only screen and (min-width: $hd)
+  .order-item-photos
+    width: 456px
+
+  .oimt-price
+    font-size: 22px
+
+  .oimt-no
+    font-size: 22px
+    width: 38%
+
+  .oimt-date, .oimt-price, .oimt-status
+    width: 24%
+/* end media min width $hd */
