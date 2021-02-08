@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config ./build/webpack.dev.conf.js",
     "build": "webpack --config ./build/webpack.build.conf.js",
-    "deploy": "webpack --config ./build/webpack.build.conf.js && surge --project ./dist --domain start-proj.surge.sh"
+    "deploy": "webpack --config ./build/webpack.build.conf.js && surge --project ./dist --domain o-the-wave.surge.sh"
   },
   "browserslist": [
     "last 2 version"

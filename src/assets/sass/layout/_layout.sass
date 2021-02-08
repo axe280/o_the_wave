@@ -51,6 +51,37 @@ body
     img
       width: 100%
 
+.spec-offer-head-page
+  .site-wrapper
+    padding-top: $banner-height
+
+.spec-offer-line
+  position: fixed
+  left: 0
+  top: $header-height-xs
+  width: 100%
+  z-index: 200
+  height: 40px
+  text-align: center
+  background-color: $colorDanger
+  font-weight: 300
+  font-size: 18px
+  line-height: 40px
+  color: #fff
+  text-decoration: none
+  transition: background-color .2s
+
+  &:hover
+    color: #fff
+    background-color: darken($colorDanger, 10%)
+
+/* Max width $m-lg */
+@media only screen and (max-width: $m-lg)
+  .spec-offer-head-page
+    .menu-wrapper-fixed,
+    .main-search-wrapper
+      padding-top: $banner-height
+/* end media max width $m-lg */
 
 /* Min width $md*/
 @media only screen and (min-width: $md)
@@ -172,6 +203,17 @@ body
     display: flex
     align-items: flex-start
     justify-content: space-between
+
+  .spec-offer-line
+    z-index: 190
+    top: 50px
+    height: 30px
+    font-size: 22px
+    line-height: 30px
+
+  .spec-offer-head-page
+    .main-search-wrapper._opened
+      transform: translateY(100px)
 /* end media min width $lg */
 
 /* Min width $hd */
