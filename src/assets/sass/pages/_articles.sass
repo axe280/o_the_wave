@@ -1,0 +1,88 @@
+.article-item
+  margin-bottom: 32px
+  box-shadow: 0px 2.10562px 2.10562px rgba(0, 0, 0, 0.08)
+
+  &:last-child
+    margin-bottom: 0
+
+  a
+    display: block
+    text-decoration: none
+
+    &:hover
+      img
+        transition: transform .2s
+
+  &__img
+    img
+      width: 100%
+
+  &__about
+    padding: 16px
+    text-align: center
+
+.article-item-tt
+  margin-bottom: 8px
+  font-weight: 700
+  font-size: 14px
+  line-height: 17px
+  text-transform: uppercase
+
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .articles-row
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    margin-top: -16px
+    
+  .article-item
+    width: calc(50% - 8px)
+    margin: 16px 0 0
+
+    a
+      &:hover
+        img
+          transform: scale(1.2)
+          transition: transform 3s linear
+
+    &__img
+      position: relative
+      overflow: hidden
+      height: 216px
+
+      img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: 50% 0
+        transition-duration: 1s
+
+    &__about
+      padding: 16px 32px 32px
+
+      p
+        max-width: 432px
+        margin-left: auto
+        margin-right: auto
+/* end media min width $md */
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .article-item
+    &__img
+      height: 416px
+
+    &__about
+      font-weight: 300
+      font-size: 22px
+      line-height: 27px
+
+  .article-item-tt
+    font-size: 22px
+    line-height: 27px
+    margin-bottom: 16px
+/* end media min width $lg */
