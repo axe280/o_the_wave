@@ -79,8 +79,8 @@ $(function () {
   // open order item
   $('.order-item').on('click', '.btn', function () {
     var $item = $(this).parents('.order-item')
-    $item.find('.order-item__details').slideToggle()
     $item.toggleClass('_opened')
+    $item.find('.order-item__details').slideToggle()
   })
 
   // sticky header
@@ -127,6 +127,31 @@ $(function () {
       .fadeIn()
       .siblings('.simple-tabs-box')
       .hide()
+  })
+
+  // change src, hover product
+  $(document).on(
+    'mouseover',
+    '.st-prod-card__nav span:not(.current)',
+    function () {
+      var srcProd = $(this).data().prodSrc
+      var $img = $(this).parent().siblings('[data-target-prod-src]')
+
+      $(this).siblings().removeClass('current')
+      $(this).addClass('current')
+      $img.attr('src', srcProd)
+    }
+  )
+
+  // switch prodct columns
+  $('.ch-c-filter-switch').on('click', 'button:not(.active)', function () {
+    if ($(this).data().prodCols === true) {
+      $('.catalog-list').addClass('_cols')
+    } else {
+      $('.catalog-list').removeClass('_cols')
+    }
+
+    $(this).addClass('active').siblings('button').removeClass('active')
   })
 
   // // data-lity

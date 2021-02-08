@@ -3,7 +3,7 @@
   vertical-align: top
   font-size: 10px
   line-height: 14px
-  padding: 0 8px
+  padding: 1px 8px 0
   text-transform: uppercase
   color: #fff
   background-color: #000
@@ -14,7 +14,16 @@
 .st-prod-card
   position: relative
 
+  &:hover
+    .st-prod-card
+      &__like
+        opacity: 1
+
+      &__info
+        transform: translateY(0)
+
   &__like
+    opacity: 1
     position: absolute
     right: 0
     top: 0
@@ -24,6 +33,13 @@
     justify-content: center
     width: 40px
     height: 36px
+    transition: opacity .3s
+
+    &._active
+      opacity: 1
+
+      .icon
+        fill: #000
 
     .icon
       width: 15px
@@ -34,6 +50,37 @@
     &:hover
       .icon
         fill: #000
+
+  &__info
+    display: none
+    position: absolute
+    transform: translateY(100%)
+    bottom: 0
+    left: 0
+    z-index: 3
+    width: 100%
+    padding: 10px 14px
+    background-color: rgba(#fff, .75)
+    color: #000
+    text-align: center
+    transition: transform .2s
+
+    li
+      margin-bottom: 5px
+      font-size: 12px
+      line-height: 14px
+
+      &:last-child
+        margin-bottom: 0
+
+    .color-item
+      margin-left: 6px
+
+  &__more
+    text-decoration: underline
+
+    &:hover
+      text-decoration: none
 
   &__link
     display: block
@@ -88,6 +135,46 @@
       font-size: 18px
       color: #c4c4c4
 
+  &__nav
+    display: none
+
+.catalog-list._cols
+  .st-prod-card
+    &__img
+      height: 230px
+      margin-bottom: 10px
+
+    &__name
+      margin-bottom: 5px
+      font-size: 14px
+      line-height: 18px
+
+    &__price
+      font-size: 12px
+      line-height: 14px
+      
+      del
+        margin-right: 8px
+        font-size: 10px
+        font-weight: 400
+
+/* Min width $sm */
+@media only screen and (min-width: $sm)
+  .catalog-list._cols
+    .st-prod-card
+      &__img
+        height: 360px
+/* end media min width $sm */
+
+/* Max width $m-md */
+@media only screen and (max-width: $m-md)
+  .catalog-list._cols
+    .st-label
+      font-size: 8px
+      line-height: 12px
+      padding-top: 1px
+/* end media max width $m-md */
+
 /* Min width $md */
 @media only screen and (min-width: $md)
   .st-prod-card
@@ -98,13 +185,125 @@
       .icon
         width: 30px
         height: 26px
+
+    &__img
+      height: 680px
+
+  .catalog-list._cols
+    .st-prod-card
+      &__img
+        margin-bottom: 18px
+
+      &__name
+        margin-bottom: 8px
+        font-size: 18px
+        line-height: 22px
+
+      &__price
+        font-size: 16px
+        line-height: 20px
+        
+        del
+          margin-right: 16px
+          font-size: 14px
+          line-height: 18px
+
+      &__like
+        width: 30px
+        height: 30px
+
+        .icon
+          width: 14px
+          height: 13px
 /* end media min width $md */
 
 /* Min width $lg */
 @media only screen and (min-width: $lg)
   .st-prod-card
-    margin-bottom: 48px
+    &__img
+      height: 500px
 
+    &__like
+      opacity: 0
+
+    &__info
+      opacity: 1
+      display: block
+      padding: 14px
+      
+      li
+        font-size: 18px
+        line-height: 22px
+        margin-bottom: 8px
+
+      .color-item
+        margin-left: 12px
+
+    &__nav
+      display: block
+      position: absolute
+      z-index: 2
+      left: 0
+      top: 0
+      height: 100%
+      width: 100%
+      padding: 0 4px
+      display: flex
+      justify-content: space-between
+
+      span
+        padding: 8px 4px
+        flex-grow: 1
+
+        &::before
+          content: ''
+          display: block
+          height: 2px
+          border-radius: 2px
+          background-color: #000
+          transition: background-color .2s
+
+        &.current
+          &::before
+            background-color: #C4C1C2
+
+  .catalog-list._cols
+    .st-prod-card
+      &__name
+        margin-bottom: 8px
+        font-size: 20px
+        line-height: 24px
+
+      &__price
+        font-size: 18px
+        line-height: 22px
+        
+        del
+          margin-right: 16px
+          font-size: 16px
+          line-height: 20px
+
+      &__info
+        padding: 8px
+        
+        li
+          font-size: 10px
+          line-height: 12px
+          margin-bottom: 4px
+
+        .color-item
+          margin-left: 6px
+          width: 12px
+          height: 12px
+
+      &__nav
+        span
+          padding-top: 3px
+/* end media min width $lg */
+
+/* Min width $xl */
+@media only screen and (min-width: $xl)
+  .st-prod-card
     &__img
       height: 736px
-/* end media min width $lg */
+/* end media min width $xl */
