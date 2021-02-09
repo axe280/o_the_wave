@@ -143,6 +143,8 @@
 
   h1, .title-site
     line-height: 20px
+    font-weight: 700
+    border-bottom: 1px solid $colorGold
 
 .i-head-info
   width: 100%
@@ -156,10 +158,10 @@
 
 .i-head-link
   text-decoration: none
-  border-bottom: 1px solid $colorGold
+  border-bottom: 1px solid transparent
   
   &:hover
-    border-color: transparent
+    border-color: $colorGold
 
 /* Min width $sm */
 @media only screen and (min-width: $sm)
@@ -287,6 +289,7 @@
       margin-bottom: 16px
       font-size: 18px
       line-height: 22px
+      border: none
 
   .i-head-info
     width: auto

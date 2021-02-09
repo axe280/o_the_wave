@@ -1,0 +1,233 @@
+.cart-row
+  margin-bottom: 32px
+  font-size: 14px
+  line-height: 17px
+
+.cart-col-prod-img
+  float: left
+  width: 168px
+
+  a
+    display: block
+
+  img
+    width: 100%
+
+.cart-col-close
+  line-height: 12px
+  position: absolute
+  right: 0
+  top: 0
+
+  a
+    display: block
+    width: 12px
+    height: 12px
+
+  .icon
+    vertical-align: top
+    width: 100%
+    height: 100%
+    stroke: #000
+
+.cart-col-title
+  b
+    display: block
+    margin-bottom: 8px
+    font-weight: 700
+
+  a
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+
+  span
+    display: block
+    margin-bottom: 8px
+    font-size: 10px
+    line-height: 12px
+
+.cart-col-color
+  margin-bottom: 8px
+
+.col-panel-tc
+  width: 70px
+  height: 24px
+  position: relative
+  overflow: hidden
+  margin-top: 8px
+
+  input
+    vertical-align: top
+    padding: 0 23px
+    height: 24px
+    font-size: 16px
+    border-radius: 0
+    border-color: #C4C1C2
+
+  span
+    position: absolute
+    z-index: 2
+    top: 0
+    height: 24px
+    font-size: 16px
+    line-height: 24px
+    text-align: center
+    width: 22px
+    cursor: pointer
+    user-select: none
+
+  .minus-input
+    left: 0
+    border-right: 1px solid #C4C1C2
+
+  .plus-input
+    right: 0
+    border-left: 1px solid #C4C1C2
+
+.cart-col-total
+  font-weight: 700
+
+/* Max width $m-lg */
+@media only screen and (max-width: $m-lg)
+  .cart-row
+    overflow: hidden
+    position: relative
+    padding-right: 20px
+
+    > div
+      margin-left: 178px
+      margin-bottom: 8px
+    
+    .cart-col-prod-img,
+    .cart-col-close
+      margin-left: 0
+/* end media max width $m-lg */
+
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .cart-row
+    max-width: 400px
+/* end media min width $md */
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .cart-row
+    display: flex
+    align-items: center
+    justify-content: space-between
+    max-width: 100%
+    padding-bottom: 32px
+    border-bottom: 1px solid $colorGold
+
+    &:last-child
+      padding-bottom: 0
+      border: none
+
+    &_titles
+      padding-bottom: 16px
+
+      > div
+        color: #828282
+        font-weight: 400
+
+    > div
+      flex-shrink: 0
+      width: 11%
+      // text-align: center
+
+    .cart-col-color
+      width: 9%
+
+    .cart-col-prod-img,
+    .cart-col-title
+      width: 16%
+      text-align: left
+
+    .cart-col-close
+      width: 30px
+
+  .cart-col-prod-img
+    float: none
+    margin-right: 30px
+
+  .col-panel-tc
+    margin: 0
+
+  .cart-col-close
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: flex-end
+
+  .cart-col-color
+    margin: 0
+
+  .cart-col-title
+    margin-right: 30px
+    font-size: 16px
+    line-height: 18px
+
+    b
+      margin-bottom: 6px
+    
+    span
+      margin-bottom: 0
+      font-size: 12px
+      line-height: 17px
+/* end media min width $lg */
+
+/* Min width $xl */
+@media only screen and (min-width: $xl)
+  .cart-row
+    max-width: 100%
+
+    > div
+      width: 124px
+      font-size: 18px
+      line-height: 22px
+
+    .cart-col-color,
+    .cart-col-size
+      width: 100px
+
+    .cart-col-prod-img
+      width: 176px
+      margin-right: 0
+
+    .cart-col-title
+      width: 260px
+      padding: 0 30px
+
+  .cart-col-close
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: flex-end
+
+  .cart-col-color
+    margin: 0
+
+  .cart-col-title
+    margin-right: 0
+    font-size: 18px
+    line-height: 22px
+    
+    span
+      font-size: 14px
+/* end media min width $xl */
+
+/* Min width $hd */
+@media only screen and (min-width: $hd)
+  .cart-row
+    > div
+      width: 154px
+      text-align: left
+
+    .cart-col-color
+      width: 100px
+
+    .cart-col-title
+      width: 300px
+/* end media min width $hd */

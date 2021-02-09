@@ -85,6 +85,9 @@ p + p
 .text_success
   color: $colorSuccess
 
+.text_gold
+  color: $colorGold
+
 img
   vertical-align: middle
   max-width: 100%
@@ -97,6 +100,14 @@ a
   &:hover
     text-decoration: none
     color: $color-h-link
+
+.link-gold
+  color: $colorGold
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+    color: $colorGold
 
 .icon
   display: inline-block
@@ -177,6 +188,7 @@ blockquote
     margin-top: 16px
     font-size: 16px
     line-height: 16px
+    font-weight: 700
 
 /* Min width $lg pixels */
 @media only screen and (min-width: $lg)

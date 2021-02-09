@@ -1,0 +1,128 @@
+.cart-head-wrapp
+  .catalog-head
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    &__tt
+      justify-content: flex-start
+      margin-bottom: 0
+
+  .tt-more-info
+    margin-left: 16px
+
+.mobile-btn-reset-cart
+  font-size: 10px
+  line-height: 12px
+
+.cart-sticky-order
+  margin-top: -16px
+
+  &__total
+    margin-bottom: 32px
+    font-weight: 700
+    font-size: 22px
+    line-height: 27px
+
+  .container
+    padding: 0
+
+.cart-order-promo
+  .field-item
+    margin-bottom: 16px
+
+  .btn
+    margin-bottom: 16px
+    width: 100%
+
+  .hint-comp
+    margin-bottom: 16px
+
+
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .cart-sticky-order
+    max-width: 400px
+
+  .cart-order-promo
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+
+    .field-item,
+    .btn
+      width: 49%
+
+    .hint-comp
+      width: 100%
+/* end media min width $md */
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .mobile-btn-reset-cart
+    display: none
+
+  .cart-head-wrapp
+    margin-bottom: 16px
+
+    .tt-more-info
+      display: none
+
+  .cart-sticky-order
+    max-width: 100%
+    margin-top: 0
+
+    .container
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      justify-content: space-between
+
+    &__btn
+      width: 100%
+      text-align: right
+
+  .cart-order-promo
+    flex-wrap: nowrap
+    justify-content: flex-start
+    margin-bottom: 32px
+
+    .field-item,
+    .btn
+      flex-shrink: 0
+      width: 264px
+      margin-right: 16px
+      margin-bottom: 0
+
+    .hint-comp
+      margin: 0
+      width: 32px
+/* end media min width $lg */
+
+/* Min width $xl */
+@media only screen and (min-width: $xl)
+  .cart-sticky-order-wrapp
+    height: 48px
+    margin-bottom: 48px
+
+  .cart-sticky-order
+    // position: fixed
+    z-index: 20
+    left: 0
+    bottom: 0
+    width: 100%
+    background-color: #fff
+
+    .container
+      // padding: 0 $sides-spacing-xl
+
+    &__total
+      margin: 0 20px
+
+    &__btn
+      width: auto
+
+  .cart-order-promo
+    margin-bottom: 0
+/* end media min width $xl */

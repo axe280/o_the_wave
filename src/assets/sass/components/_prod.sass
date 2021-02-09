@@ -158,6 +158,16 @@
         font-size: 10px
         font-weight: 400
 
+  .card-add-to-cart
+    .btn
+      padding-left: 10px
+      padding-right: 10px
+      font-size: 14px
+      line-height: 18px
+
+.card-add-to-cart
+  margin-top: 16px
+
 /* Min width $sm */
 @media only screen and (min-width: $sm)
   .catalog-list._cols
@@ -224,6 +234,7 @@
       height: 500px
 
     &__like
+      top: 4px
       opacity: 0
 
     &__info
@@ -298,7 +309,7 @@
 
       &__nav
         span
-          padding-top: 3px
+          padding-top: 4px
 /* end media min width $lg */
 
 /* Min width $xl */
@@ -307,3 +318,12 @@
     &__img
       height: 736px
 /* end media min width $xl */
+
+/* Min width $hd */
+@media only screen and (min-width: $hd)
+  .catalog-list._cols
+    .card-add-to-cart
+      .btn
+        font-size: 22px
+        line-height: 26px
+/* end media min width $hd */

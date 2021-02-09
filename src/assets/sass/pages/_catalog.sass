@@ -1,4 +1,5 @@
-.catalog-head-wrapp
+.catalog-head-wrapp,
+.favorites-head-wrapp
   display: flex
   flex-direction: column
 
@@ -13,10 +14,14 @@
     justify-content: space-between
     margin-bottom: 16px
 
-    .title-thin
+    .title-thin, h1, .title-site
       margin-bottom: 0
       font-size: 16px
       line-height: 20px
+
+    h1, .title-site
+      text-transform: none
+      font-weight: 400
 
     .tt-more-info
       flex-shrink: 0
@@ -108,11 +113,23 @@
   .catalog-head-wrapp
     margin-bottom: 48px
 
+  .favorites-head-wrapp
+    margin-bottom: 32px
+
+  .pd-top-desk-40
+    padding-top: 40px
+
+  .pd-top-desk-50
+    padding-top: 50px
+
   .catalog-head
     order: 1
     display: flex
     align-items: center
     justify-content: space-between
+
+    &:last-child
+      margin-bottom: 0
 
     &__tt
       margin-bottom: 0
@@ -121,6 +138,13 @@
         font-size: 22px
         line-height: 27px
         margin-right: 17px
+
+      h1, .title-site
+        font-size: 18px
+        line-height: 25px
+        margin-right: 17px
+        font-weight: 700
+        text-transform: uppercase
 
       .tt-more-info
         margin-right: 32px

@@ -1,0 +1,470 @@
+.order-form-wrapp
+  margin-top: 32px
+
+.order-form-row
+  margin-bottom: 32px
+
+.order-sign-in
+  text-align: center
+
+  p
+    font-size: 14px
+    line-height: 17px
+
+  p + p
+    margin: 0
+
+  .btn
+    margin-top: 16px
+
+.order-row-tt
+  display: flex
+  margin-bottom: 16px
+  font-weight: 700
+  font-size: 16px
+  line-height: 19px
+
+  .icon
+    flex-shrink: 0
+    width: 16px
+    height: 16px
+    margin-right: 8px
+
+  .icon-car-del
+    width: 24px
+    height: 14px
+    margin-top: 2px
+
+.del-order-tt-wrapp
+  display: flex
+  justify-content: space-between
+  margin-bottom: 32px
+
+.del-city
+  text-align: right
+  font-size: 16px
+  line-height: 19px
+
+  b
+    font-weight: 700
+    display: block
+
+  &__current
+    color: #9A9A9A
+    text-decoration: underline
+    cursor: pointer
+
+    &:hover
+      text-decoration: none
+
+.order-delivery-list
+  > li
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 16px
+    padding-bottom: 16px
+    border-bottom: 1px solid $colorGold
+
+    &:last-child
+      border: none
+      margin-bottom: 0
+      padding-bottom: 0
+
+  .ui-st-radio
+    width: 150px
+    margin-right: 18px
+    flex-shrink: 0
+
+    label
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      min-height: 21px
+      line-height: 21px
+
+    img
+      cursor: pointer
+      display: block
+
+    img + img
+      margin-top: 8px
+    
+  .fake-control
+    top: 2px
+
+.del-icons
+  order: 1
+  width: 168px
+
+  li
+    display: flex
+    line-height: 17px
+    margin-bottom: 10px
+
+  .icon
+    flex-shrink: 0
+    width: 16px
+    height: 16px
+    margin-top: 1px
+    margin-right: 16px
+
+.del-info
+  order: 2
+  width: 100%
+
+  b, span
+    display: block
+
+.del-fields-wrapp
+  margin-top: 32px
+
+.order-fields
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+  .form-group
+    width: 49%
+    margin-bottom: 8px
+
+    &:first-child
+      width: 100%
+
+.order-fields__row-many-cols
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+.order-fields__row-many-cols + .form-group
+  width: 100%
+
+.pay-checks
+  li
+    margin-bottom: 16px
+
+    &:last-child
+      margin-bottom: 0
+
+  .ui-st-radio
+    margin-bottom: 0
+
+.to-form-info
+  li
+    display: flex
+    justify-content: space-between
+    margin-bottom: 6px
+    font-size: 16px
+    line-height: 19px
+
+    &:last-child
+      font-weight: 700
+      font-size: 22px
+      line-height: 27px
+
+      b
+        font-weight: 700
+
+    b
+      font-weight: 400
+
+.to-form-ro
+  margin-top: 16px
+  padding-top: 16px
+  border-top: 1px solid $colorGold
+
+.to-form-callback
+  .ui-st-radio
+    margin-bottom: 32px
+    font-size: 12px
+
+.to-form-order-btn
+  span
+    display: block
+    margin-top: 16px
+    font-size: 12px
+    line-height: 15px
+
+/* Max width $m-md */
+@media only screen and (max-width: $m-md)
+  .order-sign-in
+    padding: 16px
+    border: 1px solid #dadada
+    border-radius: 2px
+/* end media max width $m-md */
+
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .order-form-wrapp
+    margin-top: 48px
+
+  .order-form-row
+    margin-bottom: 16px
+    padding: 48px
+    border: 1px solid #dadada
+    border-radius: 2px
+
+  .order-sign-in
+    padding: 0
+    margin: -16px 0
+
+  .del-icons
+    width: 360px
+
+    li
+      display: inline-flex
+      margin-right: 30px
+
+  .del-info
+    margin-top: 10px
+
+  .del-order-tt-wrapp
+    justify-content: flex-start
+    margin-bottom: 20px
+
+    .order-row-tt
+      width: 150px
+      margin-right: 18px
+      margin-bottom: 0
+
+  .del-city
+    display: flex
+    align-items: center
+    line-height: 19px
+
+    b
+      margin-right: 15px
+
+  .pay-checks
+    display: flex
+    justify-content: space-between
+
+    li
+      margin-bottom: 0
+
+  .total-order-form
+    margin-top: 48px
+/* end media min width $md */
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .order-sign-in
+    p
+      font-size: 18px
+      line-height: 22px
+    
+    .btn
+      margin-top: 32px
+
+  .del-icons
+    flex-shrink: 0
+    width: 244px
+    order: 2
+    margin-left: auto
+
+    li
+      display: flex
+      margin-right: 0
+      font-size: 18px
+      line-height: 22px
+      margin-bottom: 16px
+
+      &:last-child
+        margin-bottom: 0
+
+      .icon
+        width: 19px
+        height: 19px
+
+  .del-order-tt-wrapp
+    margin-bottom: 57px
+
+    .order-row-tt
+      width: 200px
+      margin-right: 20px
+
+  .del-city
+    font-size: 18px
+    line-height: 22px
+
+  .order-row-tt
+    font-size: 18px
+    line-height: 22px
+    text-transform: uppercase
+
+    .icon
+      width: 24px
+      height: 24px
+      margin-right: 40px
+
+    .icon-car-del
+      width: 31px
+      height: 18px
+      margin-right: 30px
+
+  .order-delivery-list
+    >li
+      flex-wrap: nowrap
+      padding-bottom: 0
+      margin-bottom: 48px
+      border: none
+      
+    .ui-st-radio
+      flex-shrink: 0
+      width: 200px
+      margin-right: 20px
+
+  .del-info
+    order: 1
+    max-width: 450px
+    margin-top: 0
+    margin-right: 40px
+    font-size: 18px
+    line-height: 22px
+
+  .order-fields
+    margin-top: -32px
+    margin-left: -36px
+    justify-content: flex-start
+
+    .form-group
+      width: calc(33.33% - 36px)
+      margin: 32px 0 0 36px
+
+      &:first-child
+        width: calc(33.33% - 36px)
+
+  .order-row-tt
+    margin-bottom: 48px
+
+  .order-fields__row-many-cols + .form-group
+    width: calc(66% - 30px)
+
+  .pay-checks
+    li
+      .ui-st-radio
+        font-size: 18px
+        line-height: 27px
+
+    .fake-control
+      top: 5px
+
+  .radio-ch-more-info
+    margin-top: 10px
+
+    .icon
+      fill: #9A9A9A
+      width: 40px
+      margin-left: -6px
+
+    // .icon-visa
+    //   width: 21px
+    //   height: 7px
+
+    // .icon-master
+    //   width: 21px
+    //   height: 15px
+
+    // .icon-paypal
+    //   width: 30px
+    //   height: 9px
+
+    // .icon-g-pay
+    //   width: 27px
+    //   height: 11px
+
+    // .icon-a-pay
+    //   width: 24px
+    //   height: 12px
+
+  .total-order-form
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    padding-right: 48px
+
+  .to-form-info
+    width: 544px
+
+  .to-form-ro
+    display: flex
+    justify-content: space-between
+    width: 544px
+
+  .to-form-info
+    li
+      margin-bottom: 16px
+      font-size: 24px
+      line-height: 29px
+
+      &:last-child
+        margin-bottom: 0
+        font-weight: 400
+        font-size: 24px
+        line-height: 29px
+
+      b
+        font-weight: 700
+
+  .to-form-callback
+    .ui-st-radio
+      width: 160px
+      padding-left: 32px
+      margin-bottom: 0
+      line-height: 15px
+
+  .to-form-order-btn
+    span
+      width: 210px
+/* end media min width $lg */
+
+/* Min width $xl */
+@media only screen and (min-width: $xl)
+  .order-form-row
+    padding-left: 80px
+    padding-right: 80px
+
+  .del-order-tt-wrapp .order-row-tt,
+  .order-delivery-list .ui-st-radio
+    width: 240px
+
+  .order-fields__row-many-cols
+    margin-left: 12px
+
+    .form-group
+      width: calc(25% - 24px)
+      margin-left: 24px
+
+      &:first-child
+        width: calc(25% - 24px)
+
+  .pay-checks
+    li
+      .ui-st-radio
+        font-size: 22px
+        padding-left: 48px
+/* end media min width $xl */
+
+/* Min width $hd */
+@media only screen and (min-width: $hd)
+  .order-form-row
+    padding-left: 112px
+    padding-right: 112px
+
+  .del-order-tt-wrapp .order-row-tt,
+  .order-delivery-list .ui-st-radio
+    width: 300px
+    margin-right: 0
+
+  .order-fields__row-many-cols
+    margin-left: 4px
+
+    .form-group
+      width: calc(20% - 32px)
+      margin-left: 32px
+
+      &:first-child
+        width: calc(40% - 32px)
+
+  .order-fields__row-many-cols + .form-group
+    width: calc(60% - 34px)
+/* end media min width $hd */
