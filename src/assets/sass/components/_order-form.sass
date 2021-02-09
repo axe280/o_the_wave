@@ -77,16 +77,16 @@
 
     label
       display: flex
-      flex-wrap: wrap
-      align-items: center
+      flex-direction: column
+      justify-content: center
       min-height: 21px
       line-height: 21px
 
     img
-      cursor: pointer
       display: block
+      cursor: pointer
 
-    img + img
+    span + span img
       margin-top: 8px
     
   .fake-control
@@ -117,6 +117,33 @@
 
 .del-fields-wrapp
   margin-top: 32px
+
+  .dd-list-item
+    margin-bottom: 16px
+
+  .dd-list-head
+    font-weight: 600
+    font-size: 16px
+    line-height: 20px
+
+  .dd-list-body
+    margin-top: 8px
+
+.del-adresses
+  li
+    margin-bottom: 8px
+
+    &:last-child
+      margin-bottom: 0
+
+  .ui-st-radio
+    padding-left: 32px
+    font-size: 16px
+    line-height: 19px
+    
+    b
+      display: block
+      font-weight: 600
 
 .order-fields
   display: flex
@@ -243,6 +270,15 @@
 
   .total-order-form
     margin-top: 48px
+
+  .del-fields-wrapp
+    margin-top: 32px
+    padding-top: 32px
+    border-top: 1px solid $colorGold
+
+  .del-fields-wrapp
+    .dd-list-item
+      padding-left: 24px
 /* end media min width $md */
 
 /* Min width $lg */
@@ -415,6 +451,34 @@
   .to-form-order-btn
     span
       width: 210px
+
+  .del-fields-wrapp
+    margin-top: 48px
+    padding-top: 48px
+
+  .del-fields-wrapp
+    .dd-list-item
+      padding-left: 64px
+
+    .dd-list-head
+      font-size: 18px
+      line-height: 24px
+
+    .dd-list-body
+      margin-top: 20px
+
+  .del-adresses
+    margin-bottom: 30px
+    li
+      margin-bottom: 16px
+
+    .ui-st-radio
+      padding-left: 40px
+      font-size: 18px
+      line-height: 22px
+
+    .fake-control
+      top: 4px
 /* end media min width $lg */
 
 /* Min width $xl */

@@ -488,7 +488,9 @@
                       <li>
                         <div class="ui-st-radio">
                           <label>
-                            <img src="assets/img/cdek.svg" alt="" />
+                            <span>
+                              <img src="assets/img/cdek.svg" alt="" />
+                            </span>
                             <input type="radio" name="delivery" checked />
                             <span class="fake-control"></span>
                           </label>
@@ -536,7 +538,7 @@
                       <li>
                         <div class="ui-st-radio">
                           <label>
-                            <img src="assets/img/ems.svg" alt="" />
+                            <span><img src="assets/img/ems.svg" alt="" /></span>
                             <input type="radio" name="delivery" />
                             <span class="fake-control"></span>
                           </label>
@@ -584,8 +586,12 @@
                       <li>
                         <div class="ui-st-radio">
                           <label>
-                            <img src="assets/img/boxberry.svg" alt="" />
-                            <img src="assets/img/cdek.svg" alt="" />
+                            <span
+                              ><img src="assets/img/boxberry.svg" alt=""
+                            /></span>
+                            <span
+                              ><img src="assets/img/cdek.svg" alt=""
+                            /></span>
                             <input type="radio" name="delivery" />
                             <span class="fake-control"></span>
                           </label>
@@ -631,7 +637,9 @@
                       <li>
                         <div class="ui-st-radio">
                           <label>
-                            <img src="assets/img/ru-post.svg" alt="" />
+                            <span
+                              ><img src="assets/img/ru-post.svg" alt=""
+                            /></span>
                             <input type="radio" name="delivery" />
                             <span class="fake-control"></span>
                           </label>
@@ -682,54 +690,127 @@
                             xlink:href="assets/img/sprite.svg#map-marker"
                           ></use>
                         </svg>
-                        Адрес доставки
+                        Пункты самовывоза
+                      </div>
+
+                      <div class="dd-list-wrapp">
+                        <div class="dd-list-item">
+                          <div class="dd-list-head">Списком</div>
+                          <div class="dd-list-body">
+                            <ul class="del-adresses">
+                              <li>
+                                <div class="ui-st-radio">
+                                  <label>
+                                    <b>м. Старая Деревня</b>
+                                    ул. Торфяная дорога, 2 корп. 1, 2
+                                    <input
+                                      type="radio"
+                                      name="adresses"
+                                      checked
+                                    />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-radio">
+                                  <label>
+                                    <b>м. Старая Деревня</b>
+                                    ул. Торфяная дорога, 2 корп. 1, 2
+                                    <input type="radio" name="adresses" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-radio">
+                                  <label>
+                                    <b>м. Старая Деревня</b>
+                                    ул. Торфяная дорога, 2 корп. 1, 2
+                                    <input type="radio" name="adresses" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="dd-list-item">
+                          <div class="dd-list-head">На карте</div>
+                          <div class="dd-list-body">
+                            <img src="assets/img/map.png" alt="" />
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="order-fields">
-                      <div class="order-fields__row-many-cols">
-                        <div class="form-group">
-                          <div class="field-item">
-                            <div class="field-item__field">
-                              <input type="text" required placeholder="Улица" />
-                            </div>
-                          </div>
-                        </div>
 
-                        <div class="form-group">
-                          <div class="field-item">
-                            <div class="field-item__field">
-                              <input type="text" required placeholder="Дом" />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <div class="field-item">
-                            <div class="field-item__field">
-                              <input
-                                type="text"
-                                required
-                                placeholder="Квартира/Офис"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <div class="field-item">
-                            <div class="field-item__field">
-                              <input type="tel" placeholder="Индекс" required />
-                            </div>
-                          </div>
-                        </div>
+                    <div class="del-fields-wrapp">
+                      <div class="order-row-tt">
+                        <svg class="icon icon-map-marker">
+                          <use
+                            xlink:href="assets/img/sprite.svg#map-marker"
+                          ></use>
+                        </svg>
+                        Адрес доставки
                       </div>
 
-                      <div class="form-group">
-                        <div class="field-item">
-                          <div class="field-item__field">
-                            <textarea
-                              placeholder="Комментарии к заказу"
-                            ></textarea>
+                      <div class="order-fields">
+                        <div class="order-fields__row-many-cols">
+                          <div class="form-group">
+                            <div class="field-item">
+                              <div class="field-item__field">
+                                <input
+                                  type="text"
+                                  required
+                                  placeholder="Улица"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <div class="field-item">
+                              <div class="field-item__field">
+                                <input type="text" required placeholder="Дом" />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <div class="field-item">
+                              <div class="field-item__field">
+                                <input
+                                  type="text"
+                                  required
+                                  placeholder="Квартира/Офис"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <div class="field-item">
+                              <div class="field-item__field">
+                                <input
+                                  type="tel"
+                                  placeholder="Индекс"
+                                  required
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <div class="field-item">
+                            <div class="field-item__field">
+                              <textarea
+                                placeholder="Комментарии к заказу"
+                              ></textarea>
+                            </div>
                           </div>
                         </div>
                       </div>
