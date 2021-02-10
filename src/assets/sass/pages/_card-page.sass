@@ -1,0 +1,257 @@
+.owl-carousel.card-bl-photos
+  display: block
+  margin-bottom: 16px
+
+.card-bl-photo
+  position: relative
+  height: 460px
+  overflow: hidden
+
+  img, video
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+    object-position: 50% 0
+
+.card-bl-info
+  &__head
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-bottom: 32px
+
+  .dd-list-item
+    margin-bottom: 16px
+
+  .dd-list-head
+    font-size: 16px
+    line-height: 19px
+    font-weight: 400
+
+  .dd-list-body
+    margin-top: 6px
+    font-size: 12px
+    line-height: 15px
+
+    p + p
+      margin-top: 16px
+
+.card-sizes-wrapp
+  margin-bottom: 32px
+
+  .dd-list-item
+    margin-bottom: 6px
+
+.card-brand-name
+  width: 100%
+  font-size: 16px
+  line-height: 20px
+  margin-bottom: 8px
+  color: $colorGold
+
+.card-name
+  margin-bottom: 8px
+  font-size: 24px
+  line-height: 30px
+  font-size: 24px
+  line-height: 29px
+  font-weight: 700
+
+.card-art
+  order: 2
+  font-size: 14px
+  line-height: 17px
+  margin-bottom: 8px
+
+.card-price
+  margin-bottom: 8px
+  order: 1
+  flex-shrink: 0
+  margin-left: 20px
+  font-size: 24px
+  line-height: 29px
+  font-weight: 700
+
+.card-colors
+  width: 100%
+  order: 2
+
+.card-colors
+  display: flex
+  align-items: center
+
+  &__tt
+    font-size: 16px
+    line-height: 19px
+    margin-right: 16px
+
+.table-size-popup
+  cursor: pointer
+  color: $colorGold
+  font-size: 14px
+  line-height: 17px
+
+  &:hover
+    text-decoration: underline
+
+.sizes-error-msg
+  display: block
+
+.sizes-error-msg
+  display: none
+  margin-top: 6px
+  color: $colorDanger
+  font-size: 14px
+  line-height: 17px
+
+.card-order-btns
+  margin-bottom: 32px
+
+.co-btns-row
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 16px
+
+  .btn
+    width: 100%
+
+  .like-btn
+    width: auto
+    margin-left: 12px
+    flex-shrink: 0
+
+    &._active
+      .icon
+        fill: #fff
+
+.card-bl-status
+  margin-bottom: 16px
+  font-size: 16px
+  line-height: 19px
+
+.card-cheaper
+  button
+    font-size: 16px
+    line-height: 19px
+    font-weight: 700
+    text-decoration: underline
+    cursor: pointer
+
+    &:hover
+      text-decoration: none
+
+.card-order-one-click
+  display: block
+  margin-top: 16px
+
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .card-bl-wrapp
+    display: flex
+
+  .card-bl-photos-wrap
+    flex-shrink: 0
+    width: 400px
+    margin-right: 16px
+
+  .card-bl-photo
+    width: 400px
+    height: 550px
+
+  .card-bl-info
+    flex-grow: 1
+
+    &__head
+      display: block
+
+  .card-price
+    margin-left: 0
+/* end media min width $md */
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .owl-carousel.card-bl-photos
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+  .card-bl-photos-wrap
+    flex-grow: 1
+    margin-right: 16px
+
+  .card-bl-info
+    flex: 0 0 380px
+
+    .dd-list-item
+      margin-bottom: 21px
+
+    .dd-list-head
+      font-size: 18px
+      line-height: 22px
+
+    .dd-list-body
+      margin-top: 10px
+      font-size: 14px
+      line-height: 17px
+
+  .card-sizes-wrapp
+    .dd-list-item
+      margin-bottom: 4px
+
+  .card-bl-status
+    margin-bottom: 21px
+    font-size: 18px
+    line-height: 22px
+
+  .card-bl-photo
+    width: 50%
+    height: 380px
+    margin-bottom: 16px
+
+  .co-btns-row
+    .like-btn
+      padding: 0
+      height: 48px
+      width: 56px
+      margin-left: 8px
+
+      .icon
+        width: 43px
+        height: 35px
+
+  .card-brand-name
+    font-size: 18px
+    line-height: 22px
+
+  .card-name
+    font-size: 28px
+    line-height: 34px
+
+  .card-colors
+    width: 100%
+    order: 2
+
+  .card-colors
+    &__tt
+      font-size: 18px
+      line-height: 22px
+      margin-right: 23px
+
+  .card-order-one-click
+    margin-top: 32px
+
+  .card-cheaper
+    margin-top: -6px
+    font-size: 18px
+    line-height: 22px
+/* end media min width $lg */
+
+/* Min width $xl */
+@media only screen and (min-width: $xl)
+  .card-bl-photo
+    height: 585px
+/* end media min width $xl */

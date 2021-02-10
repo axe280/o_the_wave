@@ -352,4 +352,17 @@ $(function () {
       },
     },
   })
+
+  if ($(window).width() < 980) {
+    $('.card-bl-photos').owlCarousel({
+      loop: false,
+      dots: true,
+      items: 1,
+      nav: true,
+      navText: [
+        '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
+        '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
+      ],
+    })
+  }
 })

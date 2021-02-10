@@ -52,6 +52,67 @@
     background-position: 50% 50%
     background-size: 75% 75%
 
+.card-color-btn,
+.card-size-btn
+  position: relative
+
+  input
+    width: 0
+    height: 0
+    visibility: hidden
+    position: absolute
+    left: 0
+    top: 0
+
+.card-colors-btns,
+.card-sizes-btns
+  display: flex
+  align-items: center
+
+.card-color-btn,
+.card-size-btn
+  margin-right: 15px
+  cursor: pointer
+
+.fake-radio-color
+  display: block
+  width: 22px
+  height: 22px
+  border-color: 1px solid transparent
+  border-radius: 50%
+  transition: box-shadow .2s
+
+  &:last-child
+    margin-right: 0
+
+.card-color-btn
+  input:checked ~ .fake-radio-color
+    box-shadow: inset 0 0 0 1px #fff, 0 0 0 1px #444
+
+.fake-radio-size
+  text-align: center
+  font-weight: 600
+  font-size: 16px
+  line-height: 22px
+
+.card-size-btn
+  input:checked ~ .fake-radio-size
+    color: $colorGold
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .card-color-btn,
+  .card-size-btn
+    margin-right: 23px
+
+  .fake-radio-color
+    width: 28px
+    height: 28px
+
+  .fake-radio-size
+    font-size: 18px
+    line-height: 24px
+/* end media min width $lg */
 
 
 
