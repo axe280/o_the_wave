@@ -66,11 +66,7 @@ $(function () {
     $(this).parent().find('input').focus()
   })
 
-  // open search panel
-  var $searchEL = $('.main-search-wrapper')
-  $('.main-search-btn').on('click', toggleSearch)
-  $('.main-search-overlay').on('click', toggleSearch)
-
+  // remove outside classes
   $(document).bind('click touchstart', function (e) {
     var $clicked = $(e.target)
     if (
@@ -80,7 +76,19 @@ $(function () {
       $('.main-search-wrapper').removeClass('_opened')
       removeDocumentScrollBlocker()
     }
+
+    if (
+      !$clicked.parents().hasClass('st-modal-cart') &&
+      !$clicked.parents().hasClass('show-cart-btn')
+    ) {
+      $('.st-modal-cart').removeClass('_opened')
+    }
   })
+
+  // open search panel
+  var $searchEL = $('.main-search-wrapper')
+  $('.main-search-btn').on('click', toggleSearch)
+  $('.main-search-overlay').on('click', toggleSearch)
 
   // open order item
   $('.order-item').on('click', '.btn', function () {
@@ -177,39 +185,54 @@ $(function () {
     return false
   })
 
-  // // data-lity
-  // $(document).on('lity:ready', function (e, instance) {
-  //   addDocumentScrollBlocker()
+  // magnific popup
+  var magnificOptions = {
+    type: 'inline',
+    midClick: true,
+    mainClass: 'mfp-zoom',
+    removalDelay: 300,
+    cursor: null,
+    callbacks: {
+      open: function () {
+        addDocumentScrollBlocker()
+        $('.mfp-close').html(
+          '<svg class="icon icon-close-wide"><use xlink:href="assets/img/sprite.svg#close-wide"></use></svg>'
+        )
+      },
+      close: function () {
+        removeDocumentScrollBlocker()
+      },
+    },
+  }
+  $('.open-popup-link').magnificPopup(magnificOptions)
 
-  //   var el = instance.element()
-  //   el.find('.lity-close').html(
-  //     '<svg class="icon icon-close"><use xlink:href="assets/img/sprite.svg#close"></use></svg>'
-  //   )
-  // })
+  // cart modal
+  var isCartEmpty = false
+  $('.show-cart-btn').on('click', function () {
+    if (isCartEmpty) {
+      showModal('#modalEmptyCart')
+    } else {
+      showModal('#modalCart')
+    }
+  })
 
-  // $(document).on('lity:close', function () {
-  //   removeDocumentScrollBlocker()
-  // })
+  $('.st-modal-cart .mfp-close').on('click', function () {
+    $(this).parent().removeClass('_opened')
+  })
 
-  // // magnific popup
-  // $('.open-popup-link').magnificPopup({
-  //   type: 'inline',
-  //   midClick: true,
-  //   mainClass: 'mfp-zoom',
-  //   removalDelay: 300,
-  //   cursor: null,
-  //   callbacks: {
-  //     open: function () {
-  //       addDocumentScrollBlocker()
-  //       $('.mfp-close').html(
-  //         '<svg class="icon icon-close"><use xlink:href="assets/img/sprite.svg#close"></use></svg>'
-  //       )
-  //     },
-  //     close: function () {
-  //       removeDocumentScrollBlocker()
-  //     },
-  //   },
-  // })
+  var showModal = function (modalSrc) {
+    if ($(window).width() < 980) {
+      $.magnificPopup.open(
+        $.extend(magnificOptions, {
+          items: {
+            src: modalSrc,
+          },
+        })
+      )
+    } else {
+      $(modalSrc).addClass('_opened')
+    }
+  }
 
   // $('.magnific-gallery').magnificPopup({
   //   delegate: 'button',

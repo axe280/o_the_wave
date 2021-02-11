@@ -14,6 +14,36 @@
   </head>
 
   <body>
+    <div id="modalPromocode" class="st-modal mfp-hide">
+      <div class="st-modal__body">
+        <div class="modal-promocode-bl">
+          <div class="title-site title-site_h1 text_bold">
+            ЧТО ТАКОЕ ПРОМОКОД?
+          </div>
+          <p>
+            Промокод – это специальный купон, состоящий из уникального набора
+            букв или цифр, дающий право на получение скидки при оформлении
+            заказа в интернет-магазине.
+          </p>
+          <p>
+            У каждого промокода есть индивидуальные условия использования –
+            пожалуйста, внимательно ознакомьтесь с ними перед применением
+            купона.
+          </p>
+        </div>
+        <div class="modal-promocode-bl">
+          <div class="title-site title-site_h1 text_bold">
+            КАК ПОЛУЧИТЬ ПРОМОКОД?
+          </div>
+          <p>
+            Подпишитесь на новости при оформление заказа и получите промокод на
+            скидку. Участие в программе лояльности также позволит Вам
+            участвовать во всех наших акциях и специальных мероприятиях.
+          </p>
+        </div>
+      </div>
+    </div>
+
     <!-- site main wrapper -->
     <div class="site-wrapper">
       <!-- header -->
@@ -413,7 +443,11 @@
                         </button>
 
                         <div class="hint-comp hint-comp_mobile-text">
-                          <div class="hint-main">
+                          <button
+                            type="button"
+                            data-mfp-src="#modalPromocode"
+                            class="hint-main open-popup-link"
+                          >
                             <span class="hint-main__mob-text"
                               >Что такое промокод?</span
                             >
@@ -423,15 +457,7 @@
                                 xlink:href="assets/img/sprite.svg#info"
                               ></use>
                             </svg>
-                          </div>
-                          <div class="hint-info">
-                            <div class="hint-info__inner">
-                              <p>
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Voluptate, laboriosam.
-                              </p>
-                            </div>
-                          </div>
+                          </button>
                         </div>
                       </div>
 

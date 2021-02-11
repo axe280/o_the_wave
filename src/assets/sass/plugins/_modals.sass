@@ -1,6 +1,112 @@
 .st-modal
   position: relative
-  max-width: 340px
+  max-width: 400px
   margin: 0 auto
-  padding: 20px
+  padding: 32px
   background-color: #fff
+  box-shadow: 0 4 10px rgba(#000, .2)
+
+  &__head
+    margin-bottom: 20px
+    text-align: center
+
+  .form-group
+    margin-bottom: 16px
+
+  .ui-st-checkbox
+    margin-bottom: 0
+    color: $colorGray
+
+.modal-btns-group
+  margin-top: 16px
+
+  .btn
+    margin-top: 16px
+
+.form-group-f-line
+  display: flex
+  align-items: center
+  justify-content: space-between
+  font-size: 12px
+  line-height: 15px
+
+  .ui-st-checkbox
+    font-size: 12px
+    line-height: 18px
+
+.modal-del-info
+  font-size: 14px
+  line-height: 18px
+
+.empty-modal-cart
+  p
+    margin-bottom: 16px
+    text-align: center
+
+.modal-cheaper
+  span
+    margin-bottom: 4px
+    display: block
+
+.modal-promocode-bl
+  margin-bottom: 32px
+
+  &:last-child
+    margin-bottom: 0
+
+  .title-site
+    margin-bottom: 10px
+
+  p + p 
+    margin-top: 8px
+
+.btn-close-for-desktop
+  display: none
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .st-modal
+    &__head
+      margin-bottom: 32px
+
+  .form-group-f-line
+    .ui-st-checkbox
+      line-height: 23px
+
+  .empty-modal-cart
+    p
+      margin-bottom: 32px
+      font-size: 18px
+      line-height: 22px
+
+  .modal-cheaper
+    span
+      font-size: 18px
+      line-height: 22px
+      margin-bottom: 8px
+
+  .modal-promocode-bl
+    font-size: 18px
+    line-height: 22px
+
+    p + p
+      margin-top: 20px
+
+  .st-modal-cart
+    width: 400px
+    position: absolute
+    top: $header-height-lg
+    right: $sides-spacing-lg
+    z-index: 20
+    opacity: 0
+    transform: translateY(-100%)
+    transition: transform 2s cubic-bezier(.25,1,.5,1),opacity .5s
+
+    &.mfp-hide
+      display: block !important
+
+    &._opened
+      transform: translateY(50px)
+      opacity: 1
+      transition: transform .5s cubic-bezier(.25,1,.5,1),opacity .5s
+/* end media min width $lg */

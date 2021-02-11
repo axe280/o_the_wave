@@ -14,6 +14,93 @@
   </head>
 
   <body class="spec-offer-head-page">
+    <!-- modals -->
+    <div id="modalSignIn" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="title-site title-site_h1">Вход</div>
+      </div>
+
+      <div class="st-modal__body">
+        <form class="st-form" action="#">
+          <div class="form-group">
+            <label class="field-item">
+              <div class="field-item__field">
+                <input type="text" placeholder="Email или телефон" />
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="field-item">
+              <div class="field-item__field">
+                <input type="password" placeholder="Пароль" />
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group-f-line">
+            <div class="ui-st-checkbox">
+              <label>
+                Запомнить меня
+                <input type="checkbox" checked />
+                <span class="fake-control"></span>
+              </label>
+            </div>
+
+            <a href="#" class="link-light">Забыли пароль?</a>
+          </div>
+
+          <div class="modal-btns-group">
+            <button class="btn btn_max" type="submit">Войти</button>
+            <button class="btn btn_max btn_border" type="submit">
+              Зарегистрироваться
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="cart-modals-wrapper">
+      <div class="container">
+        <div id="modalEmptyCart" class="st-modal mfp-hide st-modal-cart">
+          <button type="button" class="mfp-close">
+            <svg class="icon icon-close-wide">
+              <use xlink:href="assets/img/sprite.svg#close-wide"></use>
+            </svg>
+          </button>
+
+          <div class="st-modal__head">
+            <div class="title-site title-site_h1">Ваша корзина пуста</div>
+          </div>
+
+          <div class="st-modal__body">
+            <div class="empty-modal-cart">
+              <p>Войдите, чтобы посмотреть Вашу корзину и совершать покупки!</p>
+              <button
+                type="button"
+                data-mfp-src="#modalSignIn"
+                class="btn btn_max open-popup-link"
+              >
+                Войти
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="modalCart" class="st-modal mfp-hide st-modal-cart">
+          <button type="button" class="mfp-close">
+            <svg class="icon icon-close-wide">
+              <use xlink:href="assets/img/sprite.svg#close-wide"></use>
+            </svg>
+          </button>
+
+          <div class="st-modal__body">
+            <div class="modal-cart">Корзина</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- site main wrapper -->
     <div class="site-wrapper">
       <!-- header -->
@@ -41,12 +128,16 @@
               </li>
 
               <li>
-                <a href="#" class="h-nav-icon">
+                <button
+                  type="button"
+                  data-mfp-src="#modalSignIn"
+                  class="h-nav-icon open-popup-link"
+                >
                   <svg class="icon icon-user">
                     <use xlink:href="assets/img/sprite.svg#user"></use>
                   </svg>
                   <span>Вход</span>
-                </a>
+                </button>
               </li>
 
               <li>
@@ -59,12 +150,16 @@
               </li>
 
               <li>
-                <a href="#" class="h-nav-icon">
+                <button
+                  type="button"
+                  data-mfp-src="#modalCart"
+                  class="h-nav-icon show-cart-btn"
+                >
                   <svg class="icon icon-cart">
                     <use xlink:href="assets/img/sprite.svg#cart"></use>
                   </svg>
                   <span>Корзина</span>
-                </a>
+                </button>
               </li>
             </ul>
 

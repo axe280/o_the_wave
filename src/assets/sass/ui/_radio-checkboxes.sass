@@ -24,6 +24,7 @@
   background-color: #fff
   transition: background-color $transDefault, border-color $transDefault
   border: 1px solid #9A9A9A
+  border-radius: 2px
 
 .ui-st-radio
   .fake-control
@@ -45,9 +46,16 @@
       background-color: $colorDark
 
 .ui-st-checkbox
+  user-select: none
+
+  .fake-control
+    width: 18px
+    height: 18px
+    top: 0
+    cursor: pointer
+
   input:checked ~ .fake-control
-    background-color: $second-color
-    // background-image: url('../img/check.svg')
+    background-image: url('../img/check.svg')
     background-repeat: no-repeat
     background-position: 50% 50%
     background-size: 75% 75%
@@ -185,6 +193,14 @@
       top: 2px
       left: 2px
       height: 22px
+
+  .ui-st-checkbox
+    line-height: 23px
+    padding-left: 36px
+
+    .fake-control
+      width: 23px
+      height: 23px
 /* end media min width $lg */
 
 
