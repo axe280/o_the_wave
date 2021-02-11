@@ -1,0 +1,141 @@
+.data-wrapp
+  .form-group
+    margin-bottom: 8px
+
+    &:last-child
+      margin-bottom: 0
+
+  .form-group-grid
+    margin-bottom: 16px
+
+.data-row
+  margin-bottom: 16px
+
+  &._password
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    .data-info
+      flex-grow: 1
+      text-align: right
+
+    .btn
+      max-width: 168px
+
+.row-line
+  height: 1px
+  background-color: $colorGold
+  margin-bottom: 16px
+
+.data-title
+  margin-bottom: 8px
+  font-size: 14px
+  line-height: 18px
+
+.switch-radio-group
+  display: flex
+  align-items: center
+
+  .switch-radio
+    margin-right: 32px
+
+.data-pass-btn
+  &._show-pass
+    margin-left: 30px
+
+    .btn
+      display: none
+
+    input
+      display: block
+
+.data-confirm-btn
+  margin-top: 32px
+
+.data-pass-btn
+  input
+    display: none
+
+
+/* Min width $md */
+@media only screen and (min-width: $md)
+  .data-wrapp
+    .form-group
+      margin-bottom: 0
+
+    .form-group-grid
+      margin-bottom: 32px
+
+  .data-row
+    display: flex
+    align-items: center
+    margin-bottom: 32px
+
+  .data-title
+    width: 30%
+
+  .data-info
+    width: 40%
+
+  .row-line
+    margin-bottom: 32px
+
+  .data-row._password
+    justify-content: flex-start
+
+    .btn
+      max-width: 100%
+
+    .data-info
+      flex-grow: 0
+
+  .data-pass-btn._show-pass
+    margin-left: 0
+
+  .data-confirm-btn
+    margin-left: 30%
+    width: 40%
+
+  .data-title
+    margin-bottom: 0
+/* end media min width $md */
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .data-title
+    font-size: 18px
+    line-height: 22px
+
+  .data-confirm-btn
+    margin-top: 48px
+
+  .switch-radio-group
+    .switch-radio
+      margin-right: 60px
+
+      &:last-child
+        margin-right: 0
+
+  .data-info
+    font-size: 18px
+    line-height: 22px
+/* end media min width $lg */
+
+/* Min width $xl */
+@media only screen and (min-width: $xl)
+  .switch-radio-group
+    .switch-radio
+      margin-right: 80px
+
+  .data-title
+    width: calc(33.33% - 8px)
+
+  .data-info
+    width: calc(33.33% - 8px)
+    margin-left: 16px
+
+  .data-confirm-btn
+    width: calc(33.33% - 8px)
+    margin-left: calc(33.33% + 8px)
+/* end media min width $xl */

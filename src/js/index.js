@@ -60,6 +60,12 @@ $(function () {
     $(this).parent().toggleClass('_opened')
   })
 
+  // show data password field
+  $('.data-pass-btn .btn').on('click', function () {
+    $(this).parent().addClass('_show-pass')
+    $(this).parent().find('input').focus()
+  })
+
   // open search panel
   var $searchEL = $('.main-search-wrapper')
   $('.main-search-btn').on('click', toggleSearch)
