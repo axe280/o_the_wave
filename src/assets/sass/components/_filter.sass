@@ -1,0 +1,258 @@
+.filter-drop-d
+  display: none
+  padding-top: 8px
+  font-size: 16px
+  line-height: 19px
+
+  &__select
+    li
+      cursor: pointer
+      margin-bottom: 8px
+
+      &:last-child
+        margin-bottom: 0
+
+    .active
+      font-weight: 700
+
+  &__checkboxes
+    li
+      margin-bottom: 8px
+
+      &:last-child
+        margin-bottom: 0
+
+    .ui-st-checkbox
+      font-size: 16px
+
+      label
+        display: flex
+        align-items: center
+
+    .color-item
+      width: 18px
+      height: 18px
+      margin: 0 10px 0 6px
+
+    .fake-control
+      width: 18px
+      height: 18px
+      border-color: $colorDark
+
+.filter-item-reset
+  display: none
+  margin-left: 20px
+  width: 20px
+  height: 20px
+  cursor: pointer
+
+  .icon
+    vertical-align: top
+    width: 14px
+    height: 14px
+
+/* Max width $m-lg */
+@media only screen and (max-width: $m-lg)
+  .filter-item
+    padding-bottom: 16px
+    margin-bottom: 16px
+    border-bottom: 1px solid $colorGold
+
+  .filter-head
+    position: relative
+    display: flex
+    align-items: center
+    padding-right: 30px
+    font-size: 16px
+    line-height: 19px
+    text-transform: uppercase
+    cursor: pointer
+    user-select: none
+
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      right: 0
+      top: 50%
+      width: 17px
+      height: 1px
+      margin-top: -1px
+      z-index: 2
+      background-color: #000
+
+    &::after
+      width: 1px
+      height: 17px
+      right: 8px
+      margin-top: -9px
+      transition: transform .2s
+
+    &._filtered
+      font-weight: 700
+
+      .filter-item-reset
+        display: block
+
+  .filter-item._opened
+    .filter-head
+      &:after
+        transform: rotate(90deg)
+
+  .filter-drop-d-accept
+    display: none
+
+  .filter-mobile-btn
+    padding-top: 22px
+    margin-top: auto
+
+    .btn
+      margin-bottom: 16px
+
+      &:last-child
+        margin-bottom: 0
+
+  .catalog-mobile-btns
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    .btn
+      width: 48%
+
+  .filter-mobile-close
+    display: none
+    position: absolute
+    right: 0
+    top: -24px
+    width: 12px
+    height: 12px
+    
+    .icon
+      width: 100%
+      height: 100%
+      stroke: #000
+
+  .filter-mob-item
+    display: none
+/* end media max width $m-lg */
+
+/* Min width $lg */
+@media only screen and (min-width: $lg)
+  .filter-mobile-btn
+    display: none
+
+  .filters-list
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    margin-left: -18px
+
+  .filter-item
+    display: block !important
+    position: relative
+    margin-left: 18px
+    margin-top: 10px
+
+  .filter-head
+    display: flex
+    align-items: center
+    cursor: pointer
+    padding: 2px 30px 2px 8px
+    font-size: 16px
+    line-height: 18px
+    border: 1px solid $colorDark
+    text-overflow: ellipsis
+    overflow: hidden
+    white-space: nowrap
+    background-image: url('../img/arrow-down.svg')
+    background-repeat: no-repeat
+    background-position: calc(100% - 6px) 50%
+    background-size: 16px 7px
+
+    &._filtered
+      padding-right: 8px
+      background: none
+      background-color: $colorDark
+      color: #fff
+
+      .filter-item-reset
+        display: block
+        width: 9px
+        height: 9px
+        margin-left: 10px
+
+        .icon
+          width: 9px
+          height: 9px
+          stroke: #fff
+          stroke-width: 2px
+
+  .filter-drop-d
+    font-size: 14px
+    line-height: 17px
+    position: absolute
+    left: 50%
+    top: 100%
+    margin-top: 23px
+    width: 196px
+    margin-left: -98px
+    z-index: 20
+    padding: 14px
+    background: #FFFFFF
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15)
+
+    &::before
+      content: ''
+      position: absolute
+      left: 50%
+      margin-left: -8px
+      top: -8px
+      width: 0
+      height: 0
+      border-left: 8px solid transparent
+      border-right: 8px solid transparent
+      border-bottom: 16px solid white
+      background-color: #fff
+      transform: rotate(-45deg)
+      box-shadow: 1px -1px 2px 0 rgba(0, 0, 0, 0.05)
+
+    &__select
+      li
+        margin-bottom: 16px
+
+    &__checkboxes
+      max-height: 198px
+      overflow: auto
+
+      li
+        margin-bottom: 16px
+
+      .ui-st-checkbox
+        font-size: 14px
+        line-height: 17px
+        padding-left: 34px
+
+      .color-item
+        margin-left: 0
+        margin-right: 16px
+
+  .filter-drop-d-accept
+    margin-top: 8px
+    width: 100%
+
+  .catalog-mobile-btns
+    display: none
+/* end media pmin width $lg */
+
+/* Min width $hd */
+@media only screen and (min-width: $hd)
+  .filters-list
+    flex-wrap: nowrap
+    justify-content: space-between
+    margin-left: -4px
+
+  .filter-item
+    margin-left: 4px
+/* end media min width $hd */

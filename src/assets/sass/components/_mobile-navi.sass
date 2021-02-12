@@ -83,17 +83,6 @@
       padding-right: $sides-spacing-md
       margin: 0 $sides-negative-spacing-md
 
-    // .menu-wrapper-fixed
-    //   left: 0
-    //   right: 0
-    //   transform: translateY(-100%)
-    //   background-color: $header-bg-color
-
-    // .menu-close-overlay
-    //   top: 100%
-    //   left: 0
-
-
     // menu top one more version
     .menu-wrapper-fixed
       left: 0
@@ -109,7 +98,6 @@
       height: 100%
       max-height: 100%
       background-color: #fff
-
 
   .menu-wrapper-fixed
     position: fixed
@@ -139,7 +127,8 @@
 
 
   // opened menu
-  .menu_opened
+  .menu_opened .header,
+  .filter_opened .catalog-filters-wrapp
     overflow: hidden
 
     .menu-wrapper-fixed
@@ -151,6 +140,28 @@
       width: 2000px
       background-color: rgba(#000000, .15)
       transition: background-color .2s ease-in .35s
+
+  .filter_opened
+    .catalog-mobile-btns,
+      position: relative
+      z-index: 40
+
+    .bread-crumbs
+      align-items: flex-start
+      position: relative
+      z-index: 40
+    
+    .catalog-filters-wrapp
+      overflow: visible
+
+      .menu-wrapper-fixed
+        padding-top: 175px
+
+    .filter-mobile-close
+      display: block
+
+    .main-aside-col
+      padding-top: 80px
 /* end media max width $m-lg */
 
 
@@ -169,6 +180,15 @@
   ._mobile-menu-right
     .menu-wrapper-fixed
       left: 25%
+
+  .filter_opened
+    .bread-crumbs
+      min-height: 28px
+      margin-bottom: 16px
+
+    .catalog-filters-wrapp
+      .menu-wrapper-fixed
+        padding-top: 140px
 /* end media max width $m-md */
 
 

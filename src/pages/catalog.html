@@ -362,8 +362,411 @@
                   </div>
                 </div>
 
-                <div class="catalog-filters-wrapp">
-                  <span>Фильтры</span>
+                <div class="catalog-filters-wrapp _mobile-menu-top">
+                  <span class="filters-tt hidden-devices">Фильтры</span>
+
+                  <div class="catalog-mobile-btns">
+                    <button class="filter-mobile-close" type="button">
+                      <svg class="icon icon-close">
+                        <use xlink:href="assets/img/sprite.svg#close"></use>
+                      </svg>
+                    </button>
+
+                    <button
+                      class="btn btn_border"
+                      type="button"
+                      data-filter-btn="filter"
+                    >
+                      Фильтры
+                    </button>
+                    <button
+                      class="btn btn_border"
+                      type="button"
+                      data-filter-btn="sort"
+                    >
+                      Сортировать
+                    </button>
+                  </div>
+
+                  <div class="menu-wrapper-fixed">
+                    <div class="menu-open-wrapper">
+                      <div class="filters-list">
+                        <div class="filter-item" data-sort>
+                          <div class="filter-head">Упорядочить по</div>
+
+                          <div class="filter-drop-d">
+                            <ul class="filter-drop-d__select">
+                              <li>По популярности</li>
+                              <li>По возрастанию цены</li>
+                              <li>По убыванию цены</li>
+                              <li>По новинкам</li>
+                              <li>По новым скидкам</li>
+                              <li>По скидкам</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="filter-item" data-filter>
+                          <div class="filter-head _filtered">
+                            По полу: женский
+                            <button class="filter-item-reset" type="button">
+                              <svg class="icon icon-close">
+                                <use
+                                  xlink:href="assets/img/sprite.svg#close"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+
+                          <div class="filter-drop-d">
+                            <ul class="filter-drop-d__select">
+                              <li class="active">Женский</li>
+                              <li>Мужской</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="filter-item" data-filter>
+                          <div class="filter-head">
+                            По бренду
+                            <button class="filter-item-reset" type="button">
+                              <svg class="icon icon-close">
+                                <use
+                                  xlink:href="assets/img/sprite.svg#close"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+
+                          <div class="filter-drop-d">
+                            <ul class="filter-drop-d__checkboxes">
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    brand 1
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    brand 1
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    brand 1
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    brand 1
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    brand 1
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    brand 1
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    brand 1
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    brand 1
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+                            </ul>
+                            <button
+                              class="filter-drop-d-accept btn btn_border btn_sm"
+                              type="button"
+                            >
+                              Применить
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="filter-item" data-filter>
+                          <div class="filter-head">
+                            По размеру
+                            <button class="filter-item-reset" type="button">
+                              <svg class="icon icon-close">
+                                <use
+                                  xlink:href="assets/img/sprite.svg#close"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+
+                          <div class="filter-drop-d">
+                            <ul class="filter-drop-d__checkboxes">
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    42
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    42
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    42
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+                            </ul>
+                            <button
+                              class="filter-drop-d-accept btn btn_border btn_sm"
+                              type="button"
+                            >
+                              Применить
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="filter-item" data-filter>
+                          <div class="filter-head _filtered">
+                            По цвету: 3
+                            <button class="filter-item-reset" type="button">
+                              <svg class="icon icon-close">
+                                <use
+                                  xlink:href="assets/img/sprite.svg#close"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+
+                          <div class="filter-drop-d">
+                            <ul class="filter-drop-d__checkboxes">
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    <div class="color-item _gray"></div>
+                                    Серый
+                                    <input type="checkbox" checked />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    <div class="color-item _white"></div>
+                                    Белый
+                                    <input type="checkbox" checked />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    <div class="color-item _black"></div>
+                                    Черный
+                                    <input type="checkbox" checked />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    <div class="color-item _red"></div>
+                                    Красный
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    <div class="color-item _yellow"></div>
+                                    Желтый
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+                            </ul>
+                            <button
+                              class="filter-drop-d-accept btn btn_border btn_sm"
+                              type="button"
+                            >
+                              Применить
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="filter-item" data-filter>
+                          <div class="filter-head">
+                            По толщине
+                            <button class="filter-item-reset" type="button">
+                              <svg class="icon icon-close">
+                                <use
+                                  xlink:href="assets/img/sprite.svg#close"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+
+                          <div class="filter-drop-d">
+                            <ul class="filter-drop-d__select">
+                              <li>option 1</li>
+                              <li>option 2</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="filter-item" data-filter>
+                          <div class="filter-head">
+                            По типу
+                            <button class="filter-item-reset" type="button">
+                              <svg class="icon icon-close">
+                                <use
+                                  xlink:href="assets/img/sprite.svg#close"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+
+                          <div class="filter-drop-d">
+                            <ul class="filter-drop-d__checkboxes">
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    type 1
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    type 1
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div class="ui-st-checkbox">
+                                  <label>
+                                    type 1
+                                    <input type="checkbox" />
+                                    <span class="fake-control"></span>
+                                  </label>
+                                </div>
+                              </li>
+                            </ul>
+                            <button
+                              class="filter-drop-d-accept btn btn_border btn_sm"
+                              type="button"
+                            >
+                              Применить
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="filter-item" data-filter>
+                          <div class="filter-head">
+                            По молнии
+                            <button class="filter-item-reset" type="button">
+                              <svg class="icon icon-close">
+                                <use
+                                  xlink:href="assets/img/sprite.svg#close"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+
+                          <div class="filter-drop-d">
+                            <ul class="filter-drop-d__select">
+                              <li>option 1</li>
+                              <li>option 2</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="filter-mobile-btn">
+                        <button
+                          class="btn btn_max btn-filter-show"
+                          type="button"
+                        >
+                          Показать
+                        </button>
+                        <button class="btn btn_max btn_border" type="button">
+                          Сбросить
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 

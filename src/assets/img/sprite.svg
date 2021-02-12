@@ -31,7 +31,7 @@
     <path stroke-width="2" d="M12.293 1.55L.979 12.864m11.314 0L.979 1.55"></path>
   </symbol>
   <symbol fill="none" viewBox="0 0 13 13" id="close">
-    <path stroke="#9A9A9A" d="M11.667.354L.354 11.667m12.02 0L1.061.354"></path>
+    <path d="M11.667.354L.354 11.667m12.02 0L1.061.354"></path>
   </symbol>
   <symbol fill="none" viewBox="0 0 32 32" id="envelope-open">
     <path d="M4 12v13a1 1 0 001 1h22a1 1 0 001-1V12L16 4 4 12zm9.818 7l-9.51 6.717m23.384 0L18.182 19" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>

@@ -14,12 +14,19 @@ $(function () {
     document.body.classList.remove('scroll-page-locked')
   }
 
+  var hideMobileFilter = function () {
+    $('body').removeClass('filter_opened')
+    removeDocumentScrollBlocker()
+    $('.catalog-mobile-btns .btn').addClass('btn_border')
+  }
+
   var toggleMobileNavi = function () {
     $('body').toggleClass('menu_opened')
 
     if ($('body').hasClass('menu_opened')) {
       addDocumentScrollBlocker()
       $searchEL.removeClass('_opened')
+      hideMobileFilter()
     } else {
       removeDocumentScrollBlocker()
     }
@@ -30,6 +37,7 @@ $(function () {
 
     if ($searchEL.hasClass('_opened')) {
       $('body').removeClass('menu_opened')
+      hideMobileFilter()
       addDocumentScrollBlocker()
     } else {
       removeDocumentScrollBlocker()
@@ -40,7 +48,7 @@ $(function () {
   $('.burger-menu').on('click', toggleMobileNavi)
   $('.menu-close-overlay').on('click', toggleMobileNavi)
 
-  $('.menu-item__link_dd').on('click', function () {
+  $('.menu').on('click', '.menu-item__link_dd', function () {
     if ($(window).width() < 980) {
       $(this).siblings('.menu-dd').slideToggle()
       $(this).parent().toggleClass('_opened')
@@ -48,17 +56,69 @@ $(function () {
   })
 
   // footer nav open
-  $('.footer-col-head').on('click', function () {
+  $('.footer-nav-wrapp').on('click', '.footer-col-head', function () {
     if ($(window).width() < 980) {
       $(this).siblings('.footer-col-body').slideToggle()
       $(this).parent().toggleClass('_opened')
     }
   })
 
-  $('.dd-list-head').on('click', function () {
+  $('.dd-list-wrapp').on('click', '.dd-list-head', function () {
     $(this).siblings('.dd-list-body').slideToggle()
     $(this).parent().toggleClass('_opened')
   })
+
+  // filter
+  $('.filters-list').on('click', '.filter-head', function () {
+    $(this).siblings('.filter-drop-d').slideToggle()
+    $(this).parent().toggleClass('_opened')
+
+    if ($(window).width() >= 980) {
+      $(this)
+        .parent()
+        .siblings('._opened')
+        .removeClass('_opened')
+        .find('.filter-drop-d')
+        .slideUp()
+    }
+  })
+
+  $('.filter-item-reset').on('click', function (event) {
+    event.stopPropagation()
+  })
+
+  $('.filter-drop-d__select').on('click', 'li:not(.active)', function () {
+    $(this).siblings('li').removeClass('active')
+    $(this).addClass('active')
+  })
+
+  if ($(window).width() >= 980) {
+    $(document).bind('click touchstart', function (e) {
+      var $clicked = $(e.target)
+
+      if (!$clicked.parents().hasClass('filter-item')) {
+        $('.filter-item').removeClass('_opened')
+        $('.filter-drop-d').slideUp()
+      }
+    })
+  }
+
+  $('.catalog-mobile-btns').on('click', '.btn', function () {
+    var dataNameSelector = '[data-' + $(this).data().filterBtn + ']'
+    $(this).removeClass('btn_border').siblings('.btn').addClass('btn_border')
+
+    $('body').addClass('filter_opened')
+    addDocumentScrollBlocker()
+
+    $(window).scrollTop(0)
+
+    $(dataNameSelector)
+      .show()
+      .siblings('.filter-item:not(' + dataNameSelector + ')')
+      .hide()
+  })
+
+  $('.filter-mobile-close, .btn-filter-show').on('click', hideMobileFilter)
 
   // show data password field
   $('.data-pass-btn .btn').on('click', function () {
@@ -69,12 +129,15 @@ $(function () {
   // remove outside classes
   $(document).bind('click touchstart', function (e) {
     var $clicked = $(e.target)
-    if (
-      !$clicked.parents().hasClass('main-search') &&
-      !$clicked.parents().hasClass('main-search-btn')
-    ) {
-      $('.main-search-wrapper').removeClass('_opened')
-      removeDocumentScrollBlocker()
+
+    if ($('.main-search-wrapper').hasClass('_opened')) {
+      if (
+        !$clicked.parents().hasClass('main-search') &&
+        !$clicked.parents().hasClass('main-search-btn')
+      ) {
+        removeDocumentScrollBlocker()
+        $('.main-search-wrapper').removeClass('_opened')
+      }
     }
 
     if (
