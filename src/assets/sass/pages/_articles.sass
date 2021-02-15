@@ -9,10 +9,6 @@
     display: block
     text-decoration: none
 
-    &:hover
-      img
-        transition: transform .2s
-
   &__img
     img
       width: 100%
@@ -27,6 +23,7 @@
   font-size: 14px
   line-height: 17px
   text-transform: uppercase
+  transition: color .2s
 
 /* Min width $md */
 @media only screen and (min-width: $md)
@@ -43,7 +40,11 @@
     a
       &:hover
         img
-          opacity: .9
+          transform: scale(1.1)
+
+        .article-item-tt
+          // color: $colorGold
+          color: $color-h-link
 
     &__img
       position: relative
@@ -58,7 +59,7 @@
         height: 100%
         object-fit: cover
         object-position: 50% 0
-        transition: opacity .5s
+        transition: transform 15s
 
     &__about
       padding: 16px 32px 32px

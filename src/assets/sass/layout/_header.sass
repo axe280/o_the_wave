@@ -26,14 +26,13 @@
     opacity: .95
 
   img
-    width: 100px
     vertical-align: top
 
 .header-min-nav
   display: flex
 
   > li
-    margin-left: 33px
+    margin-left: 23px
 
     &:first-child
       margin-left: 0
@@ -93,13 +92,6 @@
       line-height: 17px
 /* end media min width $md */
 
-/* Max width $m-md */
-@media only screen and (max-width: $m-md)
-  .header-min-nav
-    right: $sides-spacing-xs
-/* end media max width $m-md */
-
-
 /* Max width $m-lg */
 @media only screen and (max-width: $m-lg)
   .header-mob-layer-wrapp
@@ -115,6 +107,12 @@
     top: 0
     z-index: 40
 /* end media max width $m-lg */
+
+/* Max width $m-md */
+@media only screen and (max-width: $m-md)
+  .header-min-nav
+    right: $sides-spacing-xs
+/* end media max width $m-md */
 
 
 /* Min width $lg pixels */
@@ -142,6 +140,7 @@
 
   .logo
     margin-right: 50px
+    margin-top: 0
 
     img
       width: 120px
@@ -162,7 +161,7 @@
 @media only screen and (min-width: $hd)
   .header-min-nav
     li
-      margin-left: 50px
+      margin-left: 36px
 
   .logo
     margin-right: 70px

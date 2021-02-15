@@ -57,14 +57,12 @@
 
 .oimt-no
   margin-bottom: 8px
-  font-weight: 700
   font-size: 18px
   line-height: 22px
   text-transform: uppercase
 
 .oimt-price
   margin-bottom: 8px
-  font-weight: 700
   font-size: 18px
   line-height: 22px
 
@@ -89,7 +87,6 @@
 .order-item-d-tt
   margin-bottom: 16px
   text-transform: uppercase
-  font-weight: 700
 
 .order-item-d-date-del
   margin-bottom: 16px
@@ -208,10 +205,10 @@
   .order-item
     &__main
       flex-direction: row
+      align-items: flex-start
       line-height: 22px
 
     &__details
-      font-size: 18px
       line-height: 18px
 
   .order-item-photos
@@ -220,12 +217,12 @@
     margin-left: 0
     margin-top: -8px
     margin-right: 24px
-    width: 304px
-    height: 204px
+    width: 324px
+    height: 144px
 
     &__item
-      width: 144px
-      height: 196px
+      width: 100px
+      height: 136px
       margin: 8px 8px 0 0
 
   .order-item-m-row
@@ -234,10 +231,15 @@
     justify-content: space-between
     align-items: flex-end
     margin-bottom: 0
+    min-height: 144px
 
     .btn
       width: auto
       margin-bottom: 0
+      line-height: 20px
+      font-size: 18px
+      padding-left: 20px
+      padding-right: 20px
 
   .order-item-m-titles
     display: flex
@@ -263,18 +265,23 @@
 
   .order-item-d-date-del,
   .order-item-d-tt
-    margin-bottom: 32px
+    margin-bottom: 16px
 
   .order-item-m-info
+    margin-bottom: 20px
+
     li
-      margin-bottom: 32px
+      margin-bottom: 16px
 
       b
         width: 344px
 
   .order-item-m-total
-    font-size: 22px
-    line-height: 32px
+    font-size: 18px
+    line-height: 26px
+
+    .h-comp
+      margin-left: 10px
 
   .i-head-order-data-lines
     justify-content: flex-start
@@ -306,29 +313,21 @@
 
     &:hover
       color: $colorDark
+
+  .oimt-status
+    li
+      margin-bottom: 0
 /* end media min width $lg */
 
 /* Min width $xl */
 @media only screen and (min-width: $xl)
-  .order-item__main,
-  .oimt-date
-    font-size: 18px
-
-  .oimt-no,
-  .oimt-price
-    font-size: 20px
+  .order-item-photos
+    width: 432px
 /* end media min width $xl */
 
 /* Min width $hd */
 @media only screen and (min-width: $hd)
-  .order-item-photos
-    width: 456px
-
-  .oimt-price
-    font-size: 22px
-
   .oimt-no
-    font-size: 22px
     width: 38%
 
   .oimt-date, .oimt-price, .oimt-status

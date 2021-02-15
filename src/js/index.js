@@ -23,9 +23,9 @@ $(function () {
     $('body').toggleClass('menu_opened')
 
     if ($('body').hasClass('menu_opened')) {
-      addDocumentScrollBlocker()
       $searchEL.removeClass('_opened')
       hideMobileFilter()
+      addDocumentScrollBlocker()
     } else {
       removeDocumentScrollBlocker()
     }
@@ -438,6 +438,7 @@ $(function () {
     nav: true,
     loop: true,
     dots: false,
+    smartSpeed: 1200,
     navText: [
       '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
       '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
@@ -464,6 +465,7 @@ $(function () {
   $('.insta-carousel').owlCarousel({
     loop: true,
     dots: false,
+    smartSpeed: 1200,
     navText: [
       '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
       '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
@@ -495,6 +497,7 @@ $(function () {
     nav: true,
     loop: true,
     dots: false,
+    smartSpeed: 1200,
     navText: [
       '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
       '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
@@ -523,6 +526,7 @@ $(function () {
       loop: false,
       dots: true,
       items: 1,
+      smartSpeed: 1200,
       nav: true,
       navText: [
         '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',

@@ -166,11 +166,17 @@
     cursor: pointer
 
     &:hover
-      text-decoration: none
+      color: $color-h-link
+
+    &:active
+      color: $color-h-link-active
 
 .card-order-one-click
   display: block
   margin-top: 16px
+
+  &:hover
+    text-decoration: none
 
 /* Min width $md */
 @media only screen and (min-width: $md)

@@ -38,7 +38,7 @@ button
   &:hover
     text-decoration: none
     color: $colorLight
-    background-color: $colorPrimary
+    background-color: rgba($colorPrimary, .9)
 
   &:active
     color: $colorDark
@@ -51,7 +51,8 @@ button
     background-color: transparent
 
     &:hover
-      color: #fff
+      color: rgba(#fff, .55)
+      border-color: rgba(#fff, .55)
 
     &:active
       color: $colorDark
@@ -108,8 +109,8 @@ button
     line-height: 20px
 
     &:hover
-      color: $colorDark
-      background: transparent
+      color: $colorLight
+      background: $colorDark
 
     &:active
       background-color: $colorPrimary
@@ -190,7 +191,10 @@ button
   cursor: pointer
 
   &:hover
-    text-decoration: none
+    color: $color-h-link
+
+  &:active
+    color: $color-h-link-active
 
 
 /* Max width $md */

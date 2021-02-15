@@ -10,6 +10,10 @@
       margin: 0 0 0 10px
 
     a
+      &:hover
+        .icon
+          fill: rgba(#fff, .55)
+
       .icon
         fill: #fff
 
@@ -70,16 +74,23 @@
       text-decoration: none
 
       &:hover
-        text-decoration: underline
+        text-decoration: none
+        color: rgba(#fff, .55)
 
 .footer-subs
   display: flex
   align-items: center
+  flex-wrap: wrap
   justify-content: space-between
   margin-bottom: 4px
 
   .btn
     width: 48.5%
+
+.footer-subs-error
+  display: block
+  color: $colorDanger
+  margin-top: 10px
 
 .footer-subs-field
   width: 48.5%
@@ -124,6 +135,11 @@
 
   span
     display: block
+
+  a
+    &:hover
+      text-decoration: none
+      color: rgba(#fff, .55)
 
 /* Min width $md */
 @media only screen and (min-width: $md)
@@ -191,6 +207,10 @@
       color: #fff
       text-decoration: none
       font-weight: 700
+
+      &:hover
+        text-decoration: none
+        color: rgba(#fff, .55)
 
   .footer-bottom-row
     display: flex

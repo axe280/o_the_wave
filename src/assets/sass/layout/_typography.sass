@@ -7,7 +7,6 @@ body
   font-weight: 300
   font-size: $site-text-size
   line-height: 18px
-  letter-spacing: .1em
   color: $site-text-color
 
 .title-site, h1, h2, h3, h4, h5, h6
@@ -103,6 +102,9 @@ a
     text-decoration: none
     color: $color-h-link
 
+  &:active
+    color: $color-h-link-active
+
 .link-gold
   color: $colorGold
   text-decoration: none
@@ -178,8 +180,8 @@ blockquote
   border: 2px solid $colorUiDisabled
   padding: 22px 35px 30px
   text-align: center
-  font-size: 18px
-  line-height: 22px
+  font-size: 16px
+  line-height: 20px
 
   &::before
     content: ''
@@ -255,23 +257,23 @@ blockquote
   blockquote
     margin-top: 25px
     margin-bottom: 48px
-    padding: 37px 113px 32px
-    font-size: 36px
-    line-height: 46px
+    padding: 35px 80px 32px
+    font-size: 20px
+    line-height: 28px
 
     &::before
       content: ''
       position: absolute
       left: 20px
       top: -28px
-      width: 100px
-      height: 62px
+      width: 80px
+      height: 60px
       z-index: 2
       background-color: #fff
       background-image: url('../img/qw.svg')
       background-repeat: no-repeat
       background-position: 50% 50%
-      background-size: 80px 62px
+      background-size: 60px 42px
 
     b
       font-size: 18px

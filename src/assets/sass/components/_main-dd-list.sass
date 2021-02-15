@@ -5,6 +5,9 @@
   cursor: pointer
   user-select: none
 
+  &:hover
+    color: $color-h-link
+
   &::before,
   &::after
     content: ''
@@ -23,6 +26,10 @@
     right: 8px
     margin-top: -9px
     transition: transform .2s
+
+  a
+    &:hover
+      color: $color-h-link
 
 
 .dd-list-item._opened
@@ -92,7 +99,7 @@
     text-decoration: none
 
     &:hover
-      text-decoration: underline
+      text-decoration: none
 
 .v-aside
   font-weight: 400

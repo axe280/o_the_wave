@@ -31,6 +31,9 @@
   a
     text-decoration: none
 
+.menu-dd-banner
+  display: none
+
 /* Min width $md */
 @media only screen and (min-width: $md)
   .bread-crumbs
@@ -118,6 +121,9 @@
     text-transform: uppercase
     text-decoration: none
 
+    &:hover
+      text-decoration: none
+
     &_dd
       position: relative
 
@@ -165,7 +171,10 @@
     text-decoration: none
 
     &:hover
-      text-decoration: underline
+      text-decoration: none
+
+    &.text_danger
+      color: $colorDanger
 
 .menu-item._opened
   .menu-item__link_dd
@@ -186,7 +195,7 @@
     position: relative
     font-size: 14px
     line-height: 17px
-    padding-right: 36px
+    margin-right: 36px
     border: none
 
     &::before
@@ -205,16 +214,16 @@
         width: 100%
 
       .menu-dd
-        z-index: 100
         transform: translateY(0)
 
     &__link
       padding: 0
-      line-height: 50px
+      line-height: 40px
       color: #fff
 
       &:hover
         color: #fff
+        color: rgba(#fff, .75)
 
       &_dd
         &::before,
@@ -224,23 +233,27 @@
   /* - Drop down main menu -------- */
   .menu-dd
     display: flex
-    justify-content: flex-end
     position: fixed
     z-index: -1
-    transform: translateX(-100%)
+    transform: translateY(-100%)
     left: 0
-    top: 50px
-    padding: 72px 16px 42px 100px
+    top: $header-height-xs
+    padding: 72px 30px 42px
     max-width: 100%
     min-width: 62%
-    height: calc(100% - 50px)
+    width: 100%
+    max-height: calc(100% - 40px)
     background-color: rgba(#333333, .95)
     transition: transform .5s ease-in-out
 
     &__inner
+      padding-right: 300px
       max-height: 470px
       display: flex
       overflow: auto
+      max-width: 1400px
+      margin: 0 auto
+      width: 100%
 
     ul
       width: 224px
@@ -254,6 +267,44 @@
 
     a
       color: #fff
+
+      &:hover
+        color: rgba(#fff, .75)
+
+  .menu-dd-banner
+    position: absolute
+    right: 0
+    top: 0
+    z-index: 3
+    display: block
+    width: 300px
+    height: 100%
+    overflow: hidden
+
+    img
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      object-fit: cover
+      object-position: 50% 50%
   /* end media min width $lg pixels */
+
+/* Min width $xl */
+@media only screen and (min-width: $xl)
+  .menu-dd
+    &__inner
+      padding-right: 480px
+
+  .menu-dd-banner
+    width: 480px
+/* end media min width $xl */
+
+/* Min width $hd */
+@media only screen and (min-width: $hd)
+  .menu-dd__inner
+    justify-content: flex-end
+/* end media min width $hd */
 
 /* ----- END Navigation ---------------- */
