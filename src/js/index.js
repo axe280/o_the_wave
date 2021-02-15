@@ -4,6 +4,11 @@ $(function () {
   //for ie 11
   svg4everybody()
 
+  // image card zoom
+  $('.img-zoom').each(function () {
+    $(this).imageZoom()
+  })
+
   // page scroll blocker
   var addDocumentScrollBlocker = function () {
     document.body.classList.add('scroll-page-locked')
@@ -521,8 +526,11 @@ $(function () {
     },
   })
 
-  if ($(window).width() < 980) {
-    $('.card-bl-photos').owlCarousel({
+  // init resize carousel
+  var $mobileCarouselCard = null
+
+  var initHtsCarousel = function () {
+    $mobileCarouselCard = $('.card-bl-photos').owlCarousel({
       loop: false,
       dots: true,
       items: 1,
@@ -534,6 +542,21 @@ $(function () {
       ],
     })
   }
+
+  var initCarouselResizeHandler = function () {
+    if (
+      $mobileCarouselCard &&
+      $mobileCarouselCard.length &&
+      $(window).width() >= 980
+    ) {
+      $mobileCarouselCard.trigger('destroy.owl.carousel')
+    } else if ($(window).width() < 980) {
+      initHtsCarousel()
+    }
+  }
+
+  initCarouselResizeHandler()
+  $(window).on('resize', initCarouselResizeHandler)
 
   // sticky col
   ;(function () {
