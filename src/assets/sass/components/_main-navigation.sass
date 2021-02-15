@@ -4,11 +4,12 @@
   display: flex
   align-items: center
   justify-content: center
+  flex-wrap: wrap
   margin-bottom: 30px
 
   li
     position: relative
-    padding: 0 20px
+    padding: 0 16px
     font-size: 10px
     line-height: 14px
 
@@ -114,7 +115,6 @@
   &__link
     display: block
     padding: 16px 30px 16px 0
-    font-weight: 700
     text-transform: uppercase
     text-decoration: none
 
@@ -175,6 +175,9 @@
 
 /* Min width $lg pixels */
 @media only screen and (min-width: $lg)
+  .bread-crumbs
+    text-transform: uppercase
+
   /* - Drop down main menu -------- */
   .menu
     display: flex

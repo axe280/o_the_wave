@@ -3,7 +3,6 @@ import $ from 'jquery'
 $(function () {
   //for ie 11
   svg4everybody()
-  // picturefill();
 
   // page scroll blocker
   var addDocumentScrollBlocker = function () {
@@ -63,9 +62,29 @@ $(function () {
     }
   })
 
-  $('.dd-list-wrapp').on('click', '.dd-list-head', function () {
+  // drop down plus list
+  $('.dd-list-wrapp').on('click', '.dd-list-head', function (e) {
+    var $target = $(e.target)
+    if ($target.is('a')) return
+
     $(this).siblings('.dd-list-body').slideToggle()
     $(this).parent().toggleClass('_opened')
+  })
+
+  // like btn
+  $('.st-prod-card__like').on('click touchstart', function () {
+    if ($(this).is('._active')) {
+      $(this).removeClass('_active')
+    } else {
+      $(this).toggleClass('_like_animating')
+      $(this).addClass('_active')
+    }
+
+    return false
+  })
+
+  $('.st-prod-card__like').on('animationend', function () {
+    $(this).removeClass('_like_animating')
   })
 
   // filter
@@ -140,11 +159,42 @@ $(function () {
       }
     }
 
-    if (
-      !$clicked.parents().hasClass('st-modal-cart') &&
-      !$clicked.parents().hasClass('show-cart-btn')
-    ) {
-      $('.st-modal-cart').removeClass('_opened')
+    // if (
+    //   !$clicked.parents().hasClass('st-modal-cart') &&
+    //   !$clicked.parents().hasClass('show-cart-btn')
+    // ) {
+    //   $('.st-modal-cart').removeClass('_opened')
+    // }
+  })
+
+  // card page
+  var checkOrderSize = function () {
+    return $('.card-sizes-btns input').is(':checked')
+  }
+
+  var showOrderSizeError = function () {
+    $('.card-sizes-wrapp').addClass('_check-size')
+  }
+
+  var hideOrderSizeError = function () {
+    $('.card-sizes-wrapp').removeClass('_check-size')
+  }
+
+  // chose size
+  $('.fake-radio-size').on('click', hideOrderSizeError)
+
+  // btn order one click
+  $('.btn-order-click').on('click', function () {
+    if (checkOrderSize()) {
+      $.magnificPopup.open(
+        $.extend(magnificOptions, {
+          items: {
+            src: orderNow,
+          },
+        })
+      )
+    } else {
+      showOrderSizeError()
     }
   })
 
@@ -232,7 +282,7 @@ $(function () {
   })
 
   // plus/minus value
-  $('.minus-input').click(function () {
+  $('.minus-input').on('click', function () {
     var $input = $(this).parent().find('input')
     var count = parseInt($input.val()) - 1
     count = count < 1 ? 1 : count
@@ -241,7 +291,7 @@ $(function () {
     return false
   })
 
-  $('.plus-input').click(function () {
+  $('.plus-input').on('click', function () {
     var $input = $(this).parent().find('input')
     $input.val(parseInt($input.val()) + 1)
     $input.change()
@@ -267,21 +317,11 @@ $(function () {
       },
     },
   }
+
   $('.open-popup-link').magnificPopup(magnificOptions)
 
   // cart modal
   var isCartEmpty = false
-  $('.show-cart-btn').on('click', function () {
-    if (isCartEmpty) {
-      showModal('#modalEmptyCart')
-    } else {
-      showModal('#modalCart')
-    }
-  })
-
-  $('.st-modal-cart .mfp-close').on('click', function () {
-    $(this).parent().removeClass('_opened')
-  })
 
   var showModal = function (modalSrc) {
     if ($(window).width() < 980) {
@@ -297,56 +337,89 @@ $(function () {
     }
   }
 
-  // $('.magnific-gallery').magnificPopup({
-  //   delegate: 'button',
-  //   type: 'image',
-  //   midClick: true,
-  //   cursor: null,
-  //   gallery: {
-  //     enabled: true,
-  //     arrowMarkup:
-  //       '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"><svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg></button>',
-  //     tCounter: '<span class="mfp-counter">%curr% / %total%</span>',
-  //   },
-  //   mainClass: 'mfp-zoom',
-  //   removalDelay: 300,
-  //   callbacks: {
-  //     open: function () {
-  //       addDocumentScrollBlocker()
-  //       $('.mfp-close').html(
-  //         '<svg class="icon icon-close"><use xlink:href="assets/img/sprite.svg#close"></use></svg>'
-  //       )
-  //     },
-  //     close: function () {
-  //       removeDocumentScrollBlocker()
-  //     },
-  //   },
-  // })
+  var hideDesktopModalCart = function () {
+    $('#modalCart').removeClass('_opened')
+  }
 
-  // owl carousel
-  // $('.owl-carousel').owlCarousel({
-  //   margin: 10,
-  //   nav: true,
-  //   navText: [
-  //     '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
-  //     '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
-  //   ],
-  //   responsive: {
-  //     0: {
-  //       items: 1,
-  //     },
-  //     640: {
-  //       items: 2,
-  //     },
-  //     740: {
-  //       items: 3,
-  //     },
-  //     1000: {
-  //       items: 5,
-  //     },
-  //   },
-  // })
+  $('.show-cart-btn').on('click', function () {
+    if (isCartEmpty) {
+      showModal('#modalEmptyCart')
+    } else {
+      showModal('#modalCart')
+    }
+  })
 
+  $('.st-modal-cart .mfp-close').on('click', function () {
+    $(this).parent().removeClass('_opened')
+  })
+
+  $('.add-to-cart-btn').on('click', function () {
+    if (checkOrderSize()) {
+      // add to cart
+      var defaultText = $(this).text().trim()
+      $(this).addClass('_added').text('Товар добавлен')
+
+      if ($(window).width() >= 980) {
+        showModal('#modalCart')
+      }
+
+      setTimeout(() => {
+        $(this).removeClass('_added').text(defaultText)
+        hideDesktopModalCart()
+      }, 2000)
+    } else {
+      showOrderSizeError()
+    }
+  })
+
+  // cart page
+  $('.del-btns').on('click', 'button', function () {
+    $.magnificPopup.close()
+  })
+
+  // cart sticky line
+  var cartOrderLineFixed = function () {
+    var topPos = $(window).scrollTop() + $(window).height()
+    var targetPos =
+      $targetCartSticky.position().top + $targetCartSticky.innerHeight()
+    if (topPos > targetPos) {
+      $targetCartSticky.addClass('_stop')
+    } else {
+      $targetCartSticky.removeClass('_stop')
+    }
+  }
+
+  var $targetCartSticky = $('.cart-sticky-order-wrapp')
+  if ($targetCartSticky.length) {
+    cartOrderLineFixed()
+    $(window).on('scroll', cartOrderLineFixed)
+  }
+
+  // show order form
+  $('.cart-sticky-order__btn .btn').on('click', function () {
+    $('.order-form-wrapp').slideDown()
+    $(window).off('scroll', cartOrderLineFixed)
+  })
+
+  // subs modal
+  $('.subs-form').on('submit', function (e) {
+    e.preventDefault()
+
+    // send ajax
+    // if success show modal
+    $.magnificPopup.open(
+      $.extend(magnificOptions, {
+        items: {
+          src: subsComplete,
+        },
+      })
+    )
+
+    // if success hide block
+    $(this).parent().fadeOut()
+  })
+
+  // carousels
   $('.main-carousel').owlCarousel({
     items: 1,
     autoplay: true,
@@ -457,4 +530,81 @@ $(function () {
       ],
     })
   }
+
+  // sticky col
+  ;(function () {
+    // elements
+    var $targetEl = $('[data-sticky]')
+    var $targetWrapp = $targetEl.parent()
+    var $stickyEl = null
+    var $destinationEl = $('[data-sticky-stop]')
+
+    // if elements doesn't on page
+    if (!$targetEl.length || !$destinationEl.length) {
+      return
+    }
+
+    if ($stickyEl === null) {
+      $stickyEl = $('<div class="sticky-wrapp"></div>')
+      $stickyEl.css('width', $targetEl.css('width'))
+      $targetEl.wrap($stickyEl)
+    }
+
+    $stickyEl = $targetWrapp.find('.sticky-wrapp')
+
+    // positions
+    var resizeTimer,
+      offsetWrappTopPos,
+      destinationBottomPos,
+      stickyElHeight,
+      stickyTopPosition
+
+    // events
+    $(window).scroll(stickyHandler)
+
+    $(window).resize(function () {
+      $stickyEl.css('width', $targetWrapp.css('width'))
+
+      clearTimeout(resizeTimer)
+      resizeTimer = setTimeout(function () {
+        if ($(window).width() >= 980) {
+          calculatePositions()
+          stickyHandler()
+        }
+      }, 300)
+    })
+
+    // init
+    $(window).trigger('resize')
+
+    // calc positions
+    function calculatePositions() {
+      offsetWrappTopPos = $targetWrapp.offset().top
+      destinationBottomPos =
+        $destinationEl.offset().top + parseInt($destinationEl.css('height'))
+      stickyElHeight = parseInt($stickyEl.outerHeight())
+      stickyTopPosition =
+        destinationBottomPos - offsetWrappTopPos - stickyElHeight
+    }
+
+    function stickyHandler() {
+      var targetScrollElTop = offsetWrappTopPos - $(window).scrollTop()
+      var targetScrollElBottom =
+        destinationBottomPos - $(window).scrollTop() - stickyElHeight
+
+      if (targetScrollElTop <= 0) {
+        $stickyEl.addClass('sticky')
+      } else {
+        $stickyEl.removeClass('sticky')
+      }
+
+      if (targetScrollElBottom <= 0) {
+        $stickyEl.addClass('stop')
+        $stickyEl.css('top', stickyTopPosition)
+      } else {
+        $stickyEl.removeClass('stop')
+        $stickyEl.css('top', '')
+      }
+    }
+  })()
 })

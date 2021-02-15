@@ -60,6 +60,16 @@
       </div>
     </div>
 
+    <div id="subsComplete" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="title-site title-site_h1">Подписка успешно оформлена!</div>
+      </div>
+
+      <div class="st-modal__body">
+        <p>Благодарим за интерес к нашему Интернет-магазину.</p>
+      </div>
+    </div>
+
     <!-- site main wrapper -->
     <div class="site-wrapper">
       <!-- header -->
@@ -690,11 +700,13 @@
                 Секретные распродажи, уникальные акции и интересные статьи
                 только для подписчиков рассылки
               </p>
-              <form action="#">
+              <form action="#" class="subs-form">
                 <input type="text" placeholder="Введите свой e-mail" />
+                <span class="subs-form-error">Email введен неправильно</span>
                 <button
-                  class="btn btn_border btn_max-mobile btn_min-width"
+                  class="btn btn_border btn_max-mobile btn_min-width btn-subs"
                   type="submit"
+                  data-mfp-src="#subsComplete"
                 >
                   Кнопка
                 </button>

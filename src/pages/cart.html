@@ -14,6 +14,51 @@
   </head>
 
   <body>
+    <div id="modalSignIn" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="title-site title-site_h1">Вход</div>
+      </div>
+
+      <div class="st-modal__body">
+        <form class="st-form" action="#">
+          <div class="form-group">
+            <label class="field-item">
+              <div class="field-item__field">
+                <input type="text" placeholder="Email или телефон" />
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="field-item">
+              <div class="field-item__field">
+                <input type="password" placeholder="Пароль" />
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group-f-line">
+            <div class="ui-st-checkbox">
+              <label>
+                Запомнить меня
+                <input type="checkbox" checked />
+                <span class="fake-control"></span>
+              </label>
+            </div>
+
+            <a href="#" class="link-light">Забыли пароль?</a>
+          </div>
+
+          <div class="modal-btns-group">
+            <button class="btn btn_max" type="submit">Войти</button>
+            <button class="btn btn_max btn_border" type="submit">
+              Зарегистрироваться
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <div id="modalPromocode" class="st-modal mfp-hide">
       <div class="st-modal__body">
         <div class="modal-promocode-bl">
@@ -40,6 +85,18 @@
             скидку. Участие в программе лояльности также позволит Вам
             участвовать во всех наших акциях и специальных мероприятиях.
           </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="delProd" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="del-btns-t">Удалить товар?</div>
+      </div>
+      <div class="st-modal__body">
+        <div class="del-btns">
+          <button class="btn btn_border" type="button">Да</button>
+          <button class="btn" type="button">Нет</button>
         </div>
       </div>
     </div>
@@ -347,13 +404,17 @@
                     </div>
                     <div class="cart-col-total">8 998 руб.</div>
                     <div class="cart-col-close">
-                      <a href="#">
+                      <button
+                        type="button"
+                        data-mfp-src="#delProd"
+                        class="open-popup-link"
+                      >
                         <svg class="icon icon-close-wide">
                           <use
                             xlink:href="assets/img/sprite.svg#close-wide"
                           ></use>
                         </svg>
-                      </a>
+                      </button>
                     </div>
                   </div>
 
@@ -382,13 +443,17 @@
                     </div>
                     <div class="cart-col-total">8 998 руб.</div>
                     <div class="cart-col-close">
-                      <a href="#">
+                      <button
+                        type="button"
+                        data-mfp-src="#delProd"
+                        class="open-popup-link"
+                      >
                         <svg class="icon icon-close-wide">
                           <use
                             xlink:href="assets/img/sprite.svg#close-wide"
                           ></use>
                         </svg>
-                      </a>
+                      </button>
                     </div>
                   </div>
 
@@ -417,13 +482,17 @@
                     </div>
                     <div class="cart-col-total">8 998 руб.</div>
                     <div class="cart-col-close">
-                      <a href="#">
+                      <button
+                        type="button"
+                        data-mfp-src="#delProd"
+                        class="open-popup-link"
+                      >
                         <svg class="icon icon-close-wide">
                           <use
                             xlink:href="assets/img/sprite.svg#close-wide"
                           ></use>
                         </svg>
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -432,6 +501,10 @@
                   <div class="cart-sticky-order">
                     <div class="container">
                       <div class="cart-order-promo">
+                        <span class="promo-error"
+                          >Условия акции не выполнены. Ни один промокод не
+                          попадает под условия акции</span
+                        >
                         <div class="field-item">
                           <div class="field-item__field">
                             <input type="text" placeholder="Введите промокод" />
@@ -488,7 +561,11 @@
                       Если у вас нет аккаунта, мы создадим его автоматически в
                       ходе оформления заказа.
                     </p>
-                    <button type="button" class="btn btn_min-width-sm">
+                    <button
+                      type="button"
+                      data-mfp-src="#modalSignIn"
+                      class="btn btn_min-width-sm open-popup-link"
+                    >
                       Войти
                     </button>
                   </div>

@@ -1,6 +1,8 @@
-/* Max width $lg */
-@media only screen and (max-width: $lg)
+/* Min width $lg */
+@media only screen and (min-width: $lg)
   .sticky-wrapp
+    padding-top: 60px
+
     &.sticky
       position: fixed
       z-index: 10
@@ -8,4 +10,8 @@
 
     &.stop
       position: relative
-/* end media max width $lg */
+
+  .spec-offer-head-page
+    .sticky-wrapp
+      padding-top: 90px
+/* end media min width $lg */

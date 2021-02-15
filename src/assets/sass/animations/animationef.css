@@ -40,3 +40,16 @@
 .fadeOut {
   animation-name: fadeOut;
 }
+
+._like_animating::before {
+  animation: heart-burst 0.8s steps(28) 1;
+}
+
+@keyframes heart-burst {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}

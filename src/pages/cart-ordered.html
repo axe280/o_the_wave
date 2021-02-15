@@ -14,6 +14,18 @@
   </head>
 
   <body>
+    <div id="delProd" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="del-btns-t">Удалить товар?</div>
+      </div>
+      <div class="st-modal__body">
+        <div class="del-btns">
+          <button class="btn btn_border" type="button">Да</button>
+          <button class="btn" type="button">Нет</button>
+        </div>
+      </div>
+    </div>
+
     <!-- site main wrapper -->
     <div class="site-wrapper">
       <!-- header -->
@@ -319,13 +331,17 @@
                     </div>
                     <div class="cart-col-total">8 998 руб.</div>
                     <div class="cart-col-close">
-                      <a href="#">
+                      <button
+                        type="button"
+                        data-mfp-src="#delProd"
+                        class="open-popup-link"
+                      >
                         <svg class="icon icon-close-wide">
                           <use
                             xlink:href="assets/img/sprite.svg#close-wide"
                           ></use>
                         </svg>
-                      </a>
+                      </button>
                     </div>
                   </div>
 
@@ -354,13 +370,17 @@
                     </div>
                     <div class="cart-col-total">8 998 руб.</div>
                     <div class="cart-col-close">
-                      <a href="#">
+                      <button
+                        type="button"
+                        data-mfp-src="#delProd"
+                        class="open-popup-link"
+                      >
                         <svg class="icon icon-close-wide">
                           <use
                             xlink:href="assets/img/sprite.svg#close-wide"
                           ></use>
                         </svg>
-                      </a>
+                      </button>
                     </div>
                   </div>
 
@@ -389,13 +409,17 @@
                     </div>
                     <div class="cart-col-total">8 998 руб.</div>
                     <div class="cart-col-close">
-                      <a href="#">
+                      <button
+                        type="button"
+                        data-mfp-src="#delProd"
+                        class="open-popup-link"
+                      >
                         <svg class="icon icon-close-wide">
                           <use
                             xlink:href="assets/img/sprite.svg#close-wide"
                           ></use>
                         </svg>
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>

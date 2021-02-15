@@ -100,6 +100,24 @@
     display: block
     margin-bottom: 8px
 
+.del-btns-t
+  text-align: center
+  font-size: 14px
+  line-height: 17px
+
+.del-btns
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+  .btn
+    width: 50%
+    border-radius: 0 2px 2px 0
+
+  .btn_border
+    border-radius: 2px 0 0 2px
+
+
 /* Min width $lg */
 @media only screen and (min-width: $lg)
   .st-modal
@@ -161,4 +179,14 @@
   .modal-cart-prod
     max-height: 300px
     overflow: auto
+
+  #subsComplete
+    .st-modal
+      &__head
+        padding-right: 20px
+        margin-bottom: 22px
+
+      &__body
+        p
+          line-height: 20px
 /* end media min width $lg */
