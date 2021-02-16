@@ -525,17 +525,44 @@
                 <div class="card-bl-photos-wrap">
                   <div class="card-bl-photos owl-carousel">
                     <div class="card-bl-photo">
-                      <img src="assets/img/prod@2x.jpg" alt="" />
+                      <img
+                        src="assets/img/prod@2x.jpg"
+                        class="img-zoom"
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-bl-photo">
+                      <video loop="loop" autoplay="true" muted="true">
+                        <source src="assets/img/video.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                    <div class="card-bl-photo">
+                      <img
+                        src="assets/img/prod@2x.jpg"
+                        alt=""
+                        class="img-zoom"
+                      />
+                    </div>
+                    <div class="card-bl-photo">
+                      <img
+                        src="assets/img/prod@2x.jpg"
+                        alt=""
+                        class="img-zoom"
+                      />
                     </div>
                   </div>
                 </div>
 
                 <div class="card-bl-info">
                   <div class="card-bl-info__head">
-                    <div class="card-brand-name">Trailhead</div>
-                    <div class="card-name">Футболка</div>
+                    <div class="card-brand-name"><a href="#">Trailhead</a></div>
+                    <div class="card-name">
+                      Гидрокостюм MYSTIC STAR FULLSUIT 5/3MM BZIP
+                    </div>
                     <div class="card-art">Арт. MTS-ZHIGU1028-WT20</div>
-                    <div class="card-price">2 799 руб.</div>
+                    <div class="card-price">
+                      <del>0 000 руб.</del> 2 799 руб.
+                    </div>
                     <div class="card-colors">
                       <div class="card-colors__tt">Цвета</div>
                       <div class="card-colors-btns">
@@ -566,26 +593,28 @@
 
                   <div class="card-order-section">
                     <div class="card-sizes-wrapp">
-                      <div class="dd-list-item">
-                        <div class="dd-list-head">Выберите размер</div>
-                        <div class="dd-list-body">
-                          <div class="card-sizes-btns">
-                            <label class="card-size-btn">
-                              <input type="radio" name="ziseBtn" checked />
-                              <span class="fake-radio-size">S</span>
-                            </label>
-                            <label class="card-size-btn">
-                              <input type="radio" name="ziseBtn" />
-                              <span class="fake-radio-size">L</span>
-                            </label>
-                            <label class="card-size-btn">
-                              <input type="radio" name="ziseBtn" />
-                              <span class="fake-radio-size">M</span>
-                            </label>
-                            <label class="card-size-btn">
-                              <input type="radio" name="ziseBtn" />
-                              <span class="fake-radio-size">42/44</span>
-                            </label>
+                      <div class="dd-list-wrapp">
+                        <div class="dd-list-item">
+                          <div class="dd-list-head">Выберите размер</div>
+                          <div class="dd-list-body">
+                            <div class="card-sizes-btns">
+                              <label class="card-size-btn">
+                                <input type="radio" name="ziseBtn" />
+                                <span class="fake-radio-size">S</span>
+                              </label>
+                              <label class="card-size-btn">
+                                <input type="radio" name="ziseBtn" />
+                                <span class="fake-radio-size">L</span>
+                              </label>
+                              <label class="card-size-btn">
+                                <input type="radio" name="ziseBtn" />
+                                <span class="fake-radio-size">M</span>
+                              </label>
+                              <label class="card-size-btn">
+                                <input type="radio" name="ziseBtn" />
+                                <span class="fake-radio-size">42/44</span>
+                              </label>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -599,20 +628,6 @@
                     </div>
 
                     <div class="card-order-btns">
-                      <div class="co-btns-row">
-                        <button class="btn" type="button">
-                          Добавить в корзину
-                        </button>
-                        <button
-                          class="btn btn_icon like-btn _active"
-                          type="button"
-                        >
-                          <svg class="icon icon-heart">
-                            <use xlink:href="assets/img/sprite.svg#heart"></use>
-                          </svg>
-                        </button>
-                      </div>
-
                       <div class="co-btns-row">
                         <button class="btn" disabled type="button">
                           Нет в наличии
@@ -628,21 +643,13 @@
                         </button>
                       </div>
 
-                      <button
-                        data-mfp-src="#orderNow"
-                        class="btn btn_border btn_max open-popup-link"
-                        type="button"
-                      >
-                        Заказ в 1 клик
-                      </button>
-
                       <span class="card-order-one-click">
                         <a href="#">Подписаться на поступление товара</a>
                       </span>
                     </div>
                   </div>
 
-                  <div class="card-bl-status">В наличии</div>
+                  <div class="card-bl-status">Нет в наличии</div>
 
                   <div class="dd-list-wrapp">
                     <div class="dd-list-item">
@@ -717,17 +724,147 @@
                       </div>
                     </div>
                   </div>
-
-                  <div class="card-cheaper">
-                    <button
-                      type="button"
-                      data-mfp-src="#modalCheaper"
-                      class="open-popup-link"
-                    >
-                      Хочу дешевле!
-                    </button>
-                  </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="st-spacing-block text_center">
+            <div class="title-thin">просмотренные товары</div>
+            <div class="owl-carousel st-prod-carousel">
+              <div class="st-prod-card">
+                <a href="" class="st-prod-card__link">
+                  <div class="st-prod-card__img">
+                    <img srcset="assets/img/prod.jpg" alt="" />
+                  </div>
+                  <div class="st-prod-card__name">Футболка Trailhead</div>
+                  <div class="st-prod-card__price">
+                    <del>0 000 руб.</del>
+                    0 000 руб.
+                  </div>
+                </a>
+              </div>
+
+              <div class="st-prod-card">
+                <a href="" class="st-prod-card__link">
+                  <div class="st-prod-card__img">
+                    <img srcset="assets/img/prod.jpg" alt="" />
+                  </div>
+                  <div class="st-prod-card__name">Футболка Trailhead</div>
+                  <div class="st-prod-card__price">
+                    <del>0 000 руб.</del>
+                    0 000 руб.
+                  </div>
+                </a>
+              </div>
+
+              <div class="st-prod-card">
+                <a href="" class="st-prod-card__link">
+                  <div class="st-prod-card__img">
+                    <img srcset="assets/img/prod.jpg" alt="" />
+                  </div>
+                  <div class="st-prod-card__name">Футболка Trailhead</div>
+                  <div class="st-prod-card__price">
+                    <del>0 000 руб.</del>
+                    0 000 руб.
+                  </div>
+                </a>
+              </div>
+
+              <div class="st-prod-card">
+                <a href="" class="st-prod-card__link">
+                  <div class="st-prod-card__img">
+                    <img srcset="assets/img/prod.jpg" alt="" />
+                  </div>
+                  <div class="st-prod-card__name">Футболка Trailhead</div>
+                  <div class="st-prod-card__price">
+                    <del>0 000 руб.</del>
+                    0 000 руб.
+                  </div>
+                </a>
+              </div>
+
+              <div class="st-prod-card">
+                <a href="" class="st-prod-card__link">
+                  <div class="st-prod-card__img">
+                    <img srcset="assets/img/prod.jpg" alt="" />
+                  </div>
+                  <div class="st-prod-card__name">Футболка Trailhead</div>
+                  <div class="st-prod-card__price">
+                    <del>0 000 руб.</del>
+                    0 000 руб.
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="st-spacing-block text_center">
+            <div class="title-thin">Похожие товары</div>
+            <div class="owl-carousel st-prod-carousel">
+              <div class="st-prod-card">
+                <a href="" class="st-prod-card__link">
+                  <div class="st-prod-card__img">
+                    <img srcset="assets/img/prod.jpg" alt="" />
+                  </div>
+                  <div class="st-prod-card__name">Футболка Trailhead</div>
+                  <div class="st-prod-card__price">
+                    <del>0 000 руб.</del>
+                    0 000 руб.
+                  </div>
+                </a>
+              </div>
+
+              <div class="st-prod-card">
+                <a href="" class="st-prod-card__link">
+                  <div class="st-prod-card__img">
+                    <img srcset="assets/img/prod.jpg" alt="" />
+                  </div>
+                  <div class="st-prod-card__name">Футболка Trailhead</div>
+                  <div class="st-prod-card__price">
+                    <del>0 000 руб.</del>
+                    0 000 руб.
+                  </div>
+                </a>
+              </div>
+
+              <div class="st-prod-card">
+                <a href="" class="st-prod-card__link">
+                  <div class="st-prod-card__img">
+                    <img srcset="assets/img/prod.jpg" alt="" />
+                  </div>
+                  <div class="st-prod-card__name">Футболка Trailhead</div>
+                  <div class="st-prod-card__price">
+                    <del>0 000 руб.</del>
+                    0 000 руб.
+                  </div>
+                </a>
+              </div>
+
+              <div class="st-prod-card">
+                <a href="" class="st-prod-card__link">
+                  <div class="st-prod-card__img">
+                    <img srcset="assets/img/prod.jpg" alt="" />
+                  </div>
+                  <div class="st-prod-card__name">Футболка Trailhead</div>
+                  <div class="st-prod-card__price">
+                    <del>0 000 руб.</del>
+                    0 000 руб.
+                  </div>
+                </a>
+              </div>
+
+              <div class="st-prod-card">
+                <a href="" class="st-prod-card__link">
+                  <div class="st-prod-card__img">
+                    <img srcset="assets/img/prod.jpg" alt="" />
+                  </div>
+                  <div class="st-prod-card__name">Футболка Trailhead</div>
+                  <div class="st-prod-card__price">
+                    <del>0 000 руб.</del>
+                    0 000 руб.
+                  </div>
+                </a>
               </div>
             </div>
           </div>

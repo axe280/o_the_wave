@@ -364,14 +364,9 @@ $(function () {
       var defaultText = $(this).text().trim()
       $(this).addClass('_added').text('Товар добавлен')
 
-      if ($(window).width() >= 980) {
-        showModal('#modalCart')
-      }
-
       setTimeout(() => {
         $(this).removeClass('_added').text(defaultText)
-        hideDesktopModalCart()
-      }, 2000)
+      }, 8000)
     } else {
       showOrderSizeError()
     }
@@ -404,6 +399,13 @@ $(function () {
   $('.cart-sticky-order__btn .btn').on('click', function () {
     $('.order-form-wrapp').slideDown()
     $(window).off('scroll', cartOrderLineFixed)
+    $targetCartSticky.addClass('_stop')
+
+    var destination = $('.order-form-wrapp').offset().top - 60
+    jQuery('html:not(:animated),body:not(:animated)').animate(
+      { scrollTop: destination },
+      800
+    )
   })
 
   // subs modal
@@ -579,6 +581,19 @@ $(function () {
 
     $stickyEl = $targetWrapp.find('.sticky-wrapp')
 
+    $targetEl.off('click')
+    $targetEl.on('click', '.dd-list-head', function (e) {
+      var $target = $(e.target)
+      if ($target.is('a')) return
+
+      $(this)
+        .siblings('.dd-list-body')
+        .slideToggle(300, function () {
+          stickyHandler()
+        })
+      $(this).parent().toggleClass('_opened')
+    })
+
     // positions
     var resizeTimer,
       offsetWrappTopPos,
@@ -595,7 +610,6 @@ $(function () {
       clearTimeout(resizeTimer)
       resizeTimer = setTimeout(function () {
         if ($(window).width() >= 980) {
-          calculatePositions()
           stickyHandler()
         }
       }, 300)
@@ -615,6 +629,8 @@ $(function () {
     }
 
     function stickyHandler() {
+      calculatePositions()
+
       var targetScrollElTop = offsetWrappTopPos - $(window).scrollTop()
       var targetScrollElBottom =
         destinationBottomPos - $(window).scrollTop() - stickyElHeight

@@ -38,6 +38,7 @@
       margin-left: 0
 
 .h-nav-icon
+  position: relative
   display: flex
   align-items: center
   color: $colorLight
@@ -59,18 +60,15 @@
   span
     display: none
 
-  .cart-val
+  .count-val
     display: flex
 
-.show-cart-btn
-  position: relative
-
-.cart-val
+.count-val
   position: absolute
   display: flex
   align-items: center
   justify-content: center
-  left: -8px
+  left: -12px
   top: -8px
   min-width: 16px
   height: 16px
@@ -155,6 +153,9 @@
   .logo
     img
       width: 150px
+
+  .count-val
+    left: -10px
 /* end media min width $xl */
 
 /* Min width $hd */

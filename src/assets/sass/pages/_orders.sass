@@ -25,8 +25,9 @@
   flex-wrap: wrap
   order: 2
   margin-left: -2%
-  height: 238px
+  max-height: 238px
   overflow: hidden
+  transition: max-height 1s
 
   &__item
     position: relative
@@ -123,42 +124,39 @@
         font-weight: 700
 
     .order-item-photos
-      height: auto
+      max-height: 2000px
 
     .btn
       background-color: #000
       color: #fff
 
 .i-head-order-data-lines
+  h1, .title-site
+    margin-bottom: 8px
+
+.i-head-info
+  font-size: 14px
+  line-height: 17px
+  font-weight: 400
+
+.cab-items-nav
   display: flex
-  flex-wrap: wrap
   align-items: center
   justify-content: space-between
   font-weight: 700
   font-size: 16px
   line-height: 20px
-
-  h1, .title-site
-    line-height: 20px
-    font-weight: 700
-    border-bottom: 1px solid $colorGold
-
-.i-head-info
-  width: 100%
-  margin-top: 16px
-  font-size: 14px
-  line-height: 17px
-  font-weight: 400
-
-  b
-    font-weight: 400
-
-.i-head-link
-  text-decoration: none
-  border-bottom: 1px solid transparent
   
-  &:hover
-    border-color: $colorGold
+  &__item
+    span
+      font-weight: 400
+
+    a
+      font-weight: 400
+      color: $colorGray
+
+      &:hover
+        color: $colorDark
 
 /* Min width $sm */
 @media only screen and (min-width: $sm)
@@ -171,7 +169,7 @@
 @media only screen and (min-width: $md)
   .order-item-photos
     margin-left: -1.33%
-    height: 328px
+    max-height: 328px
 
     &__item
       height: 320px
@@ -218,7 +216,7 @@
     margin-top: -8px
     margin-right: 24px
     width: 324px
-    height: 144px
+    max-height: 144px
 
     &__item
       width: 100px
@@ -287,32 +285,20 @@
     justify-content: flex-start
     padding-bottom: 16px
     border-bottom: 1px solid $colorGold
-    font-weight: 400
-    font-size: 18px
-    line-height: 22px
 
     h1, .title-site
-      width: 100%
       margin-bottom: 16px
-      font-size: 18px
-      line-height: 22px
-      border: none
 
-  .i-head-info
-    width: auto
-    margin: 0
+  .cab-items-nav
+    font-size: 18px
+    line-height: 22px
+    justify-content: flex-start
 
-    b
-      font-weight: 700
-      margin-right: 8px
+    &__item
+      margin-right: 75px
 
-  .i-head-link
-    border: none
-    margin-right: 120px
-    color: $colorGray
-
-    &:hover
-      color: $colorDark
+      span
+        margin-left: 5px
 
   .oimt-status
     li

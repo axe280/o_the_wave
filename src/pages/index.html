@@ -24,16 +24,224 @@
     <div class="site-wrapper">
       <!-- header -->
       <header class="header _mobile-menu-top" id="header">
+        <div class="cart-modals-wrapper">
+          <div class="container">
+            <div id="modalEmptyCart" class="st-modal mfp-hide st-modal-cart">
+              <button type="button" class="mfp-close">
+                <svg class="icon icon-close-wide">
+                  <use xlink:href="assets/img/sprite.svg#close-wide"></use>
+                </svg>
+              </button>
+
+              <div class="st-modal__head">
+                <div class="title-site title-site_h1">Ваша корзина пуста</div>
+              </div>
+
+              <div class="st-modal__body">
+                <div class="empty-modal-cart">
+                  <p>
+                    Войдите, чтобы посмотреть Вашу корзину и совершать покупки!
+                  </p>
+                  <button
+                    type="button"
+                    data-mfp-src="#modalSignIn"
+                    class="btn btn_max open-popup-link"
+                  >
+                    Войти
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div id="modalCart" class="st-modal mfp-hide st-modal-cart">
+              <button type="button" class="mfp-close">
+                <svg class="icon icon-close-wide">
+                  <use xlink:href="assets/img/sprite.svg#close-wide"></use>
+                </svg>
+              </button>
+
+              <div class="st-modal__body">
+                <div class="modal-cart">
+                  <div class="modal-cart__tt">
+                    Корзина <span class="modal-cart-val">(1)</span>
+                  </div>
+                  <ul class="modal-cart-prod">
+                    <li>
+                      <div class="modal-cart-prod__img">
+                        <img src="assets/img/prod@2x.jpg" alt="" />
+                      </div>
+                      <ul class="modal-cart-prod__info">
+                        <li><b>Свитшот</b> Trailhead</li>
+                        <li>Размер: M</li>
+                        <li>Кол-во: 2</li>
+                        <li><b>Всего: 8 998 руб.</b></li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <div class="modal-cart-prod__img">
+                        <img src="assets/img/prod@2x.jpg" alt="" />
+                      </div>
+                      <ul class="modal-cart-prod__info">
+                        <li><b>Свитшот</b> Trailhead</li>
+                        <li>Размер: M</li>
+                        <li>Кол-во: 2</li>
+                        <li><b>Всего: 8 998 руб.</b></li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <div class="modal-cart-prod__img">
+                        <img src="assets/img/prod@2x.jpg" alt="" />
+                      </div>
+                      <ul class="modal-cart-prod__info">
+                        <li><b>Свитшот</b> Trailhead</li>
+                        <li>Размер: M</li>
+                        <li>Кол-во: 2</li>
+                        <li><b>Всего: 8 998 руб.</b></li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <div class="modal-cart-prod__img">
+                        <img src="assets/img/prod@2x.jpg" alt="" />
+                      </div>
+                      <ul class="modal-cart-prod__info">
+                        <li><b>Свитшот</b> Trailhead</li>
+                        <li>Размер: M</li>
+                        <li>Кол-во: 2</li>
+                        <li><b>Всего: 8 998 руб.</b></li>
+                      </ul>
+                    </li>
+                  </ul>
+
+                  <div class="modal-btns-group">
+                    <a href="#" class="btn btn_max">Посмотреть корзину</a>
+                    <a href="#" class="btn btn_max btn_border">
+                      Оформить заказ
+                    </a>
+                  </div>
+
+                  <div class="modal-cart-more-info">
+                    <span>Бесплатная доставка</span>
+                    <a href="#">Узнать больше</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="header-inner">
           <div class="header-panel container">
             <div class="header-mob-layer-wrapp">
-              <a href="index.html" class="logo">
-                <img src="assets/img/logo.svg" alt="logo" />
-                <span class="logo__slogan">Lorem ipsum slogan</span>
-              </a>
-
               <div class="burger-menu">
                 <div class="burger-menu-box"></div>
+              </div>
+
+              <a href="index.html" class="logo">
+                <img src="assets/img/logo.svg" alt="logo" />
+              </a>
+            </div>
+
+            <ul class="header-min-nav">
+              <li>
+                <button class="main-search-btn h-nav-icon">
+                  <svg class="icon icon-search">
+                    <use xlink:href="assets/img/sprite.svg#search"></use>
+                  </svg>
+                  <span>Искать</span>
+                </button>
+              </li>
+
+              <li>
+                <button
+                  type="button"
+                  data-mfp-src="#modalSignIn"
+                  class="h-nav-icon open-popup-link"
+                >
+                  <svg class="icon icon-user">
+                    <use xlink:href="assets/img/sprite.svg#user"></use>
+                  </svg>
+                  <span>Вход</span>
+                </button>
+              </li>
+
+              <li>
+                <a href="#" class="h-nav-icon">
+                  <span class="count-val">1</span>
+                  <svg class="icon icon-heart">
+                    <use xlink:href="assets/img/sprite.svg#heart"></use>
+                  </svg>
+                  <span>Избранное</span>
+                </a>
+              </li>
+
+              <li>
+                <button
+                  type="button"
+                  data-mfp-src="#modalCart"
+                  class="h-nav-icon show-cart-btn"
+                >
+                  <span class="count-val">1</span>
+                  <svg class="icon icon-cart">
+                    <use xlink:href="assets/img/sprite.svg#cart"></use>
+                  </svg>
+                  <span>Корзина</span>
+                </button>
+              </li>
+            </ul>
+
+            <div class="main-search-wrapper">
+              <div class="main-search-overlay"></div>
+              <div class="main-search">
+                <form class="main-search-field">
+                  <div>
+                    <input type="search" placeholder="Футболка" />
+                  </div>
+                  <button class="btn btn_icon" type="submit">
+                    <svg class="icon icon-search">
+                      <use xlink:href="assets/img/sprite.svg#search"></use>
+                    </svg>
+                  </button>
+                </form>
+
+                <div class="simple-tabs-wrapp">
+                  <ul class="simple-tabs" data-simple-tabs>
+                    <li class="current">Мужское</li>
+                    <li>Женское</li>
+                    <li>Бренды</li>
+                  </ul>
+
+                  <div class="simple-tabs-box visible">
+                    <ul class="search-category-list">
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Categories</a></li>
+                    </ul>
+                  </div>
+                  <div class="simple-tabs-box">
+                    <ul class="search-category-list">
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Categories</a></li>
+                    </ul>
+                  </div>
+                  <div class="simple-tabs-box">
+                    <ul class="search-category-list">
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">Categories</a></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -46,39 +254,123 @@
                     <ul class="menu">
                       <li class="menu-item">
                         <span class="menu-item__link menu-item__link_dd"
-                          >Links</span
+                          >мужское</span
                         >
 
-                        <ul class="menu-dd">
-                          <li class="menu-dd-item">
-                            <a class="menu-dd-item__link" href="#pagination"
-                              >Pagination</a
-                            >
-                          </li>
-                          <li class="menu-dd-item">
-                            <a class="menu-dd-item__link" href="#"
-                              >Bread crumbs</a
-                            >
-                          </li>
-                        </ul>
+                        <div class="menu-dd">
+                          <div class="menu-dd__inner">
+                            <ul>
+                              <li><a href="#">Одежда</a></li>
+                              <li><a href="#">Куртки</a></li>
+                              <li><a href="#">Худи</a></li>
+                              <li><a href="#">Футболки</a></li>
+                            </ul>
+
+                            <ul>
+                              <li><a href="#">Аксессуары</a></li>
+                              <li><a href="#">Ароматизаторы</a></li>
+                              <li><a href="#">Носки</a></li>
+                              <li><a href="#">Брелоки</a></li>
+                              <li><a href="#">Ленточки</a></li>
+                              <li><a href="#">Наклейки</a></li>
+                            </ul>
+
+                            <ul>
+                              <li><a href="#">Обувь</a></li>
+                              <li><a href="#">Thrasher</a></li>
+                              <li><a href="#">Trailhead</a></li>
+                              <li>
+                                <a href="#" class="text_danger text_bold"
+                                  >SALE
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="menu-item">
+                        <span class="menu-item__link menu-item__link_dd"
+                          >женское</span
+                        >
+
+                        <div class="menu-dd">
+                          <div class="menu-dd__inner">
+                            <ul>
+                              <li><a href="#">Одежда</a></li>
+                              <li><a href="#">Куртки</a></li>
+                              <li><a href="#">Худи</a></li>
+                              <li><a href="#">Футболки</a></li>
+                            </ul>
+
+                            <ul>
+                              <li><a href="#">Аксессуары</a></li>
+                              <li><a href="#">Ароматизаторы</a></li>
+                              <li><a href="#">Носки</a></li>
+                              <li><a href="#">Брелоки</a></li>
+                              <li><a href="#">Ленточки</a></li>
+                              <li><a href="#">Наклейки</a></li>
+                            </ul>
+
+                            <ul>
+                              <li><a href="#">Обувь</a></li>
+                              <li><a href="#">Thrasher</a></li>
+                              <li><a href="#">Trailhead</a></li>
+                              <li>
+                                <a href="#" class="text_danger text_bold"
+                                  >SALE
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="menu-item">
+                        <span class="menu-item__link menu-item__link_dd"
+                          >бренды</span
+                        >
+
+                        <div class="menu-dd">
+                          <div class="menu-dd__inner">
+                            <ul>
+                              <li><a href="#">Одежда</a></li>
+                              <li><a href="#">Куртки</a></li>
+                              <li><a href="#">Худи</a></li>
+                              <li><a href="#">Футболки</a></li>
+                            </ul>
+
+                            <ul>
+                              <li><a href="#">Аксессуары</a></li>
+                              <li><a href="#">Ароматизаторы</a></li>
+                              <li><a href="#">Носки</a></li>
+                              <li><a href="#">Брелоки</a></li>
+                              <li><a href="#">Ленточки</a></li>
+                              <li><a href="#">Наклейки</a></li>
+                            </ul>
+
+                            <ul>
+                              <li><a href="#">Обувь</a></li>
+                              <li><a href="#">Thrasher</a></li>
+                              <li><a href="#">Trailhead</a></li>
+                              <li>
+                                <a href="#" class="text_danger text_bold"
+                                  >SALE
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="menu-item">
+                        <a href="#" class="menu-item__link"> О НАС </a>
                       </li>
                       <li class="menu-item">
-                        <a class="menu-item__link" href="#buttons">Buttons</a>
-                      </li>
-                      <li class="menu-item">
-                        <a class="menu-item__link" href="#form">Form</a>
-                      </li>
-                      <li class="menu-item">
-                        <a class="menu-item__link" href="#text">Text</a>
+                        <a href="#" class="menu-item__link"> статьи </a>
                       </li>
                     </ul>
                   </nav>
-
-                  <!-- header top panel -->
-                  <div class="header-top-panel">
-                    <div class="container">header top panel</div>
-                  </div>
-                  <!-- end header top panel -->
                 </div>
               </div>
             </div>
@@ -107,7 +399,9 @@
             <ol style="list-style-type: decimal">
               <li><a href="main.html">main.html</a></li>
               <li><a href="catalog.html">catalog.html</a></li>
+              <li><a href="search.html">search.html</a></li>
               <li><a href="card.html">card.html</a></li>
+              <li><a href="card2.html">card2.html</a></li>
               <li><a href="card-single-img.html">card-single-img.html</a></li>
               <li><a href="faq.html">faq.html</a></li>
               <li><a href="typography.html">typography.html</a></li>

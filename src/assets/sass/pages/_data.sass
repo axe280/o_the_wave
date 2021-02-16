@@ -37,9 +37,6 @@
   display: flex
   align-items: center
 
-  .switch-radio
-    margin-right: 32px
-
 .data-pass-btn
   &._show-pass
     margin-left: 30px
@@ -107,27 +104,17 @@
     font-size: 18px
     line-height: 22px
 
-  .data-confirm-btn
-    margin-top: 48px
-
-  .switch-radio-group
-    .switch-radio
-      margin-right: 60px
-
-      &:last-child
-        margin-right: 0
-
   .data-info
     font-size: 18px
     line-height: 22px
+
+  .switch-radio
+    span
+      margin-right: 40px
 /* end media min width $lg */
 
 /* Min width $xl */
 @media only screen and (min-width: $xl)
-  .switch-radio-group
-    .switch-radio
-      margin-right: 80px
-
   .data-title
     width: calc(33.33% - 8px)
 
