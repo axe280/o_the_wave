@@ -107,15 +107,6 @@ $(function () {
     }
   })
 
-  $('.filter-item-reset').on('click', function (event) {
-    event.stopPropagation()
-  })
-
-  $('.filter-drop-d__select').on('click', 'li:not(.active)', function () {
-    $(this).siblings('li').removeClass('active')
-    $(this).addClass('active')
-  })
-
   if ($(window).width() >= 980) {
     $(document).bind('click touchstart', function (e) {
       var $clicked = $(e.target)
@@ -143,6 +134,64 @@ $(function () {
   })
 
   $('.filter-mobile-close, .btn-filter-show').on('click', hideMobileFilter)
+
+  // filter changing
+  var addFilterVal = function ($parentEL, dataVal) {
+    $parentEL.find('.filter-head__val').text(dataVal)
+    $parentEL.find('.filter-head').addClass('_filtered')
+
+    if ($parentEL.is('[data-sort]')) {
+      $parentEL.find('.filter-head__tt').hide()
+    }
+  }
+
+  var removeFilterVal = function ($parentEL) {
+    $parentEL.find('.filter-head__val').text('')
+    $parentEL.find('.filter-head').removeClass('_filtered')
+
+    if ($parentEL.is('[data-sort]')) {
+      $parentEL.find('.filter-head__tt').show()
+    }
+  }
+
+  // filter checkboxes
+  $('.filter-drop-d__checkboxes').on('change', 'input', function () {
+    var $parentItem = $(this).parents('.filter-item')
+
+    var dataText = $(this).parent().text().trim()
+    var checkedLength = $parentItem.find('input:checked').length
+
+    if (checkedLength === 1) {
+      dataText = $parentItem.find('input:checked').parent().text().trim()
+      addFilterVal($parentItem, dataText)
+    } else if (checkedLength > 1) {
+      addFilterVal($parentItem, checkedLength)
+    } else {
+      removeFilterVal($parentItem)
+    }
+  })
+
+  // filter select
+  $('.filter-drop-d__select').on('click', 'li:not(.active)', function () {
+    var $parentItem = $(this).parents('.filter-item')
+    var dataText = $(this).text().trim()
+
+    $(this).siblings('li').removeClass('active')
+    $(this).addClass('active')
+    $parentItem.find('.filter-drop-d').slideToggle()
+
+    addFilterVal($parentItem, dataText)
+  })
+
+  // filter item reset
+  $('.filter-item-reset').on('click', function (event) {
+    event.stopPropagation()
+
+    var $parentItem = $(this).parents('.filter-item')
+    $parentItem.find('input').prop('checked', false)
+    $parentItem.find('.filter-drop-d__select li').removeClass('active')
+    removeFilterVal($parentItem)
+  })
 
   // show data password field
   $('.data-pass-btn .btn').on('click', function () {
@@ -266,12 +315,8 @@ $(function () {
     'mouseover',
     '.st-prod-card__nav span:not(.current)',
     function () {
-      var srcProd = $(this).data().prodSrc
-      var $img = $(this).parent().siblings('[data-target-prod-src]')
-
       $(this).siblings().removeClass('current')
       $(this).addClass('current')
-      $img.attr('src', srcProd)
     }
   )
 

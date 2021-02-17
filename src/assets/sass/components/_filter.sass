@@ -1,3 +1,12 @@
+.filter-head
+  &._filtered
+    .filter-head__tt
+      &::after
+        content: ':'
+      
+  &__tt
+    margin-right: 4px
+
 .filter-drop-d
   display: none
   padding-top: 8px
@@ -92,7 +101,7 @@
       font-weight: 700
 
       .filter-item-reset
-        display: block
+        display: flex
 
   .filter-item._opened
     .filter-head
@@ -136,6 +145,9 @@
 
   .filter-mob-item
     display: none
+
+  .filter-reset
+    display: none
 /* end media max width $m-lg */
 
 /* Min width $lg */
@@ -147,19 +159,21 @@
     display: flex
     flex-wrap: wrap
     align-items: center
-    margin-left: -18px
 
   .filter-item
     display: block !important
     position: relative
-    margin-left: 18px
+    margin-right: 14px
     margin-top: 10px
+
+    &:last-child
+      margin-right: 0
 
   .filter-head
     display: flex
     align-items: center
     cursor: pointer
-    padding: 2px 30px 2px 8px
+    padding: 2px 24px 2px 8px
     font-size: 16px
     // font-size: 12px
     line-height: 18px
@@ -180,10 +194,20 @@
       color: #fff
 
       .filter-item-reset
+        position: relative
         display: block
         width: 9px
         height: 9px
         margin-left: 10px
+
+        &::before
+          content: ''
+          position: absolute
+          left: -7px
+          top: -7px
+          right: -7px
+          bottom: -7px
+          z-index: 2
 
         .icon
           width: 9px
@@ -246,15 +270,21 @@
 
   .catalog-mobile-btns
     display: none
+
+  .filter-reset
+    display: block
+    margin: 10px 0 0
+    line-height: 24px
+
+    button
+      font-size: 14px
+      cursor: pointer
+      height: 24px
+      color: $colorGold
+
+      &:hover
+        color: $color-h-link
+
+      &:active
+        color: $color-h-link-active
 /* end media pmin width $lg */
-
-/* Min width $hd */
-@media only screen and (min-width: $hd)
-  .filters-list
-    flex-wrap: nowrap
-    justify-content: space-between
-    margin-left: -4px
-
-  .filter-item
-    margin-left: 4px
-/* end media min width $hd */

@@ -153,7 +153,11 @@
       color: #c4c4c4
 
   &__nav
-    display: none
+    span
+      display: none
+
+      &.current
+        display: block
 
 .catalog-list._cols
   .st-prod-card
@@ -290,20 +294,33 @@
       justify-content: space-between
 
       span
+        display: flex
+        flex-direction: column
         padding: 8px 4px
         flex-grow: 1
 
         &::before
           content: ''
+          position: relative
+          z-index: 6
           display: block
           height: 2px
           border-radius: 2px
           background-color: #000
           transition: background-color .2s
 
+        &::after
+          content: ''
+          flex-grow: 1
+          position: relative
+          z-index: 9
+
         &.current
           &::before
             background-color: #C4C1C2
+
+          img
+            z-index: 3
 
   .catalog-list._cols
     .st-prod-card

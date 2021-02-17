@@ -462,8 +462,6 @@
                 </div>
 
                 <div class="catalog-filters-wrapp _mobile-menu-top">
-                  <span class="filters-tt hidden-devices">Фильтры</span>
-
                   <div class="catalog-mobile-btns">
                     <button class="filter-mobile-close" type="button">
                       <svg class="icon icon-close">
@@ -491,7 +489,17 @@
                     <div class="menu-open-wrapper">
                       <div class="filters-list">
                         <div class="filter-item" data-sort>
-                          <div class="filter-head">Упорядочить по</div>
+                          <div class="filter-head">
+                            <span class="filter-head__tt">Упорядочить по</span>
+                            <span class="filter-head__val"></span>
+                            <button class="filter-item-reset" type="button">
+                              <svg class="icon icon-close">
+                                <use
+                                  xlink:href="assets/img/sprite.svg#close"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
 
                           <div class="filter-drop-d">
                             <ul class="filter-drop-d__select">
@@ -506,8 +514,9 @@
                         </div>
 
                         <div class="filter-item" data-filter>
-                          <div class="filter-head _filtered">
-                            По полу: женский
+                          <div class="filter-head">
+                            <span class="filter-head__tt">По полу</span>
+                            <span class="filter-head__val"></span>
                             <button class="filter-item-reset" type="button">
                               <svg class="icon icon-close">
                                 <use
@@ -519,7 +528,7 @@
 
                           <div class="filter-drop-d">
                             <ul class="filter-drop-d__select">
-                              <li class="active">Женский</li>
+                              <li>Женский</li>
                               <li>Мужской</li>
                             </ul>
                           </div>
@@ -527,7 +536,8 @@
 
                         <div class="filter-item" data-filter>
                           <div class="filter-head">
-                            По бренду
+                            <span class="filter-head__tt">По бренду</span>
+                            <span class="filter-head__val"></span>
                             <button class="filter-item-reset" type="button">
                               <svg class="icon icon-close">
                                 <use
@@ -542,7 +552,7 @@
                               <li>
                                 <div class="ui-st-checkbox">
                                   <label>
-                                    brand 1
+                                    brand 1 loong name
                                     <input type="checkbox" />
                                     <span class="fake-control"></span>
                                   </label>
@@ -630,7 +640,8 @@
 
                         <div class="filter-item" data-filter>
                           <div class="filter-head">
-                            По размеру
+                            <span class="filter-head__tt">По размеру</span>
+                            <span class="filter-head__val"></span>
                             <button class="filter-item-reset" type="button">
                               <svg class="icon icon-close">
                                 <use
@@ -682,8 +693,9 @@
                         </div>
 
                         <div class="filter-item" data-filter>
-                          <div class="filter-head _filtered">
-                            По цвету: 3
+                          <div class="filter-head">
+                            <span class="filter-head__tt">По цвету</span>
+                            <span class="filter-head__val"></span>
                             <button class="filter-item-reset" type="button">
                               <svg class="icon icon-close">
                                 <use
@@ -700,7 +712,7 @@
                                   <label>
                                     <div class="color-item _gray"></div>
                                     Серый
-                                    <input type="checkbox" checked />
+                                    <input type="checkbox" />
                                     <span class="fake-control"></span>
                                   </label>
                                 </div>
@@ -711,7 +723,7 @@
                                   <label>
                                     <div class="color-item _white"></div>
                                     Белый
-                                    <input type="checkbox" checked />
+                                    <input type="checkbox" />
                                     <span class="fake-control"></span>
                                   </label>
                                 </div>
@@ -722,7 +734,7 @@
                                   <label>
                                     <div class="color-item _black"></div>
                                     Черный
-                                    <input type="checkbox" checked />
+                                    <input type="checkbox" />
                                     <span class="fake-control"></span>
                                   </label>
                                 </div>
@@ -761,7 +773,8 @@
 
                         <div class="filter-item" data-filter>
                           <div class="filter-head">
-                            По толщине
+                            <span class="filter-head__tt">По толщине</span>
+                            <span class="filter-head__val"></span>
                             <button class="filter-item-reset" type="button">
                               <svg class="icon icon-close">
                                 <use
@@ -814,7 +827,8 @@
 
                         <div class="filter-item" data-filter>
                           <div class="filter-head">
-                            По типу
+                            <span class="filter-head__tt">По типу</span>
+                            <span class="filter-head__val"></span>
                             <button class="filter-item-reset" type="button">
                               <svg class="icon icon-close">
                                 <use
@@ -867,7 +881,8 @@
 
                         <div class="filter-item" data-filter>
                           <div class="filter-head">
-                            По молнии
+                            <span class="filter-head__tt">По молнии</span>
+                            <span class="filter-head__val"></span>
                             <button class="filter-item-reset" type="button">
                               <svg class="icon icon-close">
                                 <use
@@ -906,6 +921,10 @@
                               Применить
                             </button>
                           </div>
+                        </div>
+
+                        <div class="filter-reset">
+                          <button type="button">Сбросить</button>
                         </div>
                       </div>
 
