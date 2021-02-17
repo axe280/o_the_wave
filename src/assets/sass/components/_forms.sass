@@ -3,37 +3,33 @@
   margin-bottom: 30px
 
 .field-item
-  &_animation-label
-    position: relative
-    margin-top: 40px
-    display: block
-
-    .field-item__label
-      position: absolute
-      z-index: 3
-      left: 0
-      top: 0
-      transform: translateY(0)
-      width: 100%
-      padding: 0 15px
-      font-size: 16px
-      line-height: 50px
-      cursor: text
-      transition: transform $transDefault, padding $transDefault
-      margin: 0
-      color: #ccc
-
   &._focused
     .field-item__label
       transform: translateY(-85%)
       padding: 0
       color: #444
 
+  &._error
+    .field-item__msg
+      display: block
+
+    .field-item__field
+      input
+        border-color: $colorDanger
+
   &__label
     margin-bottom: 10px
     font-size: 16px
     line-height: 20px
     color: #0B3954
+
+  &__msg
+    display: none
+    padding-top: 8px
+    padding-bottom: 4px
+    color: $colorDanger
+    font-size: 12px
+    line-height: 16px
 
 .subs-form-error
   display: block

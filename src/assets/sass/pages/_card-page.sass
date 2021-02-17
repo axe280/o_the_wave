@@ -147,7 +147,16 @@
     margin-left: 12px
     flex-shrink: 0
 
+    &:hover
+      background-color: $colorDanger
+
+    &[disabled]
+      &:hover
+        background-color: $colorUiDisabled
+
     &._active
+      background-color: $colorDanger
+
       .icon
         fill: #fff
 

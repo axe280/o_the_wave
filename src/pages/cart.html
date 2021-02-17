@@ -101,6 +101,18 @@
       </div>
     </div>
 
+    <div id="delAllProd" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="del-btns-t">Очистить корзину?</div>
+      </div>
+      <div class="st-modal__body">
+        <div class="del-btns">
+          <button class="btn btn_border" type="button">Да</button>
+          <button class="btn" type="button">Нет</button>
+        </div>
+      </div>
+    </div>
+
     <!-- site main wrapper -->
     <div class="site-wrapper">
       <!-- header -->
@@ -479,9 +491,13 @@
                       <span class="tt-more-info">6 товаров</span>
                     </div>
 
-                    <a href="#" class="mobile-btn-reset-cart link-gold"
-                      >Очистить корзину</a
+                    <button
+                      type="button"
+                      data-mfp-src="#delAllProd"
+                      class="open-popup-link mobile-btn-reset-cart link-gold"
                     >
+                      Очистить корзину
+                    </button>
                   </div>
                 </div>
 
