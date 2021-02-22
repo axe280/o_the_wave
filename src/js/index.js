@@ -695,4 +695,20 @@ $(function () {
       }
     }
   })()
+
+  // video js
+  var updateVideo = function() {
+    $('.st-video').each(function() {
+      var mobileSrc = $(this).attr('data-video-mobile-src')
+      var deskSrc = $(this).attr('data-video-desktop-src')
+
+      if ($(window).width() < 740) {
+        $(this).append("<source src='" + mobileSrc + "' type='video/mp4' >")
+      } else {
+        $(this).append("<source src='" + deskSrc + "' type='video/mp4' >")
+      }
+    })
+  }
+
+  updateVideo()
 })
