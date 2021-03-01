@@ -112,8 +112,14 @@
     display: none
 
   .filter-mobile-btn
-    padding-top: 22px
     margin-top: auto
+    position: absolute
+    z-index: 10
+    bottom: 0
+    right: 0
+    left: 0
+    padding: 10px 30px
+    background-color: #fff
 
     .btn
       margin-bottom: 16px
@@ -142,13 +148,24 @@
       width: 100%
       height: 100%
       stroke: #000
+      vertical-align: top
 
   .filter-mob-item
     display: none
 
   .filter-reset
     display: none
+
+  .filters-list
+    padding-bottom: 122px
 /* end media max width $m-lg */
+
+/* Max width $m-md */
+@media only screen and (max-width: $m-md)
+  .filter-mobile-btn
+    padding-right: 16px
+    padding-left: 16px
+/* end media max width $m-md */
 
 /* Min width $lg */
 @media only screen and (min-width: $lg)

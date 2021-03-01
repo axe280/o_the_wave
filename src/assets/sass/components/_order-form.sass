@@ -206,6 +206,8 @@
     font-size: 12px
 
 .to-form-order-btn
+  margin-left: auto
+  
   span
     display: block
     margin-top: 16px
@@ -280,6 +282,9 @@
   .del-fields-wrapp
     .dd-list-item
       padding-left: 24px
+
+  .to-form-order-btn
+    text-align: right
 /* end media min width $md */
 
 /* Min width $lg */
@@ -450,6 +455,8 @@
       line-height: 15px
 
   .to-form-order-btn
+    text-align: left
+
     span
       width: 210px
 
@@ -481,6 +488,14 @@
     .fake-control
       top: 4px
 /* end media min width $lg */
+
+/* Max width $m-xl */
+@media only screen and (max-width: $m-xl)
+  .order-fields
+    .form-group
+      &._mob-max-width
+        width: 100%
+/* end media max width $m-xl */
 
 /* Min width $xl */
 @media only screen and (min-width: $xl)

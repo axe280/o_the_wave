@@ -117,17 +117,27 @@
 
 /* Min width $md */
 @media only screen and (min-width: $md)
+  .cart-flex
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
   .cart-row
     max-width: 400px
+    width: 48%
 /* end media min width $md */
 
 /* Min width $lg */
 @media only screen and (min-width: $lg)
+  .cart-flex
+    display: block
+
   .cart-row
     display: flex
     align-items: center
     justify-content: space-between
     max-width: 100%
+    width: 100%
     padding-bottom: 32px
     border-bottom: 1px solid $colorGold
 

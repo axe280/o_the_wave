@@ -131,6 +131,10 @@ $(function () {
       .show()
       .siblings('.filter-item:not(' + dataNameSelector + ')')
       .hide()
+
+    if ((dataNameSelector = '[data-sort]')) {
+      $(dataNameSelector).addClass('_opened').find('.filter-drop-d').show()
+    }
   })
 
   $('.filter-mobile-close, .btn-filter-show').on('click', hideMobileFilter)
@@ -174,6 +178,8 @@ $(function () {
   // filter select
   $('.filter-drop-d__select').on('click', 'li:not(.active)', function () {
     var $parentItem = $(this).parents('.filter-item')
+    $parentItem.removeClass('_opened')
+
     var dataText = $(this).text().trim()
 
     $(this).siblings('li').removeClass('active')
@@ -374,15 +380,7 @@ $(function () {
   var isCartEmpty = false
 
   var showModal = function (modalSrc) {
-    if ($(window).width() < 980) {
-      $.magnificPopup.open(
-        $.extend(magnificOptions, {
-          items: {
-            src: modalSrc,
-          },
-        })
-      )
-    } else {
+    if ($(window).width() > 980) {
       $(modalSrc).addClass('_opened')
     }
   }
@@ -391,7 +389,7 @@ $(function () {
     $('#modalCart').removeClass('_opened')
   }
 
-  $('.show-cart-btn').on('click', function () {
+  $('.show-cart-btn').on('mouseover', function () {
     if (isCartEmpty) {
       showModal('#modalEmptyCart')
     } else {
@@ -407,11 +405,11 @@ $(function () {
     if (checkOrderSize()) {
       // add to cart
       var defaultText = $(this).text().trim()
-      $(this).addClass('_added').text('Товар добавлен')
+      $(this).addClass('_added').text('Товар добавлен').attr('disabled', true)
 
       setTimeout(() => {
-        $(this).removeClass('_added').text(defaultText)
-      }, 8000)
+        $(this).removeClass('_added').text(defaultText).attr('disabled', false)
+      }, 4000)
     } else {
       showOrderSizeError()
     }
@@ -471,6 +469,18 @@ $(function () {
     $(this).parent().fadeOut()
   })
 
+  var onDragHandler = function () {
+    document.ontouchmove = function (e) {
+      e.preventDefault()
+    }
+  }
+
+  var onDraggedHandler = function () {
+    document.ontouchmove = function (e) {
+      return true
+    }
+  }
+
   // carousels
   $('.main-carousel').owlCarousel({
     items: 1,
@@ -484,6 +494,8 @@ $(function () {
       '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
       '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
     ],
+    onDrag: onDragHandler,
+    onDragged: onDraggedHandler,
   })
 
   $('.brands-carousel').owlCarousel({
@@ -495,6 +507,8 @@ $(function () {
       '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
       '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
     ],
+    onDrag: onDragHandler,
+    onDragged: onDraggedHandler,
     responsive: {
       0: {
         items: 1,
@@ -522,6 +536,8 @@ $(function () {
       '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
       '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
     ],
+    onDrag: onDragHandler,
+    onDragged: onDraggedHandler,
     responsive: {
       0: {
         margin: 8,
@@ -554,6 +570,8 @@ $(function () {
       '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
       '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
     ],
+    onDrag: onDragHandler,
+    onDragged: onDraggedHandler,
     responsive: {
       0: {
         items: 1,
@@ -587,6 +605,8 @@ $(function () {
         '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
         '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
       ],
+      onDrag: onDragHandler,
+      onDragged: onDraggedHandler,
     })
   }
 
@@ -654,7 +674,7 @@ $(function () {
 
       clearTimeout(resizeTimer)
       resizeTimer = setTimeout(function () {
-        if ($(window).width() >= 980) {
+        if ($(window).width() >= 740) {
           stickyHandler()
         }
       }, 300)
@@ -697,8 +717,8 @@ $(function () {
   })()
 
   // video js
-  var updateVideo = function() {
-    $('.st-video').each(function() {
+  var updateVideo = function () {
+    $('.st-video').each(function () {
       var mobileSrc = $(this).attr('data-video-mobile-src')
       var deskSrc = $(this).attr('data-video-desktop-src')
 
@@ -711,4 +731,17 @@ $(function () {
   }
 
   updateVideo()
+
+  // gender switcher
+  $('[data-gender-check').on('click', function () {
+    var gender = $(this).attr('data-gender-check')
+
+    if (gender === 'male') {
+      $('#gender')[0].checked = false
+    }
+
+    if (gender === 'female') {
+      $('#gender')[0].checked = true
+    }
+  })
 })

@@ -383,7 +383,7 @@
             </ul>
 
             <div class="i-head-order-data-lines">
-              <h1>Мои данные</h1>
+              <h1 class="hidden-devices">Мои данные</h1>
               <div class="cab-items-nav">
                 <div class="cab-items-nav__item">Мои данные</div>
                 <div class="cab-items-nav__item">
@@ -484,15 +484,20 @@
                     <div class="data-info">
                       <div class="switch-radio-group">
                         <div class="switch-radio">
-                          <span>Мужской</span>
+                          <span data-gender-check="male">Мужской</span>
                           <label>
-                            <input type="checkbox" name="gender" checked />
+                            <input
+                              type="checkbox"
+                              name="gender"
+                              id="gender"
+                              checked
+                            />
                             <span class="switch-radio-fake"></span>
                           </label>
                         </div>
 
                         <div class="switch-radio">
-                          <span>Женский</span>
+                          <span data-gender-check="female">Женский</span>
                         </div>
                       </div>
                     </div>

@@ -68,10 +68,11 @@
       <div class="st-modal__body">
         <form class="st-form" action="#">
           <div class="form-group">
-            <label class="field-item">
+            <label class="field-item _error">
               <div class="field-item__field">
                 <input type="text" placeholder="Имя" />
               </div>
+              <div class="field-item__msg">Error</div>
             </label>
           </div>
 
@@ -84,7 +85,7 @@
           </div>
 
           <div class="form-group">
-            <label class="field-item">
+            <label class="field-item _error">
               <div class="field-item__field">
                 <select name="" id="" required>
                   <option value="" disabled selected>Город</option>
@@ -93,6 +94,7 @@
                   <option value="">Минусинск</option>
                 </select>
               </div>
+              <div class="field-item__msg">Error</div>
             </label>
           </div>
 
@@ -118,7 +120,7 @@
           <div class="form-group-f-line">
             <div class="ui-st-checkbox">
               <label>
-                Согласен с пользовательским соглашением
+                Согласен с <a href="#">пользовательским соглашением</a>
                 <input type="checkbox" checked />
                 <span class="fake-control"></span>
               </label>
@@ -522,6 +524,8 @@
           <div class="main-row">
             <div class="main-content">
               <div class="card-bl-wrapp">
+                <a href="#" class="mobile-arr-back"></a>
+
                 <div class="card-bl-photos-wrap">
                   <div class="card-bl-photos owl-carousel">
                     <div class="card-bl-photo">
@@ -747,7 +751,7 @@
           </div>
 
           <div class="st-spacing-block text_center">
-            <div class="title-thin">просмотренные товары</div>
+            <div class="title-thin">Похожие товары</div>
             <div class="owl-carousel st-prod-carousel">
               <div class="st-prod-card">
                 <a href="" class="st-prod-card__link">
@@ -817,7 +821,7 @@
           </div>
 
           <div class="st-spacing-block text_center">
-            <div class="title-thin">Похожие товары</div>
+            <div class="title-thin">просмотренные товары</div>
             <div class="owl-carousel st-prod-carousel">
               <div class="st-prod-card">
                 <a href="" class="st-prod-card__link">

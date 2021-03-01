@@ -34,6 +34,7 @@
     width: 40px
     height: 36px
     transition: opacity .3s
+    filter: grayscale(100%)
 
     &::before
       content: ''
@@ -194,6 +195,9 @@
     background-image: url('../img/check-light.svg')
     background-repeat: no-repeat
     background-position: 93% 50%
+
+    &[disabled]
+      background-image: url('../img/check.svg')
 
 /* Min width $sm */
 @media only screen and (min-width: $sm)

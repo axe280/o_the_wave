@@ -1,10 +1,10 @@
 .order-item
-  padding-bottom: 32px
+  position: relative
+  padding-bottom: 80px
   margin-bottom: 32px
   border-bottom: 1px solid $colorGold
 
   &:last-child
-    padding-bottom: 0
     margin-bottom: 0
     border: none
 
@@ -13,10 +13,8 @@
     display: none
 
   &__main
-    position: relative
     display: flex
     flex-direction: column
-    padding-bottom: 48px
     font-size: 14px
     line-height: 18px
 
@@ -52,7 +50,7 @@
 
   .btn
     position: absolute
-    bottom: 0
+    bottom: 22px
     left: 0
     width: 100%
 
@@ -116,13 +114,6 @@
 
 .order-item
   &._opened
-    .oimt-status
-      li
-        display: block
-
-      .active
-        font-weight: 700
-
     .order-item-photos
       max-height: 2000px
 
@@ -232,6 +223,7 @@
     min-height: 144px
 
     .btn
+      bottom: 0
       width: auto
       margin-bottom: 0
       line-height: 20px
@@ -303,6 +295,23 @@
   .oimt-status
     li
       margin-bottom: 0
+
+  .order-item
+    padding-bottom: 32px
+
+    &:last-child
+      padding-bottom: 0
+
+    &_main
+      position: relative
+
+    &._opened
+      .oimt-status
+        li
+          display: block
+
+        .active
+          font-weight: 700
 /* end media min width $lg */
 
 /* Min width $xl */

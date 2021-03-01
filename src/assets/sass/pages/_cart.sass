@@ -37,6 +37,10 @@
 
   .field-item
     margin-bottom: 16px
+    
+    &__field
+      input
+        text-overflow: ellipsis
 
   .btn
     margin-bottom: 16px
@@ -45,12 +49,16 @@
   .hint-comp
     margin-bottom: 16px
 
-.promo-error
+.promo-error,
+.promo-msg
   display: block
   color: $colorDanger
   margin-bottom: 10px
   font-size: 12px
   line-height: 15px
+
+.promo-msg
+  color: #000
 
 .thanks-order
   padding: 30px
@@ -67,7 +75,6 @@
 
   li
     margin-bottom: 6px
-
 
 /* Min width $md */
 @media only screen and (min-width: $md)
@@ -91,7 +98,8 @@
     .hint-comp
       width: 100%
 
-  .promo-error
+  .promo-error,
+  .promo-msg
     width: 100%
     max-width: 260px
     position: absolute
@@ -99,6 +107,28 @@
     top: 0
     margin-left: 20px
 /* end media min width $md */
+
+/* Max width $m-lg */
+@media only screen and (max-width: $m-lg)
+  .cart-sticky-order__btn
+    height: 40px
+
+    .btn
+      position: fixed
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 50
+      width: 100%
+
+  .cart-sticky-order-wrapp._stop
+    .cart-sticky-order__btn
+      height: auto
+
+      .btn
+        position: relative
+        width: auto
+/* end media max width $m-lg */
 
 /* Min width $lg */
 @media only screen and (min-width: $lg)
@@ -161,7 +191,8 @@
     li
       margin-bottom: 16px
 
-  .promo-error
+  .promo-error,
+  .promo-msg
     top: auto
     top: 100%
     max-width: 100%
@@ -170,7 +201,8 @@
 
   .cart-sticky-order-wrapp
     &._stop
-      .promo-error
+      .promo-error,
+      .promo-msg
         margin-top: 12px
 /* end media min width $lg */
 
@@ -183,6 +215,7 @@
     &._stop
       .cart-sticky-order
         position: relative
+        box-shadow: none
 
         .container
           padding: 0
@@ -195,6 +228,7 @@
     width: 100%
     padding: 20px 0
     background-color: #fff
+    box-shadow: 0 -2px 10px rgba(#000, .08)
 
     .container
       padding: 0 $sides-spacing-xl

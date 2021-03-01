@@ -186,6 +186,22 @@
   &:hover
     text-decoration: none
 
+.card-bl-wrapp
+  position: relative
+
+.mobile-arr-back
+  position: absolute
+  left: 10px
+  top: 10px
+  width: 28px
+  height: 28px
+  background-image: url('../img/arrow-back.svg')
+  background-repeat: no-repeat
+  background-position: 50% 50%
+  background-size: 100% 100%
+  z-index: 10
+
+
 /* Min width $md */
 @media only screen and (min-width: $md)
   .card-bl-wrapp
@@ -208,6 +224,9 @@
 
   .card-price
     margin-left: 0
+
+  .mobile-arr-back
+    display: none
 /* end media min width $md */
 
 /* Min width $lg */
