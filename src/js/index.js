@@ -77,9 +77,10 @@ $(function () {
   })
 
   // like btn
-  $('.st-prod-card__like').on('click touchstart', function () {
+  $('.st-prod-card__like, .like-btn').on('click touchstart', function () {
     if ($(this).is('._active')) {
       $(this).removeClass('_active')
+      $(this).removeClass('_like_animating')
     } else {
       $(this).toggleClass('_like_animating')
       $(this).addClass('_active')
@@ -664,6 +665,10 @@ $(function () {
   $(window).on('resize', initCarouselResizeHandler)
 
   // sticky col
+  if ($(window).width() > 980) {
+    $('.card-bl-info-inner').attr('data-sticky', '')
+  }
+
   ;(function () {
     // elements
     var $targetEl = $('[data-sticky]')
@@ -684,8 +689,8 @@ $(function () {
 
     $stickyEl = $targetWrapp.find('.sticky-wrapp')
 
-    $targetEl.off('click')
-    $targetEl.on('click', '.dd-list-head', function (e) {
+    $stickyEl.find('.dd-list-wrapp').off('click')
+    $stickyEl.find('.dd-list-wrapp').on('click', '.dd-list-head', function (e) {
       var $target = $(e.target)
       if ($target.is('a')) return
 
@@ -861,22 +866,27 @@ $(function () {
 
   // swiper for mobile
   // swipeleft
-  $('.st-prod-card__nav').on('swipeleft', function () {
-    var $currentEl = $(this).find('.current')
+  var swipeLeft = function () {
+    var $nav = $(this).parents('.st-prod-card').find('.st-prod-card__nav')
+    var $currentEl = $nav.find('.current')
     var currentIdx = $currentEl.index()
-    var $elements = $(this).find('span')
+    var $elements = $nav.find('span')
     if (currentIdx < $elements.length - 1) {
       $currentEl.removeClass('current').next().addClass('current')
     }
-  })
-  $('.st-prod-card__nav').on('swiperight', function (e, data) {
-    var $currentEl = $(this).find('.current')
+  }
+
+  var swipeRight = function () {
+    var $nav = $(this).parents('.st-prod-card').find('.st-prod-card__nav')
+    var $currentEl = $nav.find('.current')
     var currentIdx = $currentEl.index()
-    var $elements = $(this).find('span')
     if (currentIdx > 0) {
       $currentEl.removeClass('current').prev().addClass('current')
     }
-  })
+  }
+
+  $('.st-prod-card__nav').on('swipeleft', swipeLeft)
+  $('.st-prod-card__nav').on('swiperight', swipeRight)
 
   // del city
   $('.del-city__current').on('click', function () {
@@ -894,5 +904,20 @@ $(function () {
     if (!$clicked.parents().hasClass('del-city')) {
       $('.del-city').removeClass('_opened')
     }
+  })
+
+  // dd list
+  $('.dd-list input').on('focus', function () {
+    $(this).parent().addClass('_opened')
+  })
+  $('.dd-list input').on('blur', function () {
+    $(this).parent().removeClass('_opened')
+  })
+
+  // modal prod-sub form
+  $('.modal-prod-sub').on('submit', function (e) {
+    e.preventDefault()
+
+    $(this).text('Сообщение отрпавлено')
   })
 })

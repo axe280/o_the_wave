@@ -14,6 +14,97 @@
   </head>
 
   <body>
+    <!-- modals -->
+    <div id="modalSignIn" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="title-site title-site_h1">Вход</div>
+      </div>
+
+      <div class="st-modal__body">
+        <form class="st-form" action="#">
+          <div class="form-group">
+            <label class="field-item">
+              <div class="field-item__field">
+                <input type="text" placeholder="Email или телефон" />
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="field-item">
+              <div class="field-item__field">
+                <input type="password" placeholder="Пароль" />
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group-f-line">
+            <div class="ui-st-checkbox">
+              <label>
+                Запомнить меня
+                <input type="checkbox" checked />
+                <span class="fake-control"></span>
+              </label>
+            </div>
+
+            <button
+              type="button"
+              data-mfp-src="#modalRecPassword"
+              class="st-link link-light open-popup-link"
+            >
+              Забыли пароль?
+            </button>
+          </div>
+
+          <div class="modal-btns-group">
+            <button class="btn btn_max" type="submit">Войти</button>
+            <p>
+              Если у вас еще нет аккаунта, он будет автоматически создан в
+              процессе оформления.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="modalRecPassword" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="title-site title-site_h1">Восстановление пароля</div>
+      </div>
+
+      <div class="st-modal__body">
+        <form class="st-form" action="#">
+          <div class="form-group">
+            <label class="field-item">
+              <div class="field-item__field">
+                <input type="text" placeholder="Email" />
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <img src="assets/img/capcha.png" alt="" />
+          </div>
+
+          <div class="modal-btns-group">
+            <button class="btn btn_max" type="submit">Восстановить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="subsComplete" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="title-site title-site_h1">Подписка успешно оформлена!</div>
+      </div>
+
+      <div class="st-modal__body">
+        <p class="text_center">
+          Благодарим за интерес к нашему Интернет-магазину.
+        </p>
+      </div>
+    </div>
+
     <!-- site main wrapper -->
     <div class="site-wrapper">
       <!-- header -->
@@ -187,7 +278,6 @@
             </ul>
 
             <div class="main-search-wrapper">
-              <div class="main-search-overlay"></div>
               <div class="main-search">
                 <form class="main-search-field">
                   <div>
@@ -199,43 +289,6 @@
                     </svg>
                   </button>
                 </form>
-
-                <div class="simple-tabs-wrapp">
-                  <ul class="simple-tabs" data-simple-tabs>
-                    <li class="current">Мужское</li>
-                    <li>Женское</li>
-                    <li>Бренды</li>
-                  </ul>
-
-                  <div class="simple-tabs-box visible">
-                    <ul class="search-category-list">
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
-                  <div class="simple-tabs-box">
-                    <ul class="search-category-list">
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
-                  <div class="simple-tabs-box">
-                    <ul class="search-category-list">
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -956,7 +1009,7 @@
               </div>
 
               <!-- preloader class _opacity-els -->
-              <ul class="catalog-list _opacity-els">
+              <ul class="catalog-list">
                 <li class="catalog-list__item">
                   <div class="st-prod-card">
                     <a href="#" class="st-prod-card__like">
@@ -970,90 +1023,19 @@
                     <a href="" class="st-prod-card__link">
                       <div class="st-prod-card__img">
                         <div class="st-prod-card__nav">
-                          <span
-                            data-prod-src="assets/img/prod-opt.jpg"
-                            class="current"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/prod1-col-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img2@2x-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img3-opt.jpg"
-                          ></span>
+                          <span class="current">
+                            <img src="assets/img/prod-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/prod1-col-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img2@2x-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img3-opt.jpg" alt="" />
+                          </span>
                         </div>
-
-                        <img
-                          src="assets/img/prod-opt.jpg"
-                          data-target-prod-src
-                          alt=""
-                        />
-
-                        <div class="st-prod-card__labels">
-                          <div class="st-label">new</div>
-                          <div class="st-label _danger">Sale</div>
-                        </div>
-
-                        <ul class="st-prod-card__info">
-                          <li>Размеры (RUS): 40/42 44/46 48/50</li>
-                          <li>
-                            Цвета:
-                            <div class="color-item _black"></div>
-                            <div class="color-item _red"></div>
-                            <div class="color-item _white"></div>
-                          </li>
-                          <li>
-                            <span class="st-prod-card__more">Подробнее</span>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div class="st-prod-card__name">
-                        Гидрокостюм MYSTIC STAR FULLSUIT 5/3MM BZIP
-                      </div>
-                      <div class="st-prod-card__price">
-                        <del>0 000 руб.</del>
-                        0 000 руб.
-                      </div>
-                    </a>
-                  </div>
-                </li>
-
-                <li class="catalog-list__item">
-                  <div class="st-prod-card">
-                    <a href="#" class="st-prod-card__like _active">
-                      <svg class="icon icon-heart-border-fill">
-                        <use
-                          xlink:href="assets/img/sprite.svg#heart-border-fill"
-                        ></use>
-                      </svg>
-                    </a>
-
-                    <a href="" class="st-prod-card__link">
-                      <div class="st-prod-card__img">
-                        <div class="st-prod-card__nav">
-                          <span
-                            data-prod-src="assets/img/prod-opt.jpg"
-                            class="current"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/prod1-col-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img2@2x-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img3-opt.jpg"
-                          ></span>
-                        </div>
-
-                        <img
-                          src="assets/img/prod-opt.jpg"
-                          data-target-prod-src
-                          alt=""
-                        />
 
                         <div class="st-prod-card__labels">
                           <div class="st-label">new</div>
@@ -1098,23 +1080,19 @@
                     <a href="" class="st-prod-card__link">
                       <div class="st-prod-card__img">
                         <div class="st-prod-card__nav">
-                          <span
-                            data-prod-src="assets/img/prod-opt.jpg"
-                            class="current"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/prod1-col-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img2@2x-opt.jpg"
-                          ></span>
+                          <span class="current">
+                            <img src="assets/img/prod-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/prod1-col-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img2@2x-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img3-opt.jpg" alt="" />
+                          </span>
                         </div>
-
-                        <img
-                          src="assets/img/prod-opt.jpg"
-                          data-target-prod-src
-                          alt=""
-                        />
 
                         <div class="st-prod-card__labels">
                           <div class="st-label">new</div>
@@ -1135,63 +1113,9 @@
                         </ul>
                       </div>
 
-                      <div class="st-prod-card__name">Футболка Trailhead</div>
-                      <div class="st-prod-card__price">
-                        <del>0 000 руб.</del>
-                        0 000 руб.
+                      <div class="st-prod-card__name">
+                        Гидрокостюм MYSTIC STAR FULLSUIT 5/3MM BZIP
                       </div>
-                    </a>
-                  </div>
-                </li>
-
-                <li class="catalog-list__item">
-                  <div class="st-prod-card">
-                    <a href="#" class="st-prod-card__like _active">
-                      <svg class="icon icon-heart-border-fill">
-                        <use
-                          xlink:href="assets/img/sprite.svg#heart-border-fill"
-                        ></use>
-                      </svg>
-                    </a>
-
-                    <a href="" class="st-prod-card__link">
-                      <div class="st-prod-card__img">
-                        <div class="st-prod-card__nav">
-                          <span
-                            data-prod-src="assets/img/prod-opt.jpg"
-                            class="current"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/prod1-col-opt.jpg"
-                          ></span>
-                        </div>
-
-                        <img
-                          src="assets/img/prod-opt.jpg"
-                          data-target-prod-src
-                          alt=""
-                        />
-
-                        <div class="st-prod-card__labels">
-                          <div class="st-label">new</div>
-                          <div class="st-label _danger">Sale</div>
-                        </div>
-
-                        <ul class="st-prod-card__info">
-                          <li>Размеры (RUS): 40/42 44/46 48/50</li>
-                          <li>
-                            Цвета:
-                            <div class="color-item _black"></div>
-                            <div class="color-item _red"></div>
-                            <div class="color-item _white"></div>
-                          </li>
-                          <li>
-                            <span class="st-prod-card__more">Подробнее</span>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div class="st-prod-card__name">Футболка Trailhead</div>
                       <div class="st-prod-card__price">
                         <del>0 000 руб.</del>
                         0 000 руб.
@@ -1213,26 +1137,19 @@
                     <a href="" class="st-prod-card__link">
                       <div class="st-prod-card__img">
                         <div class="st-prod-card__nav">
-                          <span
-                            data-prod-src="assets/img/prod-opt.jpg"
-                            class="current"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/prod1-col-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img2@2x-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img3-opt.jpg"
-                          ></span>
+                          <span class="current">
+                            <img src="assets/img/prod-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/prod1-col-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img2@2x-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img3-opt.jpg" alt="" />
+                          </span>
                         </div>
-
-                        <img
-                          src="assets/img/prod-opt.jpg"
-                          data-target-prod-src
-                          alt=""
-                        />
 
                         <div class="st-prod-card__labels">
                           <div class="st-label">new</div>
@@ -1253,69 +1170,9 @@
                         </ul>
                       </div>
 
-                      <div class="st-prod-card__name">Футболка Trailhead</div>
-                      <div class="st-prod-card__price">
-                        <del>0 000 руб.</del>
-                        0 000 руб.
+                      <div class="st-prod-card__name">
+                        Гидрокостюм MYSTIC STAR FULLSUIT 5/3MM BZIP
                       </div>
-                    </a>
-                  </div>
-                </li>
-
-                <li class="catalog-list__item">
-                  <div class="st-prod-card">
-                    <a href="#" class="st-prod-card__like _active">
-                      <svg class="icon icon-heart-border-fill">
-                        <use
-                          xlink:href="assets/img/sprite.svg#heart-border-fill"
-                        ></use>
-                      </svg>
-                    </a>
-
-                    <a href="" class="st-prod-card__link">
-                      <div class="st-prod-card__img">
-                        <div class="st-prod-card__nav">
-                          <span
-                            data-prod-src="assets/img/prod-opt.jpg"
-                            class="current"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/prod1-col-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img2@2x-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img3-opt.jpg"
-                          ></span>
-                        </div>
-
-                        <img
-                          src="assets/img/prod-opt.jpg"
-                          data-target-prod-src
-                          alt=""
-                        />
-
-                        <div class="st-prod-card__labels">
-                          <div class="st-label">new</div>
-                          <div class="st-label _danger">Sale</div>
-                        </div>
-
-                        <ul class="st-prod-card__info">
-                          <li>Размеры (RUS): 40/42 44/46 48/50</li>
-                          <li>
-                            Цвета:
-                            <div class="color-item _black"></div>
-                            <div class="color-item _red"></div>
-                            <div class="color-item _white"></div>
-                          </li>
-                          <li>
-                            <span class="st-prod-card__more">Подробнее</span>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div class="st-prod-card__name">Футболка Trailhead</div>
                       <div class="st-prod-card__price">
                         <del>0 000 руб.</del>
                         0 000 руб.
@@ -1337,26 +1194,19 @@
                     <a href="" class="st-prod-card__link">
                       <div class="st-prod-card__img">
                         <div class="st-prod-card__nav">
-                          <span
-                            data-prod-src="assets/img/prod-opt.jpg"
-                            class="current"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/prod1-col-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img2@2x-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img3-opt.jpg"
-                          ></span>
+                          <span class="current">
+                            <img src="assets/img/prod-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/prod1-col-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img2@2x-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img3-opt.jpg" alt="" />
+                          </span>
                         </div>
-
-                        <img
-                          src="assets/img/prod-opt.jpg"
-                          data-target-prod-src
-                          alt=""
-                        />
 
                         <div class="st-prod-card__labels">
                           <div class="st-label">new</div>
@@ -1377,69 +1227,9 @@
                         </ul>
                       </div>
 
-                      <div class="st-prod-card__name">Футболка Trailhead</div>
-                      <div class="st-prod-card__price">
-                        <del>0 000 руб.</del>
-                        0 000 руб.
+                      <div class="st-prod-card__name">
+                        Гидрокостюм MYSTIC STAR FULLSUIT 5/3MM BZIP
                       </div>
-                    </a>
-                  </div>
-                </li>
-
-                <li class="catalog-list__item">
-                  <div class="st-prod-card">
-                    <a href="#" class="st-prod-card__like _active">
-                      <svg class="icon icon-heart-border-fill">
-                        <use
-                          xlink:href="assets/img/sprite.svg#heart-border-fill"
-                        ></use>
-                      </svg>
-                    </a>
-
-                    <a href="" class="st-prod-card__link">
-                      <div class="st-prod-card__img">
-                        <div class="st-prod-card__nav">
-                          <span
-                            data-prod-src="assets/img/prod-opt.jpg"
-                            class="current"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/prod1-col-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img2@2x-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img3-opt.jpg"
-                          ></span>
-                        </div>
-
-                        <img
-                          src="assets/img/prod-opt.jpg"
-                          data-target-prod-src
-                          alt=""
-                        />
-
-                        <div class="st-prod-card__labels">
-                          <div class="st-label">new</div>
-                          <div class="st-label _danger">Sale</div>
-                        </div>
-
-                        <ul class="st-prod-card__info">
-                          <li>Размеры (RUS): 40/42 44/46 48/50</li>
-                          <li>
-                            Цвета:
-                            <div class="color-item _black"></div>
-                            <div class="color-item _red"></div>
-                            <div class="color-item _white"></div>
-                          </li>
-                          <li>
-                            <span class="st-prod-card__more">Подробнее</span>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div class="st-prod-card__name">Футболка Trailhead</div>
                       <div class="st-prod-card__price">
                         <del>0 000 руб.</del>
                         0 000 руб.
@@ -1461,26 +1251,19 @@
                     <a href="" class="st-prod-card__link">
                       <div class="st-prod-card__img">
                         <div class="st-prod-card__nav">
-                          <span
-                            data-prod-src="assets/img/prod-opt.jpg"
-                            class="current"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/prod1-col-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img2@2x-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img3-opt.jpg"
-                          ></span>
+                          <span class="current">
+                            <img src="assets/img/prod-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/prod1-col-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img2@2x-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img3-opt.jpg" alt="" />
+                          </span>
                         </div>
-
-                        <img
-                          src="assets/img/prod-opt.jpg"
-                          data-target-prod-src
-                          alt=""
-                        />
 
                         <div class="st-prod-card__labels">
                           <div class="st-label">new</div>
@@ -1501,7 +1284,9 @@
                         </ul>
                       </div>
 
-                      <div class="st-prod-card__name">Футболка Trailhead</div>
+                      <div class="st-prod-card__name">
+                        Гидрокостюм MYSTIC STAR FULLSUIT 5/3MM BZIP
+                      </div>
                       <div class="st-prod-card__price">
                         <del>0 000 руб.</del>
                         0 000 руб.
@@ -1512,7 +1297,7 @@
 
                 <li class="catalog-list__item">
                   <div class="st-prod-card">
-                    <a href="#" class="st-prod-card__like _active">
+                    <a href="#" class="st-prod-card__like">
                       <svg class="icon icon-heart-border-fill">
                         <use
                           xlink:href="assets/img/sprite.svg#heart-border-fill"
@@ -1523,26 +1308,19 @@
                     <a href="" class="st-prod-card__link">
                       <div class="st-prod-card__img">
                         <div class="st-prod-card__nav">
-                          <span
-                            data-prod-src="assets/img/prod-opt.jpg"
-                            class="current"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/prod1-col-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img2@2x-opt.jpg"
-                          ></span>
-                          <span
-                            data-prod-src="assets/img/c-img3-opt.jpg"
-                          ></span>
+                          <span class="current">
+                            <img src="assets/img/prod-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/prod1-col-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img2@2x-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img3-opt.jpg" alt="" />
+                          </span>
                         </div>
-
-                        <img
-                          src="assets/img/prod-opt.jpg"
-                          data-target-prod-src
-                          alt=""
-                        />
 
                         <div class="st-prod-card__labels">
                           <div class="st-label">new</div>
@@ -1563,7 +1341,237 @@
                         </ul>
                       </div>
 
-                      <div class="st-prod-card__name">Футболка Trailhead</div>
+                      <div class="st-prod-card__name">
+                        Гидрокостюм MYSTIC STAR FULLSUIT 5/3MM BZIP
+                      </div>
+                      <div class="st-prod-card__price">
+                        <del>0 000 руб.</del>
+                        0 000 руб.
+                      </div>
+                    </a>
+                  </div>
+                </li>
+
+                <li class="catalog-list__item">
+                  <div class="st-prod-card">
+                    <a href="#" class="st-prod-card__like">
+                      <svg class="icon icon-heart-border-fill">
+                        <use
+                          xlink:href="assets/img/sprite.svg#heart-border-fill"
+                        ></use>
+                      </svg>
+                    </a>
+
+                    <a href="" class="st-prod-card__link">
+                      <div class="st-prod-card__img">
+                        <div class="st-prod-card__nav">
+                          <span class="current">
+                            <img src="assets/img/prod-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/prod1-col-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img2@2x-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img3-opt.jpg" alt="" />
+                          </span>
+                        </div>
+
+                        <div class="st-prod-card__labels">
+                          <div class="st-label">new</div>
+                          <div class="st-label _danger">Sale</div>
+                        </div>
+
+                        <ul class="st-prod-card__info">
+                          <li>Размеры (RUS): 40/42 44/46 48/50</li>
+                          <li>
+                            Цвета:
+                            <div class="color-item _black"></div>
+                            <div class="color-item _red"></div>
+                            <div class="color-item _white"></div>
+                          </li>
+                          <li>
+                            <span class="st-prod-card__more">Подробнее</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="st-prod-card__name">
+                        Гидрокостюм MYSTIC STAR FULLSUIT 5/3MM BZIP
+                      </div>
+                      <div class="st-prod-card__price">
+                        <del>0 000 руб.</del>
+                        0 000 руб.
+                      </div>
+                    </a>
+                  </div>
+                </li>
+
+                <li class="catalog-list__item">
+                  <div class="st-prod-card">
+                    <a href="#" class="st-prod-card__like">
+                      <svg class="icon icon-heart-border-fill">
+                        <use
+                          xlink:href="assets/img/sprite.svg#heart-border-fill"
+                        ></use>
+                      </svg>
+                    </a>
+
+                    <a href="" class="st-prod-card__link">
+                      <div class="st-prod-card__img">
+                        <div class="st-prod-card__nav">
+                          <span class="current">
+                            <img src="assets/img/prod-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/prod1-col-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img2@2x-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img3-opt.jpg" alt="" />
+                          </span>
+                        </div>
+
+                        <div class="st-prod-card__labels">
+                          <div class="st-label">new</div>
+                          <div class="st-label _danger">Sale</div>
+                        </div>
+
+                        <ul class="st-prod-card__info">
+                          <li>Размеры (RUS): 40/42 44/46 48/50</li>
+                          <li>
+                            Цвета:
+                            <div class="color-item _black"></div>
+                            <div class="color-item _red"></div>
+                            <div class="color-item _white"></div>
+                          </li>
+                          <li>
+                            <span class="st-prod-card__more">Подробнее</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="st-prod-card__name">
+                        Гидрокостюм MYSTIC STAR FULLSUIT 5/3MM BZIP
+                      </div>
+                      <div class="st-prod-card__price">
+                        <del>0 000 руб.</del>
+                        0 000 руб.
+                      </div>
+                    </a>
+                  </div>
+                </li>
+
+                <li class="catalog-list__item">
+                  <div class="st-prod-card">
+                    <a href="#" class="st-prod-card__like">
+                      <svg class="icon icon-heart-border-fill">
+                        <use
+                          xlink:href="assets/img/sprite.svg#heart-border-fill"
+                        ></use>
+                      </svg>
+                    </a>
+
+                    <a href="" class="st-prod-card__link">
+                      <div class="st-prod-card__img">
+                        <div class="st-prod-card__nav">
+                          <span class="current">
+                            <img src="assets/img/prod-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/prod1-col-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img2@2x-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img3-opt.jpg" alt="" />
+                          </span>
+                        </div>
+
+                        <div class="st-prod-card__labels">
+                          <div class="st-label">new</div>
+                          <div class="st-label _danger">Sale</div>
+                        </div>
+
+                        <ul class="st-prod-card__info">
+                          <li>Размеры (RUS): 40/42 44/46 48/50</li>
+                          <li>
+                            Цвета:
+                            <div class="color-item _black"></div>
+                            <div class="color-item _red"></div>
+                            <div class="color-item _white"></div>
+                          </li>
+                          <li>
+                            <span class="st-prod-card__more">Подробнее</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="st-prod-card__name">
+                        Гидрокостюм MYSTIC STAR FULLSUIT 5/3MM BZIP
+                      </div>
+                      <div class="st-prod-card__price">
+                        <del>0 000 руб.</del>
+                        0 000 руб.
+                      </div>
+                    </a>
+                  </div>
+                </li>
+
+                <li class="catalog-list__item">
+                  <div class="st-prod-card">
+                    <a href="#" class="st-prod-card__like">
+                      <svg class="icon icon-heart-border-fill">
+                        <use
+                          xlink:href="assets/img/sprite.svg#heart-border-fill"
+                        ></use>
+                      </svg>
+                    </a>
+
+                    <a href="" class="st-prod-card__link">
+                      <div class="st-prod-card__img">
+                        <div class="st-prod-card__nav">
+                          <span class="current">
+                            <img src="assets/img/prod-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/prod1-col-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img2@2x-opt.jpg" alt="" />
+                          </span>
+                          <span>
+                            <img src="assets/img/c-img3-opt.jpg" alt="" />
+                          </span>
+                        </div>
+
+                        <div class="st-prod-card__labels">
+                          <div class="st-label">new</div>
+                          <div class="st-label _danger">Sale</div>
+                        </div>
+
+                        <ul class="st-prod-card__info">
+                          <li>Размеры (RUS): 40/42 44/46 48/50</li>
+                          <li>
+                            Цвета:
+                            <div class="color-item _black"></div>
+                            <div class="color-item _red"></div>
+                            <div class="color-item _white"></div>
+                          </li>
+                          <li>
+                            <span class="st-prod-card__more">Подробнее</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="st-prod-card__name">
+                        Гидрокостюм MYSTIC STAR FULLSUIT 5/3MM BZIP
+                      </div>
                       <div class="st-prod-card__price">
                         <del>0 000 руб.</del>
                         0 000 руб.

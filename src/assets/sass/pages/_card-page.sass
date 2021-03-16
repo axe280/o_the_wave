@@ -143,9 +143,25 @@
     width: 100%
 
   .like-btn
+    position: relative
     width: auto
     margin-left: 12px
     flex-shrink: 0
+    filter: grayscale(100%)
+
+    &::before
+      content: ''
+      position: absolute
+      left: 50%
+      top: 50%
+      width: 60px
+      height: 60px
+      transform: translate(-50%, -50%)
+      background-image: url( '../img/heart_animation.png')
+      background-position: left
+      background-repeat: no-repeat
+      background-size: 2900%
+      z-index: -1
 
     &:hover
       .icon
@@ -274,6 +290,10 @@
       height: 48px
       width: 56px
       margin-left: 8px
+
+      &::before
+        width: 100px
+        height: 100px
 
       .icon
         width: 43px

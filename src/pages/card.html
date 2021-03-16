@@ -15,6 +15,7 @@
 
   <body>
     <!-- modals -->
+    <!-- modals -->
     <div id="modalSignIn" class="st-modal mfp-hide">
       <div class="st-modal__head">
         <div class="title-site title-site_h1">Вход</div>
@@ -47,16 +48,61 @@
               </label>
             </div>
 
-            <a href="#" class="link-light">Забыли пароль?</a>
+            <button
+              type="button"
+              data-mfp-src="#modalRecPassword"
+              class="st-link link-light open-popup-link"
+            >
+              Забыли пароль?
+            </button>
           </div>
 
           <div class="modal-btns-group">
             <button class="btn btn_max" type="submit">Войти</button>
-            <button class="btn btn_max btn_border" type="submit">
-              Зарегистрироваться
-            </button>
+            <p>
+              Если у вас еще нет аккаунта, он будет автоматически создан в
+              процессе оформления.
+            </p>
           </div>
         </form>
+      </div>
+    </div>
+
+    <div id="modalRecPassword" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="title-site title-site_h1">Восстановление пароля</div>
+      </div>
+
+      <div class="st-modal__body">
+        <form class="st-form" action="#">
+          <div class="form-group">
+            <label class="field-item">
+              <div class="field-item__field">
+                <input type="text" placeholder="Email" />
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <img src="assets/img/capcha.png" alt="" />
+          </div>
+
+          <div class="modal-btns-group">
+            <button class="btn btn_max" type="submit">Восстановить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="subsComplete" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="title-site title-site_h1">Подписка успешно оформлена!</div>
+      </div>
+
+      <div class="st-modal__body">
+        <p class="text_center">
+          Благодарим за интерес к нашему Интернет-магазину.
+        </p>
       </div>
     </div>
 
@@ -85,16 +131,35 @@
           </div>
 
           <div class="form-group">
-            <label class="field-item _error">
+            <label class="field-item">
               <div class="field-item__field">
-                <select name="" id="" required>
-                  <option value="" disabled selected>Город</option>
-                  <option value="">Гаджиево</option>
-                  <option value="">Кириллов</option>
-                  <option value="">Минусинск</option>
-                </select>
+                <div class="del-city">
+                  <div class="del-city__current">Санкт-Петербург</div>
+                  <input type="text" class="city-field" value="" />
+                  <ul class="city-list">
+                    <li>
+                      Санкт-Петербург, г. Санкт-Петербург, пос. Синицино,
+                      Выборгский р-н
+                    </li>
+                    <li>
+                      Санкт-Петербург, г. Санкт-Петербург, пос. Синицино,
+                      Выборгский р-н
+                    </li>
+                    <li>
+                      Санкт-Петербург, г. Санкт-Петербург, пос. Синицино,
+                      Выборгский р-н
+                    </li>
+                    <li>
+                      Санкт-Петербург, г. Санкт-Петербург, пос. Синицино,
+                      Выборгский р-н
+                    </li>
+                    <li>
+                      Санкт-Петербург, г. Санкт-Петербург, пос. Синицино,
+                      Выборгский р-н
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div class="field-item__msg">Error</div>
             </label>
           </div>
 
@@ -324,7 +389,6 @@
             </ul>
 
             <div class="main-search-wrapper">
-              <div class="main-search-overlay"></div>
               <div class="main-search">
                 <form class="main-search-field">
                   <div>
@@ -336,43 +400,6 @@
                     </svg>
                   </button>
                 </form>
-
-                <div class="simple-tabs-wrapp">
-                  <ul class="simple-tabs" data-simple-tabs>
-                    <li class="current">Мужское</li>
-                    <li>Женское</li>
-                    <li>Бренды</li>
-                  </ul>
-
-                  <div class="simple-tabs-box visible">
-                    <ul class="search-category-list">
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
-                  <div class="simple-tabs-box">
-                    <ul class="search-category-list">
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
-                  <div class="simple-tabs-box">
-                    <ul class="search-category-list">
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -523,7 +550,7 @@
 
           <div class="main-row">
             <div class="main-content">
-              <div class="card-bl-wrapp">
+              <div class="card-bl-wrapp" data-sticky-stop>
                 <a href="#" class="mobile-arr-back"></a>
 
                 <div class="card-bl-photos-wrap">
@@ -563,187 +590,192 @@
                 </div>
 
                 <div class="card-bl-info">
-                  <div class="card-bl-info__head">
-                    <div class="card-brand-name"><a href="#">Trailhead</a></div>
-                    <div class="card-name">
-                      Гидрокостюм MYSTIC STAR FULLSUIT 5/3MM BZIP
-                    </div>
-                    <div class="card-art">Арт. MTS-ZHIGU1028-WT20</div>
-                    <div class="card-price">
-                      <del>0 000 руб.</del> 2 799 руб.
-                    </div>
-                    <div class="card-colors">
-                      <div class="card-colors__tt">Цвета</div>
-                      <div class="card-colors-btns">
-                        <label class="card-color-btn">
-                          <input type="radio" name="colorBtn" checked />
-                          <span
-                            class="fake-radio-color"
-                            style="background-color: #51353d"
-                          ></span>
-                        </label>
-                        <label class="card-color-btn">
-                          <input type="radio" name="colorBtn" />
-                          <span
-                            class="fake-radio-color"
-                            style="background-color: #c4c4c4"
-                          ></span>
-                        </label>
-                        <label class="card-color-btn">
-                          <input type="radio" name="colorBtn" />
-                          <span
-                            class="fake-radio-color"
-                            style="background-color: #000000"
-                          ></span>
-                        </label>
+                  <div class="card-bl-info-inner">
+                    <div class="card-bl-info__head">
+                      <div class="card-brand-name">
+                        <a href="#">Trailhead</a>
+                      </div>
+                      <div class="card-name">
+                        Гидрокостюм MYSTIC STAR FULLSUIT 5/3MM BZIP
+                      </div>
+                      <div class="card-art">Арт. MTS-ZHIGU1028-WT20</div>
+                      <div class="card-price">
+                        <del>0 000 руб.</del> 2 799 руб.
+                      </div>
+                      <div class="card-colors">
+                        <div class="card-colors__tt">Цвета</div>
+                        <div class="card-colors-btns">
+                          <label class="card-color-btn">
+                            <input type="radio" name="colorBtn" checked />
+                            <span
+                              class="fake-radio-color"
+                              style="background-color: #51353d"
+                            ></span>
+                          </label>
+                          <label class="card-color-btn">
+                            <input type="radio" name="colorBtn" />
+                            <span
+                              class="fake-radio-color"
+                              style="background-color: #c4c4c4"
+                            ></span>
+                          </label>
+                          <label class="card-color-btn">
+                            <input type="radio" name="colorBtn" />
+                            <span
+                              class="fake-radio-color"
+                              style="background-color: #000000"
+                            ></span>
+                          </label>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="card-order-section">
-                    <div class="card-sizes-wrapp">
-                      <div class="dd-list-wrapp">
-                        <div class="dd-list-item _opened">
-                          <div class="dd-list-head">Выберите размер</div>
-                          <div class="dd-list-body" style="display: block">
-                            <div class="card-sizes-btns">
-                              <label class="card-size-btn">
-                                <input type="radio" name="ziseBtn" />
-                                <span class="fake-radio-size">S</span>
-                              </label>
-                              <label class="card-size-btn">
-                                <input type="radio" name="ziseBtn" />
-                                <span class="fake-radio-size">L</span>
-                              </label>
-                              <label class="card-size-btn">
-                                <input type="radio" name="ziseBtn" />
-                                <span class="fake-radio-size">M</span>
-                              </label>
-                              <label class="card-size-btn">
-                                <input type="radio" name="ziseBtn" />
-                                <span class="fake-radio-size">42/44</span>
-                              </label>
+                    <div class="card-order-section">
+                      <div class="card-sizes-wrapp">
+                        <div class="dd-list-wrapp">
+                          <div class="dd-list-item _opened">
+                            <div class="dd-list-head">Выберите размер</div>
+                            <div class="dd-list-body" style="display: block">
+                              <div class="card-sizes-btns">
+                                <label class="card-size-btn">
+                                  <input type="radio" name="ziseBtn" />
+                                  <span class="fake-radio-size">S</span>
+                                </label>
+                                <label class="card-size-btn">
+                                  <input type="radio" name="ziseBtn" />
+                                  <span class="fake-radio-size">L</span>
+                                </label>
+                                <label class="card-size-btn">
+                                  <input type="radio" name="ziseBtn" />
+                                  <span class="fake-radio-size">M</span>
+                                </label>
+                                <label class="card-size-btn">
+                                  <input type="radio" name="ziseBtn" />
+                                  <span class="fake-radio-size">42/44</span>
+                                </label>
+                              </div>
                             </div>
                           </div>
                         </div>
+
+                        <button type="button" class="table-size-popup">
+                          Таблица размеров
+                        </button>
+                        <span class="sizes-error-msg"
+                          >Пожалуйста, выберите имеющийся в наличии размер</span
+                        >
                       </div>
 
-                      <button type="button" class="table-size-popup">
-                        Таблица размеров
-                      </button>
-                      <span class="sizes-error-msg"
-                        >Пожалуйста, выберите имеющийся в наличии размер</span
-                      >
-                    </div>
+                      <div class="card-order-btns">
+                        <div class="co-btns-row">
+                          <button class="btn add-to-cart-btn" type="button">
+                            Добавить в корзину
+                          </button>
+                          <button class="btn btn_icon like-btn" type="button">
+                            <svg class="icon icon-heart">
+                              <use
+                                xlink:href="assets/img/sprite.svg#heart"
+                              ></use>
+                            </svg>
+                          </button>
+                        </div>
 
-                    <div class="card-order-btns">
-                      <div class="co-btns-row">
-                        <button class="btn add-to-cart-btn" type="button">
-                          Добавить в корзину
-                        </button>
                         <button
-                          class="btn btn_icon like-btn _active"
+                          class="btn btn_border btn_max btn-order-click"
                           type="button"
                         >
-                          <svg class="icon icon-heart">
-                            <use xlink:href="assets/img/sprite.svg#heart"></use>
-                          </svg>
+                          Заказ в 1 клик
                         </button>
                       </div>
+                    </div>
 
+                    <div class="card-bl-status">В наличии</div>
+
+                    <div class="dd-list-wrapp">
+                      <div class="dd-list-item">
+                        <div class="dd-list-head">Описание товара</div>
+                        <div class="dd-list-body">
+                          <b>Джоггеры Nike Sportswear Tech Fleece </b>
+                          <p>
+                            C обновленной посадкой подходят для повседневной
+                            жизни и идеальны для холодной погоды. Свободный в
+                            бедрах и зауженный в области коленей крой
+                            обеспечивает комфорт и создает стильный силуэт.
+                          </p>
+                          <p>
+                            <b>Высокие манжеты</b> из рубчатой ткани завершают
+                            образ, а стильный карман на молнии на правой штанине
+                            предназначен для важных мелочей.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="dd-list-item">
+                        <div class="dd-list-head">Доставка с примеркой</div>
+                        <div class="dd-list-body">
+                          <b>Джоггеры Nike Sportswear Tech Fleece </b>
+                          <p>
+                            C обновленной посадкой подходят для повседневной
+                            жизни и идеальны для холодной погоды. Свободный в
+                            бедрах и зауженный в области коленей крой
+                            обеспечивает комфорт и создает стильный силуэт.
+                          </p>
+                          <p>
+                            <b>Высокие манжеты</b> из рубчатой ткани завершают
+                            образ, а стильный карман на молнии на правой штанине
+                            предназначен для важных мелочей.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="dd-list-item">
+                        <div class="dd-list-head">
+                          Гарантии подлинности товаров
+                        </div>
+                        <div class="dd-list-body">
+                          <b>Джоггеры Nike Sportswear Tech Fleece </b>
+                          <p>
+                            C обновленной посадкой подходят для повседневной
+                            жизни и идеальны для холодной погоды. Свободный в
+                            бедрах и зауженный в области коленей крой
+                            обеспечивает комфорт и создает стильный силуэт.
+                          </p>
+                          <p>
+                            <b>Высокие манжеты</b> из рубчатой ткани завершают
+                            образ, а стильный карман на молнии на правой штанине
+                            предназначен для важных мелочей.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="dd-list-item">
+                        <div class="dd-list-head">Оплата</div>
+                        <div class="dd-list-body">
+                          <p>
+                            Оплатить заказанные товары можно одним из указанных
+                            ниже способов:
+                          </p>
+                          <ol>
+                            <li>
+                              1. Наличными или картой при получении заказа
+                            </li>
+                            <li>
+                              2. Онлайн оплата картой или электронными деньгами.
+                            </li>
+                          </ol>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card-cheaper">
                       <button
-                        class="btn btn_border btn_max btn-order-click"
                         type="button"
+                        data-mfp-src="#modalCheaper"
+                        class="open-popup-link"
                       >
-                        Заказ в 1 клик
+                        Хочу дешевле!
                       </button>
                     </div>
-                  </div>
-
-                  <div class="card-bl-status">В наличии</div>
-
-                  <div class="dd-list-wrapp">
-                    <div class="dd-list-item">
-                      <div class="dd-list-head">Описание товара</div>
-                      <div class="dd-list-body">
-                        <b>Джоггеры Nike Sportswear Tech Fleece </b>
-                        <p>
-                          C обновленной посадкой подходят для повседневной жизни
-                          и идеальны для холодной погоды. Свободный в бедрах и
-                          зауженный в области коленей крой обеспечивает комфорт
-                          и создает стильный силуэт.
-                        </p>
-                        <p>
-                          <b>Высокие манжеты</b> из рубчатой ткани завершают
-                          образ, а стильный карман на молнии на правой штанине
-                          предназначен для важных мелочей.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="dd-list-item">
-                      <div class="dd-list-head">Доставка с примеркой</div>
-                      <div class="dd-list-body">
-                        <b>Джоггеры Nike Sportswear Tech Fleece </b>
-                        <p>
-                          C обновленной посадкой подходят для повседневной жизни
-                          и идеальны для холодной погоды. Свободный в бедрах и
-                          зауженный в области коленей крой обеспечивает комфорт
-                          и создает стильный силуэт.
-                        </p>
-                        <p>
-                          <b>Высокие манжеты</b> из рубчатой ткани завершают
-                          образ, а стильный карман на молнии на правой штанине
-                          предназначен для важных мелочей.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="dd-list-item">
-                      <div class="dd-list-head">
-                        Гарантии подлинности товаров
-                      </div>
-                      <div class="dd-list-body">
-                        <b>Джоггеры Nike Sportswear Tech Fleece </b>
-                        <p>
-                          C обновленной посадкой подходят для повседневной жизни
-                          и идеальны для холодной погоды. Свободный в бедрах и
-                          зауженный в области коленей крой обеспечивает комфорт
-                          и создает стильный силуэт.
-                        </p>
-                        <p>
-                          <b>Высокие манжеты</b> из рубчатой ткани завершают
-                          образ, а стильный карман на молнии на правой штанине
-                          предназначен для важных мелочей.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="dd-list-item">
-                      <div class="dd-list-head">Оплата</div>
-                      <div class="dd-list-body">
-                        <p>
-                          Оплатить заказанные товары можно одним из указанных
-                          ниже способов:
-                        </p>
-                        <ol>
-                          <li>1. Наличными или картой при получении заказа</li>
-                          <li>
-                            2. Онлайн оплата картой или электронными деньгами.
-                          </li>
-                        </ol>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-cheaper">
-                    <button
-                      type="button"
-                      data-mfp-src="#modalCheaper"
-                      class="open-popup-link"
-                    >
-                      Хочу дешевле!
-                    </button>
                   </div>
                 </div>
               </div>

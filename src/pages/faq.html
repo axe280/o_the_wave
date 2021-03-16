@@ -14,6 +14,97 @@
   </head>
 
   <body>
+    <!-- modals -->
+    <div id="modalSignIn" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="title-site title-site_h1">Вход</div>
+      </div>
+
+      <div class="st-modal__body">
+        <form class="st-form" action="#">
+          <div class="form-group">
+            <label class="field-item">
+              <div class="field-item__field">
+                <input type="text" placeholder="Email или телефон" />
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="field-item">
+              <div class="field-item__field">
+                <input type="password" placeholder="Пароль" />
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group-f-line">
+            <div class="ui-st-checkbox">
+              <label>
+                Запомнить меня
+                <input type="checkbox" checked />
+                <span class="fake-control"></span>
+              </label>
+            </div>
+
+            <button
+              type="button"
+              data-mfp-src="#modalRecPassword"
+              class="st-link link-light open-popup-link"
+            >
+              Забыли пароль?
+            </button>
+          </div>
+
+          <div class="modal-btns-group">
+            <button class="btn btn_max" type="submit">Войти</button>
+            <p>
+              Если у вас еще нет аккаунта, он будет автоматически создан в
+              процессе оформления.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="modalRecPassword" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="title-site title-site_h1">Восстановление пароля</div>
+      </div>
+
+      <div class="st-modal__body">
+        <form class="st-form" action="#">
+          <div class="form-group">
+            <label class="field-item">
+              <div class="field-item__field">
+                <input type="text" placeholder="Email" />
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <img src="assets/img/capcha.png" alt="" />
+          </div>
+
+          <div class="modal-btns-group">
+            <button class="btn btn_max" type="submit">Восстановить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="subsComplete" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="title-site title-site_h1">Подписка успешно оформлена!</div>
+      </div>
+
+      <div class="st-modal__body">
+        <p class="text_center">
+          Благодарим за интерес к нашему Интернет-магазину.
+        </p>
+      </div>
+    </div>
+
     <!-- site main wrapper -->
     <div class="site-wrapper">
       <!-- header -->
@@ -187,7 +278,6 @@
             </ul>
 
             <div class="main-search-wrapper">
-              <div class="main-search-overlay"></div>
               <div class="main-search">
                 <form class="main-search-field">
                   <div>
@@ -199,43 +289,6 @@
                     </svg>
                   </button>
                 </form>
-
-                <div class="simple-tabs-wrapp">
-                  <ul class="simple-tabs" data-simple-tabs>
-                    <li class="current">Мужское</li>
-                    <li>Женское</li>
-                    <li>Бренды</li>
-                  </ul>
-
-                  <div class="simple-tabs-box visible">
-                    <ul class="search-category-list">
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
-                  <div class="simple-tabs-box">
-                    <ul class="search-category-list">
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
-                  <div class="simple-tabs-box">
-                    <ul class="search-category-list">
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
-                </div>
               </div>
             </div>
 
