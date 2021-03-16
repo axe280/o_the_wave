@@ -13,6 +13,7 @@
 
 .st-prod-card
   position: relative
+  overflow: hidden
 
   &:hover
     .st-prod-card
@@ -22,11 +23,52 @@
       &__info
         transform: translateY(0)
 
+  &__nav
+    display: block
+    position: absolute
+    z-index: 2
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+    padding: 0 4px
+    display: flex
+    justify-content: space-between
+
+    span
+      display: flex
+      flex-direction: column
+      padding: 8px 4px
+      flex-grow: 1
+
+      &::before
+        content: ''
+        position: relative
+        z-index: 6
+        display: block
+        height: 2px
+        border-radius: 2px
+        background-color: #000
+        transition: background-color .2s
+
+      &::after
+        content: ''
+        flex-grow: 1
+        position: relative
+        z-index: 9
+
+      &.current
+        &::before
+          background-color: #C4C1C2
+
+        img
+          z-index: 3
+  
   &__like
     opacity: 1
     position: absolute
     right: 0
-    top: 0
+    top: 10px
     z-index: 3
     display: flex
     align-items: center
@@ -155,7 +197,7 @@
 
   &__nav
     span
-      display: none
+      // display: none
 
       &.current
         display: block
@@ -284,47 +326,6 @@
 
       .color-item
         margin-left: 12px
-
-    &__nav
-      display: block
-      position: absolute
-      z-index: 2
-      left: 0
-      top: 0
-      height: 100%
-      width: 100%
-      padding: 0 4px
-      display: flex
-      justify-content: space-between
-
-      span
-        display: flex
-        flex-direction: column
-        padding: 8px 4px
-        flex-grow: 1
-
-        &::before
-          content: ''
-          position: relative
-          z-index: 6
-          display: block
-          height: 2px
-          border-radius: 2px
-          background-color: #000
-          transition: background-color .2s
-
-        &::after
-          content: ''
-          flex-grow: 1
-          position: relative
-          z-index: 9
-
-        &.current
-          &::before
-            background-color: #C4C1C2
-
-          img
-            z-index: 3
 
   .catalog-list._cols
     .st-prod-card

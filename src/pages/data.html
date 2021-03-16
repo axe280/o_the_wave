@@ -443,7 +443,40 @@
                         <button class="btn btn_max" type="button">
                           Изменить
                         </button>
-                        <input type="password" placeholder="Пароль" />
+                        <div class="form-group-grid">
+                          <div class="form-group form-group_three-col">
+                            <label>
+                              <div class="field-item__field">
+                                <input
+                                  type="password"
+                                  placeholder="Ваш старый пароль"
+                                />
+                              </div>
+                            </label>
+                          </div>
+
+                          <div class="form-group form-group_three-col">
+                            <label class="field-item">
+                              <div class="field-item__field">
+                                <input
+                                  type="password"
+                                  placeholder="Новый пароль"
+                                />
+                              </div>
+                            </label>
+                          </div>
+
+                          <div class="form-group form-group_three-col">
+                            <label class="field-item">
+                              <div class="field-item__field">
+                                <input
+                                  type="password"
+                                  placeholder="Повторите новый пароль"
+                                />
+                              </div>
+                            </label>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -472,7 +505,13 @@
                       <div class="form-group">
                         <label class="field-item">
                           <div class="field-item__field">
-                            <input type="text" placeholder="20.20.2000" />
+                            <!-- <input type="text" placeholder="20.20.2000" /> -->
+                            <input
+                              type="text"
+                              placeholder="20.12.2000"
+                              id="birthdayDate"
+                              class="data-pic"
+                            />
                           </div>
                         </label>
                       </div>
@@ -507,6 +546,291 @@
                     <button class="btn btn_max" type="submit">Сохранить</button>
                   </div>
                 </form>
+
+                <div class="data-adress-wrap">
+                  <div class="row-line"></div>
+
+                  <div class="data-adress-wrap__tt">Адреса доставки</div>
+
+                  <div class="data-adress-row">
+                    <div class="data-adress-row__head">
+                      <div class="ui-st-radio">
+                        <label>
+                          <input type="radio" name="adresss-radio" />
+                          <span class="fake-control"></span>
+                          <b>Дом</b>
+                        </label>
+                      </div>
+                      <div class="data-adress-name">
+                        <span
+                          >194355, Санкт-Петербург, Невский пр., 106, кв.
+                          44</span
+                        >
+                        <span>+7 (921) 921 21 21</span>
+                      </div>
+                      <button type="button" class="adress-edit-btn">
+                        <svg class="icon icon-edit">
+                          <use xlink:href="assets/img/sprite.svg#edit"></use>
+                        </svg>
+                        Редактировать
+                      </button>
+                      <button class="adress-btn-remove" type="button">
+                        <svg class="icon icon-close2">
+                          <use xlink:href="assets/img/sprite.svg#close2"></use>
+                        </svg>
+                      </button>
+                    </div>
+
+                    <div class="data-adress-row__body">
+                      <div class="form-group-grid">
+                        <div class="form-group form-group_three-col">
+                          <label>
+                            <div class="field-item__field">
+                              <input type="text" placeholder="Дом*" />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group form-group_three-col">
+                          <label class="field-item">
+                            <div class="field-item__field">
+                              <input type="text" placeholder="194355*" />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group form-group_three-col">
+                          <label class="field-item">
+                            <div class="field-item__field">
+                              <input
+                                type="text"
+                                placeholder="Санкт-Петербург*"
+                              />
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="form-group-grid">
+                        <div class="form-group form-group_three-col">
+                          <label>
+                            <div class="field-item__field">
+                              <input type="text" placeholder="Невский пр.*" />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group form-group_three-col">
+                          <label class="field-item">
+                            <div class="field-item__field">
+                              <input type="text" placeholder="106*" />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group form-group_three-col">
+                          <label class="field-item">
+                            <div class="field-item__field">
+                              <input type="text" placeholder="44*" />
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="form-group-grid">
+                        <div class="form-group form-group_half-col">
+                          <button
+                            class="btn btn_max btn_border btn-adress-cancel"
+                            type="button"
+                          >
+                            Отменить
+                          </button>
+                        </div>
+                        <div class="form-group form-group_half-col">
+                          <button class="btn btn_max" type="submit">
+                            Сохранить
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="data-adress-row">
+                    <div class="data-adress-row__head">
+                      <div class="ui-st-radio">
+                        <label>
+                          <input type="radio" checked name="adresss-radio" />
+                          <span class="fake-control"></span>
+                          <b>Работа</b>
+                        </label>
+                      </div>
+                      <div class="data-adress-name">
+                        <span
+                          >194355, Санкт-Петербург, Невский пр., 106, кв.
+                          44</span
+                        >
+                        <span>+7 (921) 921 21 21</span>
+                      </div>
+                      <button type="button" class="adress-edit-btn">
+                        <svg class="icon icon-edit">
+                          <use xlink:href="assets/img/sprite.svg#edit"></use>
+                        </svg>
+                        Редактировать
+                      </button>
+                      <button class="adress-btn-remove" type="button">
+                        <svg class="icon icon-close2">
+                          <use xlink:href="assets/img/sprite.svg#close2"></use>
+                        </svg>
+                      </button>
+                    </div>
+
+                    <div class="data-adress-row__body">
+                      <div class="form-group-grid">
+                        <div class="form-group form-group_three-col">
+                          <label>
+                            <div class="field-item__field">
+                              <input type="text" placeholder="Дом*" />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group form-group_three-col">
+                          <label class="field-item">
+                            <div class="field-item__field">
+                              <input type="text" placeholder="194355*" />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group form-group_three-col">
+                          <label class="field-item">
+                            <div class="field-item__field">
+                              <input
+                                type="text"
+                                placeholder="Санкт-Петербург*"
+                              />
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="form-group-grid">
+                        <div class="form-group form-group_three-col">
+                          <label>
+                            <div class="field-item__field">
+                              <input type="text" placeholder="Невский пр.*" />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group form-group_three-col">
+                          <label class="field-item">
+                            <div class="field-item__field">
+                              <input type="text" placeholder="106*" />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group form-group_three-col">
+                          <label class="field-item">
+                            <div class="field-item__field">
+                              <input type="text" placeholder="44*" />
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="form-group-grid">
+                        <div class="form-group form-group_half-col">
+                          <button
+                            class="btn btn_max btn_border btn-adress-cancel"
+                            type="button"
+                          >
+                            Отменить
+                          </button>
+                        </div>
+                        <div class="form-group form-group_half-col">
+                          <button class="btn btn_max" type="submit">
+                            Сохранить
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="data-adress-row">
+                    <div class="data-adress-row__head">
+                      <button class="adress-btn-add" type="button">
+                        Добавить адрес доставки
+                      </button>
+                    </div>
+
+                    <div class="data-adress-row__body">
+                      <div class="form-group-grid">
+                        <div class="form-group form-group_three-col">
+                          <label>
+                            <div class="field-item__field">
+                              <input
+                                type="text"
+                                placeholder="Название адреса*"
+                              />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group form-group_three-col">
+                          <label class="field-item">
+                            <div class="field-item__field">
+                              <input type="text" placeholder="Индекс*" />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group form-group_three-col">
+                          <label class="field-item">
+                            <div class="field-item__field">
+                              <input type="text" placeholder="Город*" />
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="form-group-grid">
+                        <div class="form-group form-group_three-col">
+                          <label>
+                            <div class="field-item__field">
+                              <input type="text" placeholder="Улица*" />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group form-group_three-col">
+                          <label class="field-item">
+                            <div class="field-item__field">
+                              <input type="text" placeholder="Дом*" />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group form-group_three-col">
+                          <label class="field-item">
+                            <div class="field-item__field">
+                              <input type="text" placeholder="Квартира*" />
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="form-group-grid">
+                        <div class="form-group form-group_half-col">
+                          <button
+                            class="btn btn_max btn_border btn-adress-cancel"
+                            type="button"
+                          >
+                            Отменить
+                          </button>
+                        </div>
+                        <div class="form-group form-group_half-col">
+                          <button class="btn btn_max" type="submit">
+                            Сохранить
+                          </button>
+                        </div>
+                      </div>
+                      <p class="data-adress-info">
+                        Этот адрес будет сохранен в Вашем аккаунте. Поля,
+                        помеченные *, обязательны для заполнения.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

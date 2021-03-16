@@ -158,4 +158,16 @@
     <path d="M11.61 15a7 7 0 100-14 7 7 0 000 14z" stroke="#000" stroke-miterlimit="10"></path>
     <path d="M1 21.124a12.254 12.254 0 0121.221 0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"></path>
   </symbol>
+
+  <symbol fill="none" viewBox="0 0 13 13" id="close2">
+    <path stroke-width="2" d="M12.021.707L.707 12.021m11.313 0L.707.707"></path>
+  </symbol>
+  <symbol fill="none" viewBox="0 0 19 20" id="edit">
+    <path d="M7.125 16.531H3.562a.594.594 0 01-.593-.594v-3.316a.594.594 0 01.174-.42l8.906-8.906a.594.594 0 01.84 0l3.316 3.316a.594.594 0 010 .84l-9.08 9.08zM10.094 5.25l4.156 4.156" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M16.032 16.531H7.125l-4.118-4.118" stroke-linecap="round" stroke-linejoin="round"></path>
+  </symbol>
+
+  <symbol viewBox="0 0 16 16" id="user-fill">
+    <path d="M8 10a4 4 0 100-8 4 4 0 000 8zm-6.063 3.5a7.003 7.003 0 0112.126 0"></path>
+  </symbol>
 </svg>

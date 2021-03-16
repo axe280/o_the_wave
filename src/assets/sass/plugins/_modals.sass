@@ -124,6 +124,43 @@
   .btn_border
     border-radius: 2px 0 0 2px
 
+.modal-prod-sub
+  .ui-st-checkbox
+    margin-bottom: 16px
+
+  p
+    margin: 16px 0
+    font-size: 12px
+    line-height: 15px
+
+.modal-cookies
+  background-color: #000
+  color: #fff
+
+  .mfp-close .icon, button.mfp-close .icon
+    fill: #fff
+    stroke: #fff
+
+  p
+    font-size: 14px
+    line-height: 18px
+
+.modal-cookies-btns
+  font-size: 14px
+  line-height: 18px
+  margin-top: 20px
+  text-align: center
+
+  .btn
+    margin-top: 24px
+    background-color: #fff
+    color: #000
+
+  a
+    color: #fff
+    font-weight: 700
+    text-decoration: none
+
 
 /* Min width $lg */
 @media only screen and (min-width: $lg)
@@ -196,4 +233,39 @@
       &__body
         p
           line-height: 20px
+
+  .modal-cookies
+    display: block
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 300
+    max-width: 100%
+    padding: 30px
+
+    .st-modal__body
+      max-width: 1400px
+      margin: 0 auto
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+      p
+        max-width: 700px
+
+  .modal-cookies-btns
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-shrink: 0
+    margin: 0 0 0 40px
+
+    a
+      flex-shrink: 0
+
+    .btn
+      margin: 0 0 0 30px
+      min-width: 100px
+      font-size: 20px
 /* end media min width $lg */

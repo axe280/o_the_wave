@@ -47,7 +47,13 @@
               </label>
             </div>
 
-            <a href="#" class="link-light">Забыли пароль?</a>
+            <button
+              type="button"
+              data-mfp-src="#modalRecPassword"
+              class="st-link link-light open-popup-link"
+            >
+              Забыли пароль?
+            </button>
           </div>
 
           <div class="modal-btns-group">
@@ -56,6 +62,32 @@
               Если у вас еще нет аккаунта, он будет автоматически создан в
               процессе оформления.
             </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="modalRecPassword" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="title-site title-site_h1">Восстановление пароля</div>
+      </div>
+
+      <div class="st-modal__body">
+        <form class="st-form" action="#">
+          <div class="form-group">
+            <label class="field-item">
+              <div class="field-item__field">
+                <input type="text" placeholder="Email" />
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <img src="assets/img/capcha.png" alt="" />
+          </div>
+
+          <div class="modal-btns-group">
+            <button class="btn btn_max" type="submit">Восстановить</button>
           </div>
         </form>
       </div>
@@ -70,6 +102,21 @@
         <p class="text_center">
           Благодарим за интерес к нашему Интернет-магазину.
         </p>
+      </div>
+    </div>
+
+    <div id="modalCookies" class="st-modal modal-cookies">
+      <div class="st-modal__body">
+        <p>
+          Мы используем наши собственные и сторонние файлы cookie, чтобы
+          показывать Вам рекламу, разработанную в соответствии с Вашей
+          навигацией. Вы можете принять все файлы cookie или управлять своими
+          предпочтениями в панели настроек. Смотреть дополнительную информацию
+        </p>
+        <div class="modal-cookies-btns">
+          <a href="#">Настройка файлов cookie</a>
+          <button class="btn btn_max" type="button">Принять все</button>
+        </div>
       </div>
     </div>
 
@@ -208,20 +255,17 @@
               </li>
 
               <li>
-                <button
-                  type="button"
-                  data-mfp-src="#modalSignIn"
-                  class="h-nav-icon open-popup-link"
-                >
-                  <svg class="icon icon-user">
-                    <use xlink:href="assets/img/sprite.svg#user"></use>
+                <a href="#" class="h-nav-icon">
+                  <svg class="icon icon-user-fill">
+                    <use xlink:href="assets/img/sprite.svg#user-fill"></use>
                   </svg>
-                  <span>Вход</span>
-                </button>
+                  <span>admin@admin.com</span>
+                </a>
               </li>
 
               <li>
                 <a href="#" class="h-nav-icon">
+                  <span class="count-val">1</span>
                   <svg class="icon icon-heart">
                     <use xlink:href="assets/img/sprite.svg#heart"></use>
                   </svg>
@@ -231,6 +275,7 @@
 
               <li>
                 <a href="#" class="h-nav-icon show-cart-btn">
+                  <span class="count-val">2</span>
                   <svg class="icon icon-cart">
                     <use xlink:href="assets/img/sprite.svg#cart"></use>
                   </svg>
@@ -240,7 +285,6 @@
             </ul>
 
             <div class="main-search-wrapper">
-              <div class="main-search-overlay"></div>
               <div class="main-search">
                 <form class="main-search-field">
                   <div>
@@ -252,43 +296,6 @@
                     </svg>
                   </button>
                 </form>
-
-                <div class="simple-tabs-wrapp">
-                  <ul class="simple-tabs" data-simple-tabs>
-                    <li class="current">Мужское</li>
-                    <li>Женское</li>
-                    <li>Бренды</li>
-                  </ul>
-
-                  <div class="simple-tabs-box visible">
-                    <ul class="search-category-list">
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
-                  <div class="simple-tabs-box">
-                    <ul class="search-category-list">
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
-                  <div class="simple-tabs-box">
-                    <ul class="search-category-list">
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                      <li><a href="#">Categories</a></li>
-                    </ul>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -761,6 +768,50 @@
               <div class="insta-c-item">
                 <img src="assets/img/insta3.jpg" alt="" />
               </div>
+            </div>
+          </div>
+
+          <div class="st-spacing-block">
+            <div class="main-seo">
+              <h1>
+                Интернет-магазин одежды, обуви, аксессуаров, косметики и
+                парфюмерии
+              </h1>
+              <h2>Большой выбор товаров</h2>
+              <p>
+                В интернет-магазине onlythewave.ru представлены лучшие коллекции
+                женской одежды, обуви и аксессуаров, а также косметики и
+                парфюмов ведущих мировых брендов. <br />
+                Увлечённые модницы могут выбрать товары премиум-класса и
+                органично совместить их с базовыми вещами демократичной ценовой
+                категории. Любая покупка на сайте onlythewave.ru происходит в
+                два клика. Покупательница может быть уверена, что получит
+                фирменную вещь превосходного качества с гарантией. <br />
+                Для постоянных клиентов существует программа лояльности. Кроме
+                того, на onlythewave.ru регулярно проводятся распродажи товаров
+                даже из новых модных коллекций.
+              </p>
+              <h2>Доставка с примеркой</h2>
+              <p>
+                Перед покупкой всю одежду и обувь можно примерить. Для этого не
+                нужно ехать в магазин: курьер сам привезёт желаемые размеры и
+                фасоны. Покупательнице остаётся только покрутиться перед
+                зеркалом и определиться с выбором.<br />
+                По всей России onlythewave.ru доставляет товары бесплатно.
+                Собственная служба доставки работает в 66 крупных городах
+                (Москва и МО, Санкт-Петербург, Нижний Новгород, Новосибирск,
+                Екатеринбург, Самара, Тольятти, Тюмень, Челябинск и другие). В
+                этих городах заказ приедет либо в этот же день, либо уже на
+                следующий.
+              </p>
+              <h2>Оплата и возврат</h2>
+              <p>
+                Для удобства клиентов оплатить товар можно любым способом:
+                наличными курьеру, по банковской карте онлайн. <br />
+                У каждого курьера onlythewave.ru есть мобильный терминал оплаты,
+                поэтому платить карточкой можно даже дома в момент доставки
+                заказа. Возврат товара возможен в течение 14 дней после покупки.
+              </p>
             </div>
           </div>
         </div>

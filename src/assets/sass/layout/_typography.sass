@@ -93,7 +93,9 @@ img
   vertical-align: middle
   max-width: 100%
 
-a
+a, .st-link
+  text-align: left
+  cursor: pointer
   color: $color-link
   text-decoration: underline
   transition: color $transDefault, border-color .2s
@@ -204,6 +206,23 @@ blockquote
     line-height: 16px
     font-weight: 700
 
+.main-seo
+  h1
+    font-size: 14px
+    line-height: 18px
+    text-transform: uppercase
+    margin-bottom: 16px
+
+  h2
+    margin-bottom: 6px
+    font-size: 12px
+    line-height: 16px
+
+  p
+    margin-bottom: 16px
+    font-size: 12px
+    line-height: 16px
+
 /* Min width $lg pixels */
 @media only screen and (min-width: $lg)
   body
@@ -250,6 +269,18 @@ blockquote
   .st-text-bl
     .title-site, h1, h2, h3, h4, h5, h6
       text-align: left
+
+  .main-seo
+    h1
+      font-size: 16px
+      line-height: 20px
+      margin-bottom: 20px
+
+    h2
+      margin-bottom: 10px
+
+    p
+      margin-bottom: 20px
 /* end media min width $lg pixels */
 
 /* Min width $xl */

@@ -65,6 +65,7 @@
     "magnific-popup": "^1.1.0",
     "normalize.css": "^8.0.1",
     "owl.carousel2": "^2.2.1",
-    "svg4everybody": "^2.1.9"
+    "svg4everybody": "^2.1.9",
+    "tocca": "^2.0.9"
   }
 }

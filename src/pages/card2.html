@@ -132,20 +132,52 @@
       </div>
     </div>
 
-    <div id="modalCheaper" class="st-modal mfp-hide">
+    <div id="modalProdSub" class="st-modal mfp-hide">
       <div class="st-modal__head">
-        <div class="title-site title-site_h1 text_left">Хочу дешевле!</div>
+        <div class="title-site title-site_h1 text_left">
+          Подписаться на размер
+        </div>
       </div>
 
       <div class="st-modal__body">
-        <div class="modal-cheaper">
-          <span>С условиями</span>
-          <span>Если нашли где-то дешевле</span>
-          <span>Скидкой</span>
-          <span>Скидками</span>
-          <span>Со скидкой за публикацию в соц. сетях</span>
-          <span>Со скидкой по карте др брендов </span>
-        </div>
+        <form action="" class="modal-prod-sub">
+          <div class="form-group">
+            <div class="ui-st-checkbox _dark">
+              <label>
+                38 RUS (36 IT)
+                <input type="checkbox" checked />
+                <span class="fake-control"></span>
+              </label>
+            </div>
+            <div class="ui-st-checkbox _dark">
+              <label>
+                42 RUS (40 IT)
+                <input type="checkbox" />
+                <span class="fake-control"></span>
+              </label>
+            </div>
+            <div class="ui-st-checkbox _dark">
+              <label>
+                44 RUS (42 IT)
+                <input type="checkbox" />
+                <span class="fake-control"></span>
+              </label>
+            </div>
+          </div>
+          <p>
+            Мы обязательно напишем вам, когда нужный размер появится в наличии.
+          </p>
+          <div class="form-group">
+            <label>
+              <div class="field-item__field">
+                <input type="email" placeholder="Ваш Email" />
+              </div>
+              <div class="field-item__msg"></div>
+            </label>
+          </div>
+
+          <button class="btn btn_max" type="submit">Подписаться</button>
+        </form>
       </div>
     </div>
 
@@ -644,7 +676,13 @@
                       </div>
 
                       <span class="card-order-one-click">
-                        <a href="#">Подписаться на поступление товара</a>
+                        <button
+                          type="button"
+                          data-mfp-src="#modalProdSub"
+                          class="open-popup-link st-link"
+                        >
+                          Подписаться на поступление товара
+                        </button>
                       </span>
                     </div>
                   </div>

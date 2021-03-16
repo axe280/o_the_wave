@@ -21,6 +21,7 @@
   text-decoration: none
   margin-top: 3px
   transition: opacity .2s
+  max-width: 130px
 
   &:hover
     opacity: .95
@@ -51,32 +52,41 @@
     .icon
       stroke: $colorGold
 
+    .icon-user-fill
+      fill: $colorGold
+      stroke: none
+
   .icon
-    width: 16px
-    height: 16px
+    width: 20px
+    height: 20px
     fill: none
     stroke: $colorLight
+
+  .icon-user-fill
+    fill: #fff
+    stroke: none
 
   span
     display: none
 
   .count-val
     display: flex
+    font-size: 6px
 
 .count-val
   position: absolute
   display: flex
   align-items: center
   justify-content: center
-  left: -12px
-  top: -8px
-  min-width: 16px
-  height: 16px
-  padding: 0 2px
-  font-size: 12px
+  left: -3px
+  top: -3px
+  min-width: 8px
+  height: 8px
+  padding: 0 1px
+  font-size: 6px
   color: #fff
   border-radius: 50%
-  background-color: $colorDanger
+  background-color: $colorGold
 
 /* Min width $md */
 @media only screen and (min-width: $md)
@@ -139,6 +149,7 @@
   .logo
     margin-right: 50px
     margin-top: 0
+    max-width: 100%
 
     img
       width: 120px
@@ -153,9 +164,6 @@
   .logo
     img
       width: 150px
-
-  .count-val
-    left: -10px
 /* end media min width $xl */
 
 /* Min width $hd */

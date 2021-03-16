@@ -93,6 +93,11 @@ $(function () {
   })
 
   // filter
+  var closeMobileSort = function () {
+    $('.btn[data-filter-btn="sort"]').addClass('btn_border')
+    $('.mobile-sort-d').slideUp()
+  }
+
   $('.filters-list').on('click', '.filter-head', function () {
     $(this).siblings('.filter-drop-d').slideToggle()
     $(this).parent().toggleClass('_opened')
@@ -118,7 +123,7 @@ $(function () {
     })
   }
 
-  $('.catalog-mobile-btns').on('click', '.btn', function () {
+  $('.btn[data-filter-btn="filter"]').on('click', function () {
     var dataNameSelector = '[data-' + $(this).data().filterBtn + ']'
     $(this).removeClass('btn_border').siblings('.btn').addClass('btn_border')
 
@@ -131,10 +136,31 @@ $(function () {
       .show()
       .siblings('.filter-item:not(' + dataNameSelector + ')')
       .hide()
+  })
 
-    if ((dataNameSelector = '[data-sort]')) {
-      $(dataNameSelector).addClass('_opened').find('.filter-drop-d').show()
-    }
+  $('.btn[data-filter-btn="sort"]').on('click', function () {
+    hideMobileFilter()
+    $(this).removeClass('btn_border').siblings('.btn').addClass('btn_border')
+
+    $('.mobile-sort-d').slideDown()
+  })
+
+  if ($(window).width() <= 980) {
+    $(document).bind('click touchstart', function (e) {
+      var $clicked = $(e.target)
+
+      if (
+        !$clicked.parents().hasClass('mobile-sort-d') &&
+        !$clicked.is('.btn[data-filter-btn="sort"]')
+      ) {
+        closeMobileSort()
+      }
+    })
+  }
+
+  $('.mobile-sort-d').on('click', 'li', function () {
+    closeMobileSort()
+    $('[data-sort]').find('li').eq($(this).index()).trigger('click')
   })
 
   $('.filter-mobile-close, .btn-filter-show').on('click', hideMobileFilter)
@@ -201,8 +227,7 @@ $(function () {
 
   // show data password field
   $('.data-pass-btn .btn').on('click', function () {
-    $(this).parent().addClass('_show-pass')
-    $(this).parent().find('input').focus()
+    $(this).parents('.data-info').addClass('_show-pass')
   })
 
   // remove outside classes
@@ -375,6 +400,19 @@ $(function () {
   }
 
   $('.open-popup-link').magnificPopup(magnificOptions)
+
+  // open modal cookies
+  if ($(window).width() < 980) {
+    if ($('#modalCookies').length) {
+      $.magnificPopup.open(
+        $.extend(magnificOptions, {
+          items: {
+            src: '#modalCookies',
+          },
+        })
+      )
+    }
+  }
 
   // cart modal
   var isCartEmpty = false
@@ -742,6 +780,119 @@ $(function () {
 
     if (gender === 'female') {
       $('#gender')[0].checked = true
+    }
+  })
+
+  // adress btns
+  $('.adress-edit-btn, .adress-btn-add').on('click', function () {
+    $(this)
+      .parents('.data-adress-row')
+      .addClass('opened')
+      .find('.data-adress-row__body')
+      .slideDown()
+  })
+
+  $('.btn-adress-cancel').on('click', function () {
+    $(this)
+      .parents('.data-adress-row')
+      .removeClass('opened')
+      .find('.data-adress-row__body')
+      .slideUp()
+  })
+
+  // datepicker
+  $.datepicker.regional['ru'] = {
+    closeText: 'Закрыть',
+    prevText: '&#x3c;Пред',
+    nextText: 'След&#x3e;',
+    currentText: 'Сегодня',
+    monthNames: [
+      'Январь',
+      'Февраль',
+      'Март',
+      'Апрель',
+      'Май',
+      'Июнь',
+      'Июль',
+      'Август',
+      'Сентябрь',
+      'Октябрь',
+      'Ноябрь',
+      'Декабрь',
+    ],
+    monthNamesShort: [
+      'Янв',
+      'Фев',
+      'Мар',
+      'Апр',
+      'Май',
+      'Июн',
+      'Июл',
+      'Авг',
+      'Сен',
+      'Окт',
+      'Ноя',
+      'Дек',
+    ],
+    dayNames: [
+      'воскресенье',
+      'понедельник',
+      'вторник',
+      'среда',
+      'четверг',
+      'пятница',
+      'суббота',
+    ],
+    dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
+    dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+    weekHeader: 'Нед',
+    dateFormat: 'dd.mm.yy',
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: '',
+  }
+  $.datepicker.setDefaults($.datepicker.regional['ru'])
+
+  $('#birthdayDate').datepicker()
+
+  // date mask
+  $('.data-pic').mask('00.00.0000')
+
+  // swiper for mobile
+  // swipeleft
+  $('.st-prod-card__nav').on('swipeleft', function () {
+    var $currentEl = $(this).find('.current')
+    var currentIdx = $currentEl.index()
+    var $elements = $(this).find('span')
+    if (currentIdx < $elements.length - 1) {
+      $currentEl.removeClass('current').next().addClass('current')
+    }
+  })
+  $('.st-prod-card__nav').on('swiperight', function (e, data) {
+    var $currentEl = $(this).find('.current')
+    var currentIdx = $currentEl.index()
+    var $elements = $(this).find('span')
+    if (currentIdx > 0) {
+      $currentEl.removeClass('current').prev().addClass('current')
+    }
+  })
+
+  // del city
+  $('.del-city__current').on('click', function () {
+    $(this).parent().addClass('_opened')
+    $(this).parent().find('input').trigger('focus')
+  })
+
+  $('.city-list').on('click', 'li', function () {
+    $(this).parents('.del-city').removeClass('_opened')
+  })
+
+  $(document).bind('click touchstart', function (e) {
+    var $clicked = $(e.target)
+
+    if (!$clicked.parents().hasClass('del-city')) {
+      $('.del-city').removeClass('_opened')
     }
   })
 })

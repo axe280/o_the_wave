@@ -3,6 +3,14 @@
   font-size: 14px
   line-height: 17px
 
+  &._disabled
+    img
+      opacity: .7
+
+    .cart-col-title
+      a, span
+        color: #9A9A9A
+
 .cart-col-prod-img
   float: left
   width: 168px
@@ -102,6 +110,7 @@
 /* Max width $m-lg */
 @media only screen and (max-width: $m-lg)
   .cart-row
+    position: relative
     overflow: hidden
     position: relative
     padding-right: 20px
@@ -113,6 +122,23 @@
     .cart-col-prod-img,
     .cart-col-close
       margin-left: 0
+
+  .cart-col-disable-info
+    position: absolute
+    left: 0
+    bottom: 0
+    text-align: left
+
+    b
+      display: block
+      margin-bottom: 16px
+      font-weight: 700
+      font-size: 14px
+      line-height: 20px
+
+    button
+      font-size: 14px
+      line-height: 17px
 /* end media max width $m-lg */
 
 /* Min width $md */
@@ -196,6 +222,27 @@
       margin-bottom: 0
       font-size: 12px
       line-height: 17px
+
+  .cart-row._disabled
+    justify-content: flex-start
+
+    .cart-col-close
+      margin-left: auto
+
+  .cart-col-disable-info
+    display: flex
+    align-items: center
+    justify-content: space-around
+    flex-grow: 1
+
+    b
+      font-weight: 700
+      font-size: 18px
+      line-height: 22px
+
+    button
+      font-size: 18px
+      line-height: 22px
 /* end media min width $lg */
 
 /* Min width $xl */

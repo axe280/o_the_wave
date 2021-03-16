@@ -113,6 +113,55 @@
       </div>
     </div>
 
+    <div id="modalProdSub" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="title-site title-site_h1 text_left">
+          Подписаться на размер
+        </div>
+      </div>
+
+      <div class="st-modal__body">
+        <form action="" class="modal-prod-sub">
+          <div class="form-group">
+            <div class="ui-st-checkbox _dark">
+              <label>
+                38 RUS (36 IT)
+                <input type="checkbox" checked />
+                <span class="fake-control"></span>
+              </label>
+            </div>
+            <div class="ui-st-checkbox _dark">
+              <label>
+                42 RUS (40 IT)
+                <input type="checkbox" />
+                <span class="fake-control"></span>
+              </label>
+            </div>
+            <div class="ui-st-checkbox _dark">
+              <label>
+                44 RUS (42 IT)
+                <input type="checkbox" />
+                <span class="fake-control"></span>
+              </label>
+            </div>
+          </div>
+          <p>
+            Мы обязательно напишем вам, когда нужный размер появится в наличии.
+          </p>
+          <div class="form-group">
+            <label>
+              <div class="field-item__field">
+                <input type="email" placeholder="Ваш Email" />
+              </div>
+              <div class="field-item__msg"></div>
+            </label>
+          </div>
+
+          <button class="btn btn_max" type="submit">Подписаться</button>
+        </form>
+      </div>
+    </div>
+
     <!-- site main wrapper -->
     <div class="site-wrapper">
       <!-- header -->
@@ -591,7 +640,7 @@
                     </div>
                   </div>
 
-                  <div class="cart-row">
+                  <div class="cart-row _disabled">
                     <div class="cart-col-prod-img">
                       <a href="#">
                         <img src="assets/img/prod@2x.jpg" alt="" />
@@ -601,20 +650,16 @@
                       <b><a href="#">Свитшот Trailhead</a></b>
                       <span>MSS083N-NOPRI1-NV20</span>
                     </div>
-                    <div class="cart-col-color">
-                      <div class="color-item _gray"></div>
+                    <div class="cart-col-disable-info">
+                      <b>Нет в наличии</b>
+                      <button
+                        type="button"
+                        data-mfp-src="#modalProdSub"
+                        class="open-popup-link st-link"
+                      >
+                        Подписаться на поступление товара
+                      </button>
                     </div>
-                    <div class="cart-col-size">S</div>
-                    <div class="cart-col-price">4 499 руб.</div>
-                    <div class="cart-col-count">
-                      <span class="hidden-desktop">Кол-во:</span>
-                      <div class="col-panel-tc">
-                        <span class="minus-input">-</span>
-                        <input type="text" value="2" />
-                        <span class="plus-input">+</span>
-                      </div>
-                    </div>
-                    <div class="cart-col-total">8 998 руб.</div>
                     <div class="cart-col-close">
                       <button
                         type="button"
@@ -749,6 +794,29 @@
                       <div class="del-city">
                         <b>Ваш город:</b>
                         <div class="del-city__current">Санкт-Петербург</div>
+                        <input type="text" class="city-field" value="" />
+                        <ul class="city-list">
+                          <li>
+                            Санкт-Петербург, г. Санкт-Петербург, пос. Синицино,
+                            Выборгский р-н
+                          </li>
+                          <li>
+                            Санкт-Петербург, г. Санкт-Петербург, пос. Синицино,
+                            Выборгский р-н
+                          </li>
+                          <li>
+                            Санкт-Петербург, г. Санкт-Петербург, пос. Синицино,
+                            Выборгский р-н
+                          </li>
+                          <li>
+                            Санкт-Петербург, г. Санкт-Петербург, пос. Синицино,
+                            Выборгский р-н
+                          </li>
+                          <li>
+                            Санкт-Петербург, г. Санкт-Петербург, пос. Синицино,
+                            Выборгский р-н
+                          </li>
+                        </ul>
                       </div>
                     </div>
 
