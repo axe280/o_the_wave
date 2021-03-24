@@ -16,6 +16,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   devtool: 'cheap-module-eval-source-map',
   devServer: {
     contentBase: PATHS.dist,
+    open: true,
     host: 'localhost',
     disableHostCheck: true,
     port: 3000,
@@ -34,7 +35,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         },
       },
       {
-        test: /\.(woff(2)?|ttf|eot|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
         options: {
           name: '../fonts/[name].[ext]',

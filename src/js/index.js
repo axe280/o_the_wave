@@ -859,7 +859,7 @@ $(function () {
   }
   $.datepicker.setDefaults($.datepicker.regional['ru'])
 
-  $('#birthdayDate').datepicker()
+  $('#bdBl').datepicker()
 
   // date mask
   $('.data-pic').mask('00.00.0000')
@@ -918,6 +918,6 @@ $(function () {
   $('.modal-prod-sub').on('submit', function (e) {
     e.preventDefault()
 
-    $(this).text('Сообщение отрпавлено')
+    $(this).text('Сообщение отправлено')
   })
 })

@@ -12,27 +12,27 @@ const webpack = require('webpack')
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
-  assets: 'assets/'
+  assets: 'assets/',
 }
 
 // Pages const for HtmlWebpackPlugin
 const PAGES_DIR = `${PATHS.src}/pages`
 const PAGES = fs
   .readdirSync(PAGES_DIR)
-  .filter(fileName => fileName.endsWith(".html"))
+  .filter((fileName) => fileName.endsWith('.html'))
 
 module.exports = {
   // BASE config
   externals: {
-    paths: PATHS
+    paths: PATHS,
   },
   entry: {
-    app: PATHS.src
+    app: PATHS.src,
   },
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-    publicPath: ''
+    publicPath: '',
   },
   optimization: {
     splitChunks: {
@@ -41,10 +41,10 @@ module.exports = {
           name: 'vendors',
           test: /node_modules/,
           chunks: 'all',
-          enforce: true
-        }
-      }
-    }
+          enforce: true,
+        },
+      },
+    },
   },
   module: {
     rules: [
@@ -80,22 +80,25 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: true },
           },
           {
             loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: `./postcss.config.js` } }
+            options: {
+              sourceMap: true,
+              config: { path: `./postcss.config.js` },
+            },
           },
           {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
               sassOptions: {
-                outputStyle: 'expanded'
-              }
-            }
-          }
-        ]
+                outputStyle: 'expanded',
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
@@ -104,19 +107,23 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
-          }, {
+            options: { sourceMap: true },
+          },
+          {
             loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: `./postcss.config.js` } }
-          }
-        ]
-      }
-    ]
+            options: {
+              sourceMap: true,
+              config: { path: `./postcss.config.js` },
+            },
+          },
+        ],
+      },
+    ],
   },
   resolve: {
     alias: {
-      '~': PATHS.src
-    }
+      '~': PATHS.src,
+    },
   },
   plugins: [
     new webpack.ProvidePlugin({
@@ -147,19 +154,20 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-      { from: `${PATHS.src}/${PATHS.assets}icons`, to: `${PATHS.assets}img/icons` },
+      {
+        from: `${PATHS.src}/${PATHS.assets}icons`,
+        to: `${PATHS.assets}img/icons`,
+      },
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: '' },
     ]),
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
-    ...PAGES.map(
-      page => {
-        return new HtmlWebpackPlugin({
-          template: `${PAGES_DIR}/${page}`,
-          filename: `./${page}`
-        })
-      }
-    )
-  ]
+    ...PAGES.map((page) => {
+      return new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/${page}`,
+        filename: `./${page}`,
+      })
+    }),
+  ],
 }
